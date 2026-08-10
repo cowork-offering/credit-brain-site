@@ -1,0 +1,118 @@
+<!doctype html><html lang="en" data-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Functional journey — holographic redo (concept)</title>
+<style>
+  :root{ --core:#a100ff; --light:#c29bf5; --mag:#ff3d8b; --cool:#4f73ff; --bg:#06050a; --ink:#ece6f6; --muted:#b3abc4; --hair:rgba(200,170,255,.16); --ease:cubic-bezier(.22,1,.36,1); }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:radial-gradient(130% 100% at 50% 30%,#0d0918,#06050a 72%);color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 24px 80px}
+  .ey{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--light);font-weight:700;margin-bottom:12px}
+  h1{font-size:clamp(24px,3.2vw,36px);letter-spacing:-.025em;line-height:1.06;margin:0 0 12px;font-weight:800}
+  .lede{color:var(--muted);max-width:64ch;margin:0 0 6px}
+
+  /* ===== the holographic scene ===== */
+  .scene{position:relative;height:560px;margin:18px auto 0;perspective:1300px;perspective-origin:50% 42%}
+  .holo{position:absolute;inset:0;display:grid;place-items:center;transform-style:preserve-3d}
+  /* gentle holographic turn of the whole assembly */
+  .rotor{position:relative;width:300px;height:430px;transform-style:preserve-3d;animation:sway 22s ease-in-out infinite}
+  @keyframes sway{0%,100%{transform:rotateX(9deg) rotateY(-21deg)}50%{transform:rotateX(9deg) rotateY(21deg)}}
+  @media(prefers-reduced-motion:reduce){.rotor{animation:none;transform:rotateX(9deg) rotateY(-8deg)}}
+
+  /* the subtle 5-tier stack — thin translucent glowing planes (Brain..Records) */
+  .tier{position:absolute;left:50%;width:300px;height:62px;margin-left:-150px;border:1px solid color-mix(in srgb,var(--core) 42%,var(--hair));border-radius:13px;
+    background:linear-gradient(135deg,color-mix(in srgb,var(--core) 13%,transparent),color-mix(in srgb,var(--core) 4%,transparent));
+    backdrop-filter:blur(3px);box-shadow:0 0 0 1px color-mix(in srgb,var(--core) 10%,transparent) inset, 0 14px 40px -22px color-mix(in srgb,var(--core) 50%,transparent);
+    transform-style:preserve-3d;transition:box-shadow .4s ease,border-color .4s ease;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+  .tier .tn{font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--light);opacity:.75}
+  .tier .tt{font-size:13px;font-weight:700;color:var(--ink);opacity:.92}
+  .tier::before{content:"";position:absolute;inset:0;border-radius:13px;background:repeating-linear-gradient(0deg,transparent 0 5px,color-mix(in srgb,var(--light) 7%,transparent) 5px 6px);opacity:.5;pointer-events:none}
+  .t1{top:0}   .t2{top:88px} .t3{top:176px} .t4{top:264px} .t5{top:352px}
+  /* the request lights each tier as it passes (staggered) */
+  .tier.lit{border-color:color-mix(in srgb,var(--light) 80%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--light) 30%,transparent) inset,0 0 34px color-mix(in srgb,var(--core) 55%,transparent),0 14px 40px -18px color-mix(in srgb,var(--core) 60%,transparent)}
+  .t1{animation:lit 9s ease-in-out infinite} .t1{animation-delay:.7s}
+  .t2{animation:lit 9s ease-in-out infinite 1.2s}
+  .t3{animation:lit 9s ease-in-out infinite 1.7s}
+  .t4{animation:lit 9s ease-in-out infinite 2.2s}
+  .t5{animation:lit 9s ease-in-out infinite 2.7s}
+  @keyframes lit{0%,6%{border-color:color-mix(in srgb,var(--core) 42%,var(--hair));box-shadow:0 0 0 1px color-mix(in srgb,var(--core) 10%,transparent) inset,0 14px 40px -22px color-mix(in srgb,var(--core) 50%,transparent)}
+    12%{border-color:color-mix(in srgb,var(--light) 85%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--light) 34%,transparent) inset,0 0 40px color-mix(in srgb,var(--core) 62%,transparent),0 14px 40px -16px color-mix(in srgb,var(--core) 65%,transparent)}
+    34%,100%{border-color:color-mix(in srgb,var(--core) 42%,var(--hair));box-shadow:0 0 0 1px color-mix(in srgb,var(--core) 10%,transparent) inset,0 14px 40px -22px color-mix(in srgb,var(--core) 50%,transparent)}}
+
+  /* MCP client harness floating above, dashed feed into the top tier */
+  .client{position:absolute;left:50%;top:-58px;transform:translateX(-50%) translateZ(40px);display:flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid color-mix(in srgb,var(--core) 34%,var(--hair));border-radius:11px;background:rgba(14,10,22,.7);backdrop-filter:blur(8px);white-space:nowrap}
+  .client svg{width:14px;height:14px;stroke:var(--light);fill:none;stroke-width:1.6}
+  .client b{font-size:11px;color:var(--ink);font-weight:700} .client span{font-size:10px;color:var(--muted)}
+  .feed{position:absolute;left:50%;top:-18px;width:1.5px;height:18px;transform:translateX(-50%) translateZ(40px);background:repeating-linear-gradient(var(--light),var(--light) 3px,transparent 3px,transparent 6px);opacity:.5}
+
+  /* the request mote: descends the stack centre-line, then a learn-arc returns it */
+  .mote{position:absolute;left:50%;top:14px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:#fff;
+    box-shadow:0 0 10px 3px color-mix(in srgb,var(--light) 90%,transparent),0 0 22px 8px color-mix(in srgb,var(--core) 70%,transparent);
+    transform:translateZ(46px);animation:drop 9s ease-in-out infinite}
+  @keyframes drop{0%{top:-6px;opacity:0}5%{opacity:1}38%{top:392px;opacity:1}46%{top:392px;opacity:.9}
+    47%{opacity:0} 100%{opacity:0}}
+  /* answer mote rises back (it compounds) */
+  .mote.ans{background:color-mix(in srgb,var(--mag) 40%,#fff);box-shadow:0 0 9px 3px color-mix(in srgb,var(--mag) 80%,transparent),0 0 20px 7px color-mix(in srgb,var(--core) 60%,transparent);animation:rise 9s ease-in-out infinite}
+  @keyframes rise{0%,50%{top:392px;opacity:0}54%{opacity:1}86%{top:-6px;opacity:1}92%{opacity:0}100%{opacity:0}}
+
+  /* reach: filaments to two faint system glyphs (work done in place) */
+  .estate{position:absolute;top:300px;width:100%;display:flex;justify-content:space-between;transform:translateZ(10px)}
+  .sys{display:flex;flex-direction:column;align-items:center;gap:5px;opacity:.55}
+  .sys i{width:34px;height:34px;border:1px dashed color-mix(in srgb,var(--cool) 45%,var(--hair));border-radius:9px;background:color-mix(in srgb,var(--cool) 8%,transparent)}
+  .sys span{font-size:9px;color:var(--muted)}
+  .reach{position:absolute;top:300px;left:0;width:100%;height:2px;pointer-events:none}
+  .beam{position:absolute;top:0;height:1.5px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--light) 70%,transparent),transparent);opacity:0;animation:reach 9s ease-in-out infinite}
+  .beam.l{left:6%;width:38%;transform-origin:right} .beam.r{right:6%;width:38%}
+  @keyframes reach{0%,40%{opacity:0}48%{opacity:.9}62%{opacity:.9}70%{opacity:0}100%{opacity:0}}
+
+  /* governance: a guarded ring that wraps the stack and pulses once a human decides */
+  .gov{position:absolute;left:50%;top:50%;width:360px;height:480px;margin:-240px 0 0 -180px;border:1px dashed color-mix(in srgb,var(--light) 32%,transparent);border-radius:26px;transform:translateZ(-30px);animation:govp 9s ease-in-out infinite}
+  @keyframes govp{0%,66%{box-shadow:0 0 0 transparent;border-color:color-mix(in srgb,var(--light) 22%,transparent)}74%{box-shadow:0 0 40px color-mix(in srgb,var(--core) 30%,transparent);border-color:color-mix(in srgb,var(--light) 55%,transparent)}82%{box-shadow:0 0 22px color-mix(in srgb,var(--core) 16%,transparent);border-color:color-mix(in srgb,var(--light) 30%,transparent)}100%{border-color:color-mix(in srgb,var(--light) 22%,transparent)}}
+  .govlbl{position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .govlbl b{color:var(--light);font-weight:800}
+
+  .cap{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
+  .cap b{color:var(--ink);font-weight:700}
+  .foot{margin-top:34px;border-top:1px solid var(--hair);padding-top:20px;color:var(--muted);font-size:13.5px;max-width:78ch}
+  .foot b{color:var(--ink)}
+</style></head>
+<body><div class="wrap">
+  <div class="ey">The functional journey · holographic redo (concept)</div>
+  <h1>One request, the whole way through.</h1>
+  <p class="lede">The same five layers as the technical side, kept for recognition, but now a subtle holographic stack that turns in space. Watch one request fall through it, reach your systems in place, wait on a human, and loop back sharper.</p>
+
+  <div class="scene">
+    <div class="holo">
+      <div class="rotor">
+        <div class="client" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="13" rx="2"/><path d="M8 21h8M12 17.5V21"/></svg><b>MCP client</b><span>· the harness</span></div>
+        <div class="feed"></div>
+
+        <div class="gov"><span class="govlbl"><b>governed</b> · acts as you · human decides</span></div>
+
+        <div class="tier t1"><span class="tn">01 · Brain</span><span class="tt">Reasons &amp; orchestrates</span></div>
+        <div class="tier t2"><span class="tn">02 · Model</span><span class="tt">Thinks it through</span></div>
+        <div class="tier t3"><span class="tn">03 · Tools</span><span class="tt">Reaches your systems</span></div>
+        <div class="tier t4"><span class="tn">04 · Data</span><span class="tt">Finds the meaning</span></div>
+        <div class="tier t5"><span class="tn">05 · Records</span><span class="tt">Your source of truth</span></div>
+
+        <div class="reach"><span class="beam l"></span><span class="beam r"></span></div>
+        <div class="estate" aria-hidden="true">
+          <div class="sys"><i></i><span>nCino</span></div>
+          <div class="sys"><i></i><span>Snowflake</span></div>
+        </div>
+
+        <div class="mote"></div>
+        <div class="mote ans"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cap">
+    <span><b>Ask</b> · enters as you</span>
+    <span><b>Reason</b> · the brain thinks</span>
+    <span><b>Reach</b> · works in place</span>
+    <span><b>Human</b> · decides</span>
+    <span><b>Learn</b> · the answer rises, sharper</span>
+  </div>
+
+  <div class="foot">This is a looping concept mock. In the real build it would be <b>scroll-synced</b> to the journey copy (each beat advances as you scroll), gently 3D-rotating and holographic like the rest, with the five-tier stack kept subtle. Confirm the direction and I'll wire it in. <b>Note:</b> the final can use the same particle-glow material as the hero/helix for the mote and the brain tier if you want even tighter continuity.</div>
+</div></body></html>

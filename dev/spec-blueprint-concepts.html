@@ -1,0 +1,985 @@
+<!doctype html><html lang="en" data-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Commercial Blueprint · 10 concept sketches</title>
+<style>
+  :root{--v-core:#a100ff;--v-light:#c29bf5;--bg:#06050a;--ink:#ece6f6;--muted:#a89cc0;--text2:#cfc8dd;--hair:rgba(200,170,255,.16)}
+  *{box-sizing:border-box}html,body{margin:0}
+  body{background:radial-gradient(120% 80% at 50% 0%,#0c0817,#06050a 70%);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:0 0 80px}
+  header{max-width:1180px;margin:0 auto;padding:64px 28px 26px;text-align:center}
+  header .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--v-light);font-weight:700}
+  header h1{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.025em;margin:12px 0 10px;line-height:1.06}
+  header p{color:var(--muted);max-width:70ch;margin:0 auto;font-size:15px;line-height:1.6}
+  header .note{margin-top:14px;font-size:12px;color:var(--v-light);opacity:.85}
+  .grid{max-width:1180px;margin:30px auto 0;padding:0 28px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:880px){.grid{grid-template-columns:1fr}}
+  .card{border:1px solid var(--hair);border-radius:18px;background:color-mix(in srgb,var(--v-core) 4%,transparent);padding:18px;display:flex;flex-direction:column;gap:12px}
+  .cardhead{display:flex;align-items:flex-start;gap:14px}
+  .num{font-size:30px;font-weight:800;letter-spacing:-.04em;color:color-mix(in srgb,var(--v-light) 40%,transparent);font-variant-numeric:tabular-nums;line-height:1}
+  .card h2{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:0}
+  .tag{font-size:12.5px;color:var(--v-light);font-weight:600;margin-top:2px}
+  .viz{border:1px solid var(--hair);border-radius:13px;background:radial-gradient(120% 100% at 50% 30%,#0d0a18,#070610 75%);overflow:hidden;aspect-ratio:440/320}
+  .viz svg{width:100%;height:100%;display:block}
+  .why{color:var(--text2);font-size:13.5px;line-height:1.55;margin:0}
+  .meta{display:grid;grid-template-columns:84px 1fr;gap:10px;font-size:12.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--hair);padding-top:10px}
+  .meta .ml{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:10px;color:var(--text2);padding-top:2px}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:40px;padding:0 28px}
+</style></head>
+<body>
+<header>
+  <div class="k">The Commercial Blueprint · functional side</div>
+  <h1>10 ways to visualize the Customers' Credit Journey</h1>
+  <p>Rough concept sketches for a new functional-side section, grounded in the Accenture lending blueprint: the six-stage lifecycle (Prospecting → Sales → Credit Analysis → Approval → Offering/Setup → Servicing &amp; Monitoring) over its layered architecture. Each is a rotating violet hologram in the same family as the DNA spine and the 5-layer stack. Pick a direction and I'll build the animated version.</p>
+  <div class="note">Concepts only · 2D sketches · not yet animated or inserted</div>
+</header>
+<div class="grid">
+    <article class="card">
+      <div class="cardhead"><span class="num">01</span><div><h2>Credit Orrery</h2><div class="tag">Six lifecycle rings orbit one customer core</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8d5ff" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#a100ff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#a100ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#a100ff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#c29bf5" stop-opacity="0.18"/>
+    </radialGradient>
+  </defs>
+
+  <g transform="translate(190,160)">
+    <!-- layer halo / data foundation glow -->
+    <circle r="150" fill="url(#halo)"/>
+
+    <!-- 6 tilted orbital stage-rings (concentric, inside-out) -->
+    <!-- 02 model substrate / inner -->
+    <ellipse rx="34" ry="14" fill="none" stroke="#e8d5ff" stroke-opacity="0.85" stroke-width="1.1" transform="rotate(-18)"/>
+    <ellipse rx="56" ry="22" fill="none" stroke="#c29bf5" stroke-opacity="0.8" stroke-width="1.1" transform="rotate(12)"/>
+    <ellipse rx="80" ry="31" fill="none" stroke="#c29bf5" stroke-opacity="0.7" stroke-width="1.1" transform="rotate(-8)"/>
+    <ellipse rx="104" ry="40" fill="none" stroke="#b07ef0" stroke-opacity="0.65" stroke-width="1.1" transform="rotate(20)"/>
+    <ellipse rx="128" ry="50" fill="none" stroke="#a100ff" stroke-opacity="0.6" stroke-width="1.2" transform="rotate(-14)"/>
+    <ellipse rx="150" ry="60" fill="none" stroke="#a100ff" stroke-opacity="0.55" stroke-width="1.3" transform="rotate(6)"/>
+
+    <!-- MCP connector tick marks on mid ring (03 tools) -->
+    <g stroke="#c29bf5" stroke-opacity="0.5" stroke-width="1">
+      <line x1="-104" y1="0" x2="-112" y2="0"/>
+      <line x1="104" y1="0" x2="112" y2="0"/>
+      <line x1="0" y1="-40" x2="0" y2="-46"/>
+      <line x1="0" y1="40" x2="0" y2="46"/>
+    </g>
+
+    <!-- core: 01 brain / customer -->
+    <circle r="46" fill="url(#core)"/>
+    <circle r="9" fill="#f3e8ff"/>
+    <circle r="9" fill="none" stroke="#e8d5ff" stroke-opacity="0.6" stroke-width="3"/>
+
+    <!-- orbiting sub-activity nodes per stage (lit = comet passing) -->
+    <g fill="#e8d5ff">
+      <circle cx="34" cy="-2" r="2.6"/>
+      <circle cx="-50" cy="9" r="2.6"/>
+      <circle cx="74" cy="-12" r="3" fill="#fff7ff"/>
+      <circle cx="-92" cy="22" r="2.6"/>
+      <circle cx="120" cy="-20" r="2.8"/>
+      <circle cx="-138" cy="34" r="2.8"/>
+      <circle cx="150" cy="10" r="3.4" fill="#fff7ff"/>
+    </g>
+
+    <!-- comet head + tail (scroll-driven progress marker) -->
+    <circle cx="150" cy="10" r="6" fill="#a100ff" fill-opacity="0.35"/>
+
+    <!-- feedback loop arc: servicing -> core (always-on monitoring) -->
+    <path d="M 148 22 C 80 96 -40 70 -20 26" fill="none" stroke="#a100ff" stroke-opacity="0.55" stroke-width="1.3" stroke-dasharray="4 4"/>
+    <polygon points="-20,26 -14,30 -24,33" fill="#a100ff" fill-opacity="0.7"/>
+  </g>
+
+  <!-- core + layer labels -->
+  <text x="190" y="158" font-family="sans-serif" font-size="9" fill="#f3e8ff" text-anchor="middle">CUSTOMER</text>
+  <text x="190" y="169" font-family="sans-serif" font-size="6.5" fill="#c29bf5" text-anchor="middle">01 Brain core</text>
+
+  <!-- stage ring labels (inside-out = request order) -->
+  <text x="222" y="150" font-family="sans-serif" font-size="6.5" fill="#e8d5ff">1 Prospecting</text>
+  <text x="248" y="128" font-family="sans-serif" font-size="6.5" fill="#c29bf5">2 Sales</text>
+  <text x="276" y="105" font-family="sans-serif" font-size="6.5" fill="#c29bf5">3 Credit Analysis</text>
+  <text x="300" y="83" font-family="sans-serif" font-size="6.5" fill="#c29bf5">4 Approval</text>
+  <text x="320" y="62" font-family="sans-serif" font-size="6.5" fill="#c29bf5">5 Offering / Set-up</text>
+  <text x="338" y="40" font-family="sans-serif" font-size="6.5" fill="#e8d5ff">6 Servicing & Monitoring</text>
+
+  <!-- comet callout -->
+  <text x="346" y="178" font-family="sans-serif" font-size="6" fill="#a100ff" text-anchor="end">request comet lights nodes ›</text>
+  <!-- loop callout -->
+  <text x="118" y="262" font-family="sans-serif" font-size="6" fill="#a100ff">EWS loop ↺ back to core</text>
+
+  <!-- radial layer legend -->
+  <text x="14" y="294" font-family="sans-serif" font-size="6" fill="#8a6fb0">radius = 5-layer stack: 01 core › 02 substrate › 03 MCP ticks › 04 data lattice › 05 engagement arc</text>
+  <text x="14" y="20" font-family="sans-serif" font-size="9" fill="#c29bf5" font-weight="bold">CREDIT ORRERY — the customer's credit journey, in orbit</text>
+</svg></div>
+      <p class="why">An orrery reads instantly as a single living system in motion, which is exactly the blueprint's claim: one continuous credit journey, not six disconnected stages. Concentric violet rings make the inside-out architecture legible at a glance while sub-activity nodes give the close-up density an award jury rewards.</p>
+      <div class="meta"><span class="ml">Animates</span><span>All six stage-rings rotate slowly at different speeds (inner fastest, outer slowest), each at its own tilt so the whole orrery reads as a 3D hologram. Scroll advances a bright comet of light around the rings in request order Prospecting to Servicing, igniting each activity node as it passes, then the outermost Servicing ring closes the loop with a feedback arc back to the core to show the always-on monitoring cycle.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The radius IS the 5-layer stack read inside-out: the pulsing core is 01 Brain and Agent Orchestration (the RM/customer decision center); the inner halo is 02 Model Substrate (scoring, spreading, rating intelligence); the mid band of MCP-style connector ticks is 03 Tools and MCP Servers (CRM, Onboarding, Loan Origination, Core Banking platforms); the data-ring lattice is 04 Data Foundation (Single Customer View, Insights, MI); and the outer engagement arc carrying the six rotating stage-rings is 05 Systems of Record and Engagement (Web/App, RMs, portals, chatbots). The six lifecycle stages sweep across all five layers.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">02</span><div><h2>Lifecycle Helix</h2><div class="tag">The credit journey, coiled and turning</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lifecycle Helix concept sketch">
+  <title>Lifecycle Helix</title>
+  <desc>Horizontal rotating credit-journey helix over a four-band architecture floor, mapped to the five-layer methodology.</desc>
+
+  <!-- axis / timeline -->
+  <line x1="24" y1="150" x2="416" y2="150" stroke="#a100ff" stroke-width="1" stroke-dasharray="2 4" opacity="0.5"/>
+  <polygon points="416,150 408,146 408,154" fill="#c29bf5" opacity="0.8"/>
+
+  <!-- strand A (top) sine -->
+  <path d="M28,150 C48,108 78,108 98,150 C118,192 148,192 168,150 C188,108 218,108 238,150 C258,192 288,192 308,150 C328,108 358,108 378,150 C390,178 402,178 410,162"
+        fill="none" stroke="#c29bf5" stroke-width="2" opacity="0.95"/>
+  <!-- strand B (bottom) sine, phase-shifted -->
+  <path d="M28,150 C48,192 78,192 98,150 C118,108 148,108 168,150 C188,192 218,192 238,150 C258,108 288,108 308,150 C328,192 358,192 378,150 C390,122 402,122 410,138"
+        fill="none" stroke="#a100ff" stroke-width="2" opacity="0.7"/>
+
+  <!-- rungs = activities (fewer early, denser late) -->
+  <g stroke="#c29bf5" stroke-width="1" opacity="0.55">
+    <line x1="63" y1="128" x2="63" y2="172"/>
+    <line x1="133" y1="172" x2="133" y2="128"/>
+    <line x1="155" y1="160" x2="155" y2="140"/>
+    <line x1="203" y1="128" x2="203" y2="172"/>
+    <line x1="222" y1="138" x2="222" y2="162"/>
+    <line x1="273" y1="172" x2="273" y2="128"/>
+    <line x1="290" y1="160" x2="290" y2="140"/>
+    <line x1="343" y1="128" x2="343" y2="172"/>
+    <line x1="360" y1="138" x2="360" y2="162"/>
+    <line x1="373" y1="160" x2="373" y2="140"/>
+    <line x1="386" y1="142" x2="386" y2="166"/>
+  </g>
+
+  <!-- rotation hint: orbit arrows -->
+  <path d="M196,104 a40,12 0 0 1 88,0" fill="none" stroke="#a100ff" stroke-width="1" opacity="0.45"/>
+  <polygon points="284,104 277,100 279,108" fill="#a100ff" opacity="0.6"/>
+  <text x="240" y="96" font-family="sans-serif" font-size="7" fill="#c29bf5" text-anchor="middle" opacity="0.7">slow rotation about axis</text>
+
+  <!-- credit pulse (scroll playhead) -->
+  <circle cx="238" cy="150" r="6" fill="#c29bf5" opacity="0.95"/>
+  <circle cx="238" cy="150" r="11" fill="none" stroke="#c29bf5" stroke-width="1" opacity="0.5"/>
+  <text x="238" y="132" font-family="sans-serif" font-size="7" fill="#c29bf5" text-anchor="middle">credit pulse = scroll</text>
+
+  <!-- six stage labels, one per turn -->
+  <g font-family="sans-serif" font-size="7.5" fill="#c29bf5" text-anchor="middle">
+    <text x="63" y="208">1 Prospecting</text>
+    <text x="133" y="208">2 Sales</text>
+    <text x="203" y="208">3 Credit Analysis</text>
+    <text x="273" y="208">4 Approval</text>
+    <text x="343" y="208">5 Offering / Set-up</text>
+    <text x="400" y="208">6 Servicing</text>
+  </g>
+  <g font-family="sans-serif" font-size="5.5" fill="#7a6f8f" text-anchor="middle">
+    <text x="63" y="218">lead clustering · RM assign · batch-rate</text>
+    <text x="133" y="218">onboarding · pre-score · KYC · mandates</text>
+    <text x="203" y="218">spreading · collateral · due diligence</text>
+    <text x="273" y="218">agreement · pricing · covenants · sign</text>
+    <text x="343" y="218">drawdown · limits · docs · final terms</text>
+    <text x="397" y="226">EWS · monitoring · collections · renewals</text>
+  </g>
+
+  <!-- architecture floor: four bands = methodology spine -->
+  <g>
+    <rect x="24" y="240" width="392" height="13" fill="#a100ff" opacity="0.30"/>
+    <rect x="24" y="255" width="392" height="13" fill="#a100ff" opacity="0.22"/>
+    <rect x="24" y="270" width="392" height="13" fill="#a100ff" opacity="0.15"/>
+    <rect x="24" y="285" width="392" height="13" fill="#a100ff" opacity="0.10"/>
+    <g font-family="sans-serif" font-size="6.5" fill="#c29bf5">
+      <text x="30" y="249">Systems of Engagement (Web/App · RMs · chatbots · Data&AI)</text>
+      <text x="30" y="264">Systems of Insight & Analytics (SCV · NBA · MI)</text>
+      <text x="30" y="279">Platforms (CRM · Onboarding · Loan Orig & Credit Risk · Core)</text>
+      <text x="30" y="294">Client & Partner Ecosystems</text>
+    </g>
+  </g>
+
+  <!-- methodology mapping ticks on the right -->
+  <g font-family="sans-serif" font-size="6" fill="#7a6f8f" text-anchor="end">
+    <text x="414" y="249">01 Brain ↔ pulse</text>
+    <text x="414" y="294">04/05 Data & Record ↔ floor</text>
+  </g>
+</svg></div>
+      <p class="why">It is a clear sibling to the case study's vertical DNA spine — same double-strand grammar and rung-as-activity logic — but laid on its side so the helix axis IS the lifecycle timeline, reading prospecting to servicing the way the blueprint does. The horizontal coil gives each of the six stages its own full turn, so density (one rung in Prospecting, many in Servicing) visually mirrors the real blueprint without any chart, and the violet additive glow keeps it unmistakably in-family.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole helix rotates slowly around its horizontal axis (rungs sweep front-to-back, the two strands trading depth), so it reads as a living 3D coil rather than a flat ribbon. Scroll position is the playhead: scrolling left-to-right advances a bright "credit pulse" bead along the axis, lighting the active stage's turn and its rungs while past turns dim to ghost-violet and the four architecture layers underfoot brighten in sync.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The helix coils above a four-band architecture floor (Ecosystems, Platforms, Insight/Analytics, Engagement) that maps onto the methodology spine: the floor bands are 05 Systems of Record and 04 Data Foundation, the rungs/activities firing between strands are 03 Tools &amp; MCP Servers, the rotating motion driver is 02 Model Substrate, and the travelling credit pulse that orchestrates which stage and layer light up is 01 Brain &amp; Agent Orchestration — so the same five layers a viewer met in the technical helix reappear as the engine turning the customer lifecycle.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">03</span><div><h2>Lending Atrium</h2><div class="tag">Six stages light a path across four plates</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rotating holographic stack of four architecture plates with a lit six-stage credit journey path across them">
+<title>Lending Atrium</title>
+<desc>Four translucent violet plates stacked in perspective; a glowing journey path threads six labelled stages across them.</desc>
+<defs>
+<linearGradient id="pl" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#a100ff" stop-opacity="0.16"/>
+<stop offset="1" stop-color="#c29bf5" stop-opacity="0.05"/>
+</linearGradient>
+<radialGradient id="cm" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+<stop offset="0.5" stop-color="#c29bf5" stop-opacity="0.7"/>
+<stop offset="1" stop-color="#a100ff" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect x="0" y="0" width="440" height="320" fill="#06050a"/>
+
+<!-- rotation hint -->
+<path d="M52 36 a40 14 0 0 1 74 -6" fill="none" stroke="#c29bf5" stroke-width="1" stroke-dasharray="2 5" opacity="0.55"/>
+<path d="M126 30 l5 -1 -2 6 z" fill="#c29bf5" opacity="0.7"/>
+<text x="60" y="26" fill="#c29bf5" font-family="sans-serif" font-size="8" opacity="0.75">slow yaw rotation</text>
+
+<!-- PLATE 01 Engagement (top) -->
+<polygon points="150,86 360,72 392,108 182,124" fill="url(#pl)" stroke="#c29bf5" stroke-width="1.1"/>
+<polygon points="150,86 182,124 182,131 150,93" fill="#a100ff" stroke="#a100ff" stroke-width="0.6" opacity="0.28"/>
+<text x="200" y="104" fill="#e9dcff" font-family="sans-serif" font-size="8.5">04  Engagement</text>
+<text x="200" y="115" fill="#9b86c6" font-family="sans-serif" font-size="6">Web/App · RMs · Virtual RMs · chatbots</text>
+
+<!-- PLATE 02 Insight & Analytics -->
+<polygon points="138,140 348,126 380,162 170,178" fill="url(#pl)" stroke="#c29bf5" stroke-width="1.1"/>
+<polygon points="138,140 170,178 170,185 138,147" fill="#a100ff" stroke="#a100ff" stroke-width="0.6" opacity="0.28"/>
+<text x="188" y="158" fill="#e9dcff" font-family="sans-serif" font-size="8.5">03  Insight & Analytics</text>
+<text x="188" y="169" fill="#9b86c6" font-family="sans-serif" font-size="6">Single Customer View · Next Best Actions · MI</text>
+
+<!-- PLATE 03 Platforms -->
+<polygon points="126,194 336,180 368,216 158,232" fill="url(#pl)" stroke="#c29bf5" stroke-width="1.1"/>
+<polygon points="126,194 158,232 158,239 126,201" fill="#a100ff" stroke="#a100ff" stroke-width="0.6" opacity="0.28"/>
+<text x="176" y="212" fill="#e9dcff" font-family="sans-serif" font-size="8.5">02  Platforms</text>
+<text x="176" y="223" fill="#9b86c6" font-family="sans-serif" font-size="6">CRM · Onboarding · Loan Origination · Core Banking</text>
+
+<!-- PLATE 04 Ecosystems (bottom) -->
+<polygon points="114,248 324,234 356,270 146,286" fill="url(#pl)" stroke="#c29bf5" stroke-width="1.1"/>
+<polygon points="114,248 146,286 146,293 114,255" fill="#a100ff" stroke="#a100ff" stroke-width="0.6" opacity="0.28"/>
+<text x="164" y="266" fill="#e9dcff" font-family="sans-serif" font-size="8.5">01  Client & Partner Ecosystems</text>
+<text x="164" y="277" fill="#9b86c6" font-family="sans-serif" font-size="6">customers · partners · 3rd-party portals</text>
+
+<!-- JOURNEY PATH: lit beam climbing across plates -->
+<path d="M150,268 C190,250 196,214 236,200 C276,186 282,150 322,140 C352,132 360,112 378,100"
+ fill="none" stroke="#a100ff" stroke-width="6" opacity="0.18"/>
+<path d="M150,268 C190,250 196,214 236,200 C276,186 282,150 322,140 C352,132 360,112 378,100"
+ fill="none" stroke="#c29bf5" stroke-width="1.6" stroke-dasharray="4 4" opacity="0.95"/>
+
+<!-- six stage pylons / nodes -->
+<g font-family="sans-serif" font-size="6" fill="#d8c6ff">
+<circle cx="150" cy="268" r="3.4" fill="#06050a" stroke="#c29bf5" stroke-width="1.2"/>
+<text x="86" y="289">1 Prospecting</text>
+<circle cx="196" cy="222" r="3.4" fill="#06050a" stroke="#c29bf5" stroke-width="1.2"/>
+<text x="200" y="240">2 Sales</text>
+<circle cx="236" cy="200" r="3.4" fill="#06050a" stroke="#c29bf5" stroke-width="1.2"/>
+<text x="240" y="196">3 Credit Analysis</text>
+<circle cx="282" cy="168" r="3.4" fill="#06050a" stroke="#c29bf5" stroke-width="1.2"/>
+<text x="288" y="164">4 Approval</text>
+<circle cx="322" cy="140" r="3.4" fill="#06050a" stroke="#c29bf5" stroke-width="1.2"/>
+<text x="328" y="136">5 Offering / Set-up</text>
+</g>
+<!-- stage 6 (lit / current via comet) -->
+<circle cx="378" cy="100" r="14" fill="url(#cm)"/>
+<circle cx="378" cy="100" r="3.8" fill="#06050a" stroke="#ffffff" stroke-width="1.3"/>
+<text x="356" y="80" font-family="sans-serif" font-size="6.2" fill="#ffffff">6 Servicing & Monitoring</text>
+<text x="360" y="89" font-family="sans-serif" font-size="5.4" fill="#c29bf5">EWS · covenants · collections</text>
+
+<!-- scroll-drive hint -->
+<line x1="412" y1="150" x2="412" y2="250" stroke="#9b86c6" stroke-width="1" opacity="0.5"/>
+<path d="M412,250 l-3 -6 6 0 z" fill="#c29bf5" opacity="0.8"/>
+<circle cx="412" cy="186" r="3" fill="#c29bf5"/>
+<text x="396" y="140" font-family="sans-serif" font-size="7" fill="#9b86c6" transform="rotate(90 410 145)">scroll drives the lit comet up the journey</text>
+</svg></div>
+      <p class="why">A rotating holographic stack of four translucent architecture plates (Ecosystems, Platforms, Insight &amp; Analytics, Engagement) reads instantly as kin to the methodology plate stack while staying its own object: here the plates are the bank's real architecture and a single lit credit-journey path threads diagonally up-and-across them through six labelled stage pylons. It is the functional counterpart to the technical stack because the viewer follows one customer's loan as a beam of light climbing the building, not a catalog of systems.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole four-plate atrium slowly yaw-rotates (~0.04 rad/s) so parallax reveals the path weaving above and below each plate; scroll position drives a glowing comet-head along the journey path, igniting each of the six stage pylons and its activity chips in turn as it passes, and deeper scroll lifts the camera from plate 04 up to plate 01.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The four bank plates map one-to-one onto the lower four methodology layers (Engagement to 01 Brain &amp; Agent Orchestration as the surface the customer touches, Insight &amp; Analytics to 02 Model Substrate / 03 Tools &amp; MCP, Platforms to 04 Data Foundation, Client &amp; Partner Ecosystems to 05 Systems of Record), with the lit journey path itself standing in for layer 01 orchestration conducting work across all of them.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">04</span><div><h2>Credit River</h2><div class="tag">One luminous loan, flowing through six stages</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Credit River: a single luminous loan stream flowing through six lending stages, widening and branching into tributaries, looping back from servicing as feedback, over four architecture floor-planes mapping to the five-layer brain methodology.">
+  <title>Credit River</title>
+  <desc>Rough concept sketch: a violet hologram river of the commercial-credit lifecycle.</desc>
+  <defs>
+    <linearGradient id="cur" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a100ff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#c29bf5" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- four translucent architecture floor-planes (5-layer spine) -->
+  <g stroke="#7d52c7" stroke-opacity="0.45" fill="#a100ff" fill-opacity="0.05" stroke-width="1">
+    <polygon points="40,250 410,250 430,268 20,268"/>
+    <polygon points="48,232 402,232 421,249 29,249"/>
+    <polygon points="56,214 394,214 412,231 38,231"/>
+    <polygon points="64,196 386,196 403,213 47,213"/>
+  </g>
+  <g fill="#9d7ad6" font-family="sans-serif" font-size="6" text-anchor="end">
+    <text x="430" y="266">05 Systems of Record · Ecosystems</text>
+    <text x="421" y="247">04 Data Foundation · Platforms</text>
+    <text x="412" y="229">03 Tools/MCP · Insight & Analytics</text>
+    <text x="403" y="211">02 Substrate · Engagement</text>
+  </g>
+
+  <!-- main river: narrow source widening downstream -->
+  <path d="M28,150 C90,140 120,150 175,150 C250,150 300,156 412,170 L412,196 C300,186 250,180 175,178 C120,178 90,168 28,164 Z"
+        fill="url(#cur)" stroke="#c29bf5" stroke-opacity="0.7" stroke-width="1"/>
+  <!-- centreline current -->
+  <path d="M30,157 C120,159 250,166 410,183" fill="none" stroke="#ffffff" stroke-opacity="0.85" stroke-width="1" stroke-dasharray="3 9"/>
+  <circle cx="120" cy="160" r="1.6" fill="#ffffff"/>
+  <circle cx="220" cy="164" r="1.6" fill="#ffffff"/>
+  <circle cx="330" cy="174" r="1.6" fill="#ffffff"/>
+
+  <!-- 01 source / orchestration label -->
+  <circle cx="28" cy="157" r="4" fill="#a100ff" fill-opacity="0.6" stroke="#c29bf5"/>
+  <text x="14" y="142" fill="#c29bf5" font-family="sans-serif" font-size="6">01 Brain source</text>
+
+  <!-- tributaries (03 Tools): branch up at each stage -->
+  <g stroke="#c29bf5" stroke-opacity="0.75" stroke-width="1" fill="none">
+    <path d="M70,154 C66,138 60,128 52,120"/>
+    <path d="M120,156 C118,140 112,128 104,118"/>
+    <path d="M188,158 C190,142 196,130 204,120"/>
+    <path d="M262,162 C266,146 274,134 284,122"/>
+    <path d="M330,168 C336,152 346,140 356,126"/>
+    <!-- servicing fans into many tributaries -->
+    <path d="M390,180 C398,168 406,160 414,150"/>
+    <path d="M396,182 C404,176 412,172 420,166"/>
+    <path d="M384,178 C388,164 392,152 396,138"/>
+  </g>
+  <g fill="#d9c4f5" font-family="sans-serif" font-size="5.5" text-anchor="middle">
+    <text x="48" y="116">clustering · RM</text>
+    <text x="100" y="114">KYC · mandates</text>
+    <text x="208" y="116">spreading · collat.</text>
+    <text x="290" y="118">covenants · sign</text>
+    <text x="362" y="122">drawdown · limits</text>
+  </g>
+
+  <!-- stage tick marks + names along the bank -->
+  <g stroke="#7d52c7" stroke-opacity="0.6" stroke-width="0.8">
+    <line x1="55" y1="152" x2="55" y2="166"/>
+    <line x1="135" y1="153" x2="135" y2="170"/>
+    <line x1="215" y1="156" x2="215" y2="174"/>
+    <line x1="295" y1="160" x2="295" y2="178"/>
+    <line x1="355" y1="166" x2="355" y2="182"/>
+  </g>
+  <g fill="#a100ff" font-family="sans-serif" font-size="7" text-anchor="middle" font-weight="bold">
+    <text x="48" y="200" fill="#c29bf5">Prospecting</text>
+    <text x="118" y="206" fill="#c29bf5">Sales</text>
+    <text x="195" y="200" fill="#c29bf5">Credit Analysis</text>
+    <text x="278" y="206" fill="#c29bf5">Approval</text>
+    <text x="345" y="200" fill="#c29bf5">Offering / Set-up</text>
+    <text x="404" y="160" fill="#c29bf5">Servicing &</text>
+    <text x="404" y="168" fill="#c29bf5">Monitoring</text>
+  </g>
+
+  <!-- feedback loop: servicing returns upstream to prospecting -->
+  <path d="M408,184 C430,210 230,236 60,222 C40,219 30,200 30,172"
+        fill="none" stroke="#a100ff" stroke-opacity="0.7" stroke-width="1.2" stroke-dasharray="5 5"/>
+  <polygon points="30,172 27,180 33,180" fill="#a100ff" fill-opacity="0.8"/>
+  <text x="220" y="232" fill="#9d7ad6" font-family="sans-serif" font-size="6" text-anchor="middle">EWS · renewals · feedback current returns to pipeline</text>
+
+  <!-- title -->
+  <text x="20" y="26" fill="#c29bf5" font-family="sans-serif" font-size="13" font-weight="bold">CREDIT RIVER</text>
+  <text x="20" y="40" fill="#9d7ad6" font-family="sans-serif" font-size="7">one luminous loan · widening · branching · looping back · slow 3D yaw + scroll-driven current</text>
+</svg></div>
+      <p class="why">A single river is the most honest read of a loan's life: one origination flows continuously, widening as it accrues activity, branching into named tributaries at each stage rather than being chopped into disconnected boxes. The slow current plus the servicing feedback loop turns a static six-step diagram into a living system that earns its rotation and scroll, and the violet-on-near-black additive water reads as the same hologram DNA as the helix and plate stack while being unmistakably its own object.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole riverbed slowly yaws on the Y axis (a gentle 3D tilt) while bright current particles drift downstream along the main channel, scroll position acting as the throttle that advances the loan from Prospecting toward Servicing. The servicing-to-prospecting feedback arc pulses a return current upstream, and each stage's tributaries fade in as the scroll reaches them.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The riverbed sits on four stacked translucent floor-planes (the real blueprint's architecture layers: Ecosystems, Platforms, Systems of Insight, Systems of Engagement), and those map straight onto the Connectry 5-layer spine: the current's source/orchestration = 01 Brain and Agent Orchestration, the analytics insight-plane feeding the stream = 02 Model Substrate, the tributaries (each a discrete capability tap like KYC, spreading, EWS) = 03 Tools and MCP Servers, the riverbed floor of platforms = 04 Data Foundation, and the deepest ecosystem plane the water rests on = 05 Systems of Record.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">05</span><div><h2>Origination Orrery</h2><div class="tag">A deal orbits lead to live loan</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Origination Orrery — rotating lifecycle dial</title>
+<desc>A radial clock of six commercial-lending stages with concentric architecture rings and a sweeping deal token.</desc>
+<defs>
+<radialGradient id="g" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#a100ff" stop-opacity="0.30"/>
+<stop offset="100%" stop-color="#06050a" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect x="0" y="0" width="440" height="320" fill="#06050a" opacity="0"/>
+<circle cx="200" cy="165" r="150" fill="url(#g)"/>
+<!-- concentric architecture rings (5-layer spine) -->
+<ellipse cx="200" cy="165" rx="138" ry="120" fill="none" stroke="#c29bf5" stroke-width="1" opacity="0.45"/>
+<ellipse cx="200" cy="165" rx="110" ry="95" fill="none" stroke="#a100ff" stroke-width="1" opacity="0.5"/>
+<ellipse cx="200" cy="165" rx="80" ry="68" fill="none" stroke="#c29bf5" stroke-width="1" opacity="0.45"/>
+<ellipse cx="200" cy="165" rx="48" ry="40" fill="none" stroke="#a100ff" stroke-width="1.2" opacity="0.6"/>
+<!-- six segment spokes -->
+<g stroke="#c29bf5" stroke-width="0.8" opacity="0.4">
+<line x1="200" y1="165" x2="200" y2="45"/>
+<line x1="200" y1="165" x2="320" y2="100"/>
+<line x1="200" y1="165" x2="320" y2="230"/>
+<line x1="200" y1="165" x2="200" y2="285"/>
+<line x1="200" y1="165" x2="80" y2="230"/>
+<line x1="200" y1="165" x2="80" y2="100"/>
+</g>
+<!-- activity ticks around rim -->
+<g stroke="#c29bf5" stroke-width="1.4" opacity="0.7">
+<line x1="200" y1="47" x2="200" y2="56"/>
+<line x1="232" y1="52" x2="229" y2="61"/>
+<line x1="268" y1="66" x2="263" y2="74"/>
+<line x1="300" y1="86" x2="294" y2="92"/>
+<line x1="330" y1="150" x2="322" y2="151"/>
+<line x1="330" y1="180" x2="322" y2="179"/>
+<line x1="300" y1="244" x2="294" y2="238"/>
+<line x1="232" y1="278" x2="229" y2="269"/>
+<line x1="168" y1="278" x2="171" y2="269"/>
+<line x1="100" y1="244" x2="106" y2="238"/>
+<line x1="70" y1="180" x2="78" y2="179"/>
+<line x1="70" y1="150" x2="78" y2="151"/>
+<line x1="100" y1="86" x2="106" y2="92"/>
+<line x1="168" y1="52" x2="171" y2="61"/>
+</g>
+<!-- sweeping hand + deal token (lit segment = Approval) -->
+<line x1="200" y1="165" x2="312" y2="222" stroke="#a100ff" stroke-width="2.4" opacity="0.95"/>
+<circle cx="312" cy="222" r="6.5" fill="#c29bf5" opacity="0.9"/>
+<circle cx="312" cy="222" r="13" fill="none" stroke="#a100ff" stroke-width="1.5" opacity="0.6"/>
+<text x="356" y="226" font-family="sans-serif" font-size="8" fill="#c29bf5">deal token</text>
+<!-- core record -->
+<circle cx="200" cy="165" r="6" fill="#a100ff" opacity="0.85"/>
+<text x="200" y="183" font-family="sans-serif" font-size="7" fill="#c29bf5" text-anchor="middle">05 Record</text>
+<!-- six stage labels -->
+<g font-family="sans-serif" font-size="8.5" fill="#c29bf5" text-anchor="middle">
+<text x="200" y="30">1 PROSPECTING</text>
+<text x="354" y="74">2 SALES</text>
+<text x="372" y="252">3 CREDIT ANALYSIS</text>
+<text x="200" y="312">4 APPROVAL</text>
+<text x="58" y="252">5 OFFER / SET-UP</text>
+<text x="60" y="74">6 SERVICING</text>
+</g>
+<!-- activity sample (real names) -->
+<g font-family="sans-serif" font-size="6" fill="#c29bf5" opacity="0.7" text-anchor="middle">
+<text x="200" y="40">leads · RM assign · batch-rate</text>
+<text x="345" y="86">KYC · pre-score · mandates</text>
+<text x="346" y="240">spreading · collateral · DD</text>
+<text x="200" y="302">covenants · pricing · signatures</text>
+<text x="70" y="240">drawdown · limits · docs</text>
+<text x="70" y="86">EWS · monitoring · recoveries</text>
+</g>
+<!-- ring labels (5-layer spine) -->
+<g font-family="sans-serif" font-size="6.5" fill="#a100ff" text-anchor="middle" opacity="0.85">
+<text x="200" y="58">01 Engagement</text>
+<text x="200" y="84">02 Insight</text>
+<text x="200" y="110">03 Tools · 04 Data</text>
+</g>
+<!-- rotation cue -->
+<path d="M 360 40 A 26 26 0 0 1 388 60" fill="none" stroke="#c29bf5" stroke-width="1.2" opacity="0.7"/>
+<polygon points="388,60 384,52 393,54" fill="#c29bf5" opacity="0.7"/>
+<text x="372" y="34" font-family="sans-serif" font-size="7" fill="#c29bf5" opacity="0.7">scroll = rotate</text>
+</svg></div>
+      <p class="why">The commercial-credit lifecycle is genuinely cyclical (servicing renewals feed the next deal), so a rotating radial clock reads instantly as "one journey, one full turn" rather than a flat funnel. Six sunburst segments carry the real stage names while a glowing deal-token sweeps the rim, giving the violet-hologram family a third distinct geometry that sits beside the helix and plate-stack without repeating either.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole dial rotates slowly and continuously on the section's vertical axis (subtle 3D tilt + Y-spin), while scroll position drives the sweeping hand and the deal-token from segment 1 to segment 6 across one full revolution. Each stage's activity ticks ignite in sequence as the hand crosses them, and the four concentric architecture rings counter-rotate faintly to read as depth.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The four concentric rings (Engagement outer, Insight, Platforms, Client/Partner core) map outward-to-inward onto the methodology spine: Systems of Engagement = 01 Brain &amp; Agent Orchestration, Systems of Insight &amp; Analytics = 02 Model Substrate, Platforms (CRM/Onboarding/LOS/Core Banking) = 03 Tools &amp; MCP Servers feeding 04 Data Foundation, and the Client &amp; Partner Ecosystems core = 05 Systems of Record. The sweeping deal-token shows orchestration (01) driving a record (05) through every stage.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">06</span><div><h2>Credit Metro</h2><div class="tag">The deal rides the line</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Credit Metro — commercial credit journey as a rotating holographic transit map</title>
+<desc>Three parallel violet metro lines with stage interchanges and activity stations, a deal-train pulse, and a four-layer architecture rail mapped to the five-layer methodology.</desc>
+<defs>
+<radialGradient id="g" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#a100ff" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#a100ff" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect x="0" y="0" width="440" height="320" fill="none"/>
+<ellipse cx="220" cy="150" rx="210" ry="120" fill="url(#g)"/>
+<!-- slab / rotation frame -->
+<polygon points="40,70 400,58 412,250 28,262" fill="#a100ff" fill-opacity="0.05" stroke="#6a3a9a" stroke-opacity="0.5" stroke-width="1"/>
+<text x="220" y="22" fill="#c29bf5" font-family="sans-serif" font-size="13" font-weight="700" text-anchor="middle">CREDIT METRO — the deal rides the line</text>
+<!-- rotation arc -->
+<path d="M70 40 A170 60 0 0 1 372 38" fill="none" stroke="#7a4fb0" stroke-width="1" stroke-dasharray="3 5" stroke-opacity="0.7"/>
+<text x="378" y="40" fill="#8a6fc0" font-family="sans-serif" font-size="7">slow yaw ↻</text>
+<!-- three lines -->
+<!-- Sales line (top) -->
+<path d="M55 110 H150 L185 130 H300 L340 118 H400" fill="none" stroke="#c29bf5" stroke-width="3" stroke-opacity="0.95"/>
+<!-- Risk line (mid) -->
+<path d="M55 150 H120 L165 150 H300 L345 162 H400" fill="none" stroke="#a100ff" stroke-width="3" stroke-opacity="0.9"/>
+<!-- Servicing line (bottom) -->
+<path d="M55 190 H210 L250 178 H320 L355 190 H400" fill="none" stroke="#9b6fe0" stroke-width="3" stroke-opacity="0.85"/>
+<text x="46" y="113" fill="#c29bf5" font-family="sans-serif" font-size="7" text-anchor="end">SALES</text>
+<text x="46" y="153" fill="#a100ff" font-family="sans-serif" font-size="7" text-anchor="end">RISK</text>
+<text x="46" y="193" fill="#9b6fe0" font-family="sans-serif" font-size="7" text-anchor="end">SERVICE</text>
+<!-- interchange hubs (six stages) -->
+<g stroke="#ffffff" stroke-width="1.5" fill="#06050a">
+<circle cx="80" cy="150" r="9"/>
+<circle cx="150" cy="130" r="9"/>
+<circle cx="220" cy="150" r="10"/>
+<circle cx="290" cy="150" r="9"/>
+<circle cx="330" cy="168" r="9"/>
+<circle cx="385" cy="178" r="9"/>
+</g>
+<g fill="#c29bf5" font-family="sans-serif" font-size="7" text-anchor="middle" font-weight="700">
+<text x="80" y="100">1 PROSPECTING</text>
+<text x="150" y="100">2 SALES</text>
+<text x="220" y="96">3 CREDIT ANALYSIS</text>
+<text x="290" y="100">4 APPROVAL</text>
+<text x="330" y="218">5 OFFERING / SET-UP</text>
+<text x="386" y="226">6 SERVICING</text>
+</g>
+<!-- stations (real activities) -->
+<g fill="#06050a" stroke="#9b6fe0" stroke-width="1">
+<circle cx="110" cy="150" r="3"/><circle cx="125" cy="142" r="3"/>
+<circle cx="185" cy="130" r="3"/><circle cx="205" cy="150" r="3"/>
+<circle cx="250" cy="150" r="3"/><circle cx="270" cy="150" r="3"/>
+<circle cx="310" cy="150" r="3"/><circle cx="250" cy="178" r="3"/>
+<circle cx="300" cy="178" r="3"/><circle cx="355" cy="190" r="3"/>
+</g>
+<g fill="#8a6fc0" font-family="sans-serif" font-size="5.5" text-anchor="middle">
+<text x="112" y="166">batch-rating</text>
+<text x="190" y="122">KYC · mandate</text>
+<text x="250" y="142">spreading</text>
+<text x="270" y="142">collateral</text>
+<text x="310" y="142">covenants</text>
+<text x="252" y="172">drawdown</text>
+<text x="300" y="172">limit set-up</text>
+<text x="360" y="204">EWS · collections</text>
+</g>
+<!-- deal-train pulse -->
+<g>
+<rect x="232" y="145" width="16" height="10" rx="2" fill="#ffffff" fill-opacity="0.95"/>
+<rect x="218" y="146" width="12" height="8" rx="2" fill="#c29bf5" fill-opacity="0.8"/>
+<text x="240" y="138" fill="#ffffff" font-family="sans-serif" font-size="6" text-anchor="middle" font-weight="700">▸ the deal</text>
+</g>
+<!-- architecture rail (4 layers → 5-layer methodology) -->
+<rect x="40" y="238" width="372" height="62" rx="3" fill="#a100ff" fill-opacity="0.06" stroke="#6a3a9a" stroke-opacity="0.5"/>
+<g font-family="sans-serif" font-size="6" fill="#c29bf5">
+<line x1="40" y1="252" x2="412" y2="252" stroke="#6a3a9a" stroke-opacity="0.4"/>
+<line x1="40" y1="265" x2="412" y2="265" stroke="#6a3a9a" stroke-opacity="0.4"/>
+<line x1="40" y1="278" x2="412" y2="278" stroke="#6a3a9a" stroke-opacity="0.4"/>
+<text x="46" y="249">Engagement: Virtual RM · chatbot · Data & AI</text><text x="406" y="249" text-anchor="end" fill="#a100ff" font-weight="700">01·02 Brain + Model</text>
+<text x="46" y="262">Insight: Single Customer View · NBA · MI</text><text x="406" y="262" text-anchor="end" fill="#a100ff" font-weight="700">03 Tools / MCP</text>
+<text x="46" y="275">Platforms: CRM · Onboarding · LOS · Core Bank</text><text x="406" y="275" text-anchor="end" fill="#a100ff" font-weight="700">04 Data Foundation</text>
+<text x="46" y="288">Client & Partner Ecosystems</text><text x="406" y="288" text-anchor="end" fill="#a100ff" font-weight="700">05 Systems of Record</text>
+</g>
+<text x="220" y="312" fill="#8a6fc0" font-family="sans-serif" font-size="6.5" text-anchor="middle">scroll: train advances → next interchange lights → architecture rail powers the active stage</text>
+</svg></div>
+      <p class="why">A holographic transit map reads instantly as a journey with named stops, so a banker recognizes the six real lifecycle stages as interchange hubs and the activities as stations without a legend. The three parallel lines (Sales, Risk, Servicing) make explicit that commercial credit is not one track but braided workstreams that hand off at interchanges, which is exactly the "streamline and automate the handoffs" thesis of the blueprint.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole metro map is a translucent 3D slab that slowly yaws on its vertical axis (about 12 degrees each way), so stations parallax and the glow tubes catch additive light as they rotate. Scroll drives a bright deal-train pulse that travels left to right along the lines: each scroll section lights the next interchange (Prospecting through Servicing), draws in that stage's stations, and at the bottom a 4-layer architecture rail slides up under the active stage to show which platform/engagement systems power it.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The four blueprint architecture tiers running beneath the tracks map to methodology 05 Systems of Record (Core Banking / Client Ecosystems baseboard), 04 Data Foundation (Loan Origination + Single Customer View), 03 Tools &amp; MCP Servers (Customer Insights, Next Best Actions, Customisable MI as the analytics interchange logic), and 02 Model Substrate + 01 Brain &amp; Agent Orchestration fused in the Virtual RM / Data &amp; AI signal box that dispatches the train and switches the tracks at every interchange.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">07</span><div><h2>Loan Forge</h2><div class="tag">Six stations forge one governed facility</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Loan Forge — rotating six-station assembly line for commercial credit</title>
+<desc>A violet holographic forge line where six lifecycle stations snap components onto a loan core until a governed facility emerges.</desc>
+<defs>
+<radialGradient id="g" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#c29bf5" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#a100ff" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect x="0" y="0" width="440" height="320" fill="#06050a"/>
+<!-- 5-layer spine label -->
+<text x="220" y="16" fill="#c29bf5" font-family="sans-serif" font-size="9" text-anchor="middle" opacity="0.85">LOAN FORGE  ·  01 Orchestration arm  ·  02 Models  ·  03 Tools  ·  04 Data rail  ·  05 Record</text>
+
+<!-- turntable ellipse (rotation cue) -->
+<ellipse cx="220" cy="180" rx="200" ry="46" fill="none" stroke="#a100ff" stroke-opacity="0.35" stroke-dasharray="4 6"/>
+<path d="M55 160 A175 40 0 0 1 405 160" fill="none" stroke="#c29bf5" stroke-opacity="0.25"/>
+<text x="392" y="150" fill="#c29bf5" font-family="sans-serif" font-size="7" opacity="0.7">orbit ~40s ↻</text>
+
+<!-- conveyor rail (04 Data Foundation) -->
+<path d="M40 188 L400 172" stroke="#c29bf5" stroke-width="2" stroke-opacity="0.7"/>
+<path d="M40 196 L400 180" stroke="#a100ff" stroke-width="1" stroke-opacity="0.4"/>
+<text x="40" y="210" fill="#8a6fb0" font-family="sans-serif" font-size="7">04 data rail · Single Customer View →</text>
+
+<!-- spark travelling down rail (scroll-driven) -->
+<circle cx="150" cy="184" r="5" fill="#fff" opacity="0.9"/>
+<circle cx="150" cy="184" r="14" fill="url(#g)"/>
+<text x="150" y="156" fill="#fff" font-family="sans-serif" font-size="7" text-anchor="middle" opacity="0.8">weld spark ↓scroll</text>
+
+<!-- six stations -->
+<!-- helper: arms up to each station -->
+<g font-family="sans-serif" font-size="7" text-anchor="middle">
+<!-- 1 Prospecting -->
+<line x1="66" y1="186" x2="66" y2="150" stroke="#a100ff" stroke-opacity="0.5"/>
+<rect x="48" y="120" width="36" height="30" rx="4" fill="#a100ff" fill-opacity="0.10" stroke="#c29bf5" stroke-opacity="0.8"/>
+<text x="66" y="116" fill="#c29bf5">1 Prospecting</text>
+<text x="66" y="133" fill="#9a86c0">leads ·</text>
+<text x="66" y="143" fill="#9a86c0">batch-rate</text>
+<!-- 2 Sales -->
+<line x1="132" y1="183" x2="132" y2="150" stroke="#a100ff" stroke-opacity="0.5"/>
+<rect x="114" y="120" width="36" height="30" rx="4" fill="#a100ff" fill-opacity="0.10" stroke="#c29bf5" stroke-opacity="0.8"/>
+<text x="132" y="116" fill="#c29bf5">2 Sales</text>
+<text x="132" y="133" fill="#9a86c0">onboard ·</text>
+<text x="132" y="143" fill="#9a86c0">KYC scoring</text>
+<!-- 3 Credit Analysis -->
+<line x1="198" y1="180" x2="198" y2="150" stroke="#a100ff" stroke-opacity="0.5"/>
+<rect x="180" y="120" width="36" height="30" rx="4" fill="#a100ff" fill-opacity="0.12" stroke="#c29bf5" stroke-opacity="0.9"/>
+<text x="198" y="116" fill="#c29bf5">3 Credit Anlys</text>
+<text x="198" y="133" fill="#9a86c0">spreading ·</text>
+<text x="198" y="143" fill="#9a86c0">collateral</text>
+<!-- 4 Approval -->
+<line x1="264" y1="178" x2="264" y2="150" stroke="#a100ff" stroke-opacity="0.5"/>
+<rect x="246" y="120" width="36" height="30" rx="4" fill="#a100ff" fill-opacity="0.12" stroke="#c29bf5" stroke-opacity="0.9"/>
+<text x="264" y="116" fill="#c29bf5">4 Approval</text>
+<text x="264" y="133" fill="#9a86c0">covenants ·</text>
+<text x="264" y="143" fill="#9a86c0">pricing·sign</text>
+<!-- 5 Offering / Set-up -->
+<line x1="330" y1="176" x2="330" y2="150" stroke="#a100ff" stroke-opacity="0.5"/>
+<rect x="312" y="120" width="36" height="30" rx="4" fill="#a100ff" fill-opacity="0.14" stroke="#c29bf5"/>
+<text x="330" y="116" fill="#c29bf5">5 Set-up</text>
+<text x="330" y="133" fill="#9a86c0">drawdown ·</text>
+<text x="330" y="143" fill="#9a86c0">limit·docs</text>
+<!-- 6 Servicing -->
+<line x1="392" y1="174" x2="392" y2="150" stroke="#a100ff" stroke-opacity="0.5"/>
+<rect x="372" y="118" width="40" height="32" rx="4" fill="#a100ff" fill-opacity="0.22" stroke="#fff" stroke-opacity="0.9"/>
+<text x="392" y="114" fill="#fff">6 Servicing</text>
+<text x="392" y="132" fill="#d8c8f0">monitor·EWS</text>
+<text x="392" y="143" fill="#d8c8f0">collections</text>
+</g>
+
+<!-- growing loan core on the rail -->
+<rect x="58" y="178" width="10" height="10" rx="2" fill="#a100ff" fill-opacity="0.3" stroke="#c29bf5"/>
+<rect x="150" y="174" width="16" height="14" rx="2" fill="#a100ff" fill-opacity="0.4" stroke="#c29bf5"/>
+<rect x="262" y="168" width="22" height="18" rx="2" fill="#a100ff" fill-opacity="0.5" stroke="#c29bf5"/>
+<!-- finished governed facility -->
+<rect x="380" y="158" width="26" height="22" rx="3" fill="url(#g)" stroke="#fff" stroke-opacity="0.9"/>
+<text x="393" y="200" fill="#fff" font-family="sans-serif" font-size="7" text-anchor="middle" opacity="0.85">governed facility ✓</text>
+
+<!-- servicing return loop -->
+<path d="M392 152 C 360 60, 90 60, 66 112" fill="none" stroke="#c29bf5" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.5"/>
+<text x="220" y="62" fill="#9a86c0" font-family="sans-serif" font-size="7" text-anchor="middle" opacity="0.7">EWS alerts → re-rate (loop)</text>
+
+<!-- architecture layers below (pulse upward) -->
+<g font-family="sans-serif" font-size="7">
+<rect x="40" y="240" width="360" height="14" rx="2" fill="none" stroke="#8a6fb0" stroke-opacity="0.7"/>
+<text x="46" y="250" fill="#c29bf5">Systems of Engagement · Web/App · RM · Virtual RM · chatbots · Data&AI  → 05 Record</text>
+<rect x="40" y="258" width="360" height="14" rx="2" fill="none" stroke="#8a6fb0" stroke-opacity="0.55"/>
+<text x="46" y="268" fill="#9a86c0">Systems of Insight · SCV · Next Best Actions · MI  → 02 Models</text>
+<rect x="40" y="276" width="360" height="14" rx="2" fill="none" stroke="#8a6fb0" stroke-opacity="0.45"/>
+<text x="46" y="286" fill="#9a86c0">Platforms · CRM · Onboarding · Loan Origination · Core Banking  → 03 Tools</text>
+<rect x="40" y="294" width="360" height="14" rx="2" fill="none" stroke="#8a6fb0" stroke-opacity="0.35"/>
+<text x="46" y="304" fill="#8a6fb0">Client & Partner Ecosystems  → 01 Orchestration</text>
+</g>
+</svg></div>
+      <p class="why">A rotating forge line reads instantly as "the loan gets built," giving the functional credit lifecycle a tangible product arc that the helix and plate-stack (technical side) deliberately lack, so the two sides of the case study feel like one family yet never repeat. Each of the six real stages becomes a station that snaps on a component, so scroll = build progress and the abstract origination journey becomes a thing you watch assemble.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole forge line orbits on a slow ~40s turntable (perspective ellipse) so depth reads as the camera arcs around it; scroll drives a welding spark down the rail, lighting one station at a time and snapping its component onto the growing facility core, which brightens stage by stage until the finished governed loan glows at station six. The four architecture layers below pulse upward (ecosystem to engagement) as each station fires, and a faint return-loop arc feeds Servicing alerts back to the head of the line.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The forge is wrapped by the 5-layer methodology spine: the orbiting arm and the spark that sequences stations is 01 Brain &amp; Agent Orchestration; the rating/scoring/NBA engine each station calls is 02 Model Substrate; the snap-on tooling heads (spread, KYC, covenant, collateral) are 03 Tools &amp; MCP Servers; the conveyor rail carrying state between stations is 04 Data Foundation (Single Customer View); and the finished facility plus Core Banking / loan-origination platforms it lands in are 05 Systems of Record.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">08</span><div><h2>Credit Journey Constellation</h2><div class="tag">Six star-clusters, one critical path, slowly turning</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c29bf5" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#a100ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bus" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c29bf5" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#a100ff" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rotation hint: orbit ellipse + turn arrows -->
+  <ellipse cx="220" cy="150" rx="196" ry="58" fill="none" stroke="#a100ff" stroke-opacity="0.28" stroke-dasharray="3 6"/>
+  <path d="M30 150 a196 58 0 0 1 30 -33" fill="none" stroke="#c29bf5" stroke-opacity="0.6" stroke-width="1.2"/>
+  <path d="M58 113 l-3 8 8 -1" fill="none" stroke="#c29bf5" stroke-opacity="0.6" stroke-width="1.2"/>
+  <text x="14" y="146" fill="#c29bf5" font-family="sans-serif" font-size="7" opacity="0.7">slow yaw ~40s</text>
+
+  <!-- dependency edges (faint) -->
+  <g stroke="#a100ff" stroke-opacity="0.35" stroke-width="1" fill="none">
+    <path d="M70 138 L150 120"/>
+    <path d="M150 120 L215 108"/>
+    <path d="M215 108 L290 118"/>
+    <path d="M290 118 L350 140"/>
+    <path d="M350 140 L388 168"/>
+    <path d="M150 120 L160 150"/>
+    <path d="M215 108 L210 152"/>
+    <path d="M290 118 L300 158"/>
+  </g>
+
+  <!-- CRITICAL PATH (bright, with pulse dot) -->
+  <path id="cp" d="M70 138 L150 120 L215 108 L290 118 L350 140 L388 168"
+        fill="none" stroke="#c29bf5" stroke-width="2.2" stroke-opacity="0.95"/>
+  <circle r="4.5" fill="#c29bf5">
+    <animateMotion dur="6s" repeatCount="indefinite"
+      path="M70 138 L150 120 L215 108 L290 118 L350 140 L388 168"/>
+  </circle>
+  <text x="300" y="100" fill="#c29bf5" font-family="sans-serif" font-size="7" opacity="0.85">pulse = critical path</text>
+
+  <!-- six stage clusters: halo + satellite activity nodes + label -->
+  <!-- 1 Prospecting -->
+  <circle cx="70" cy="138" r="22" fill="url(#g)"/>
+  <circle cx="70" cy="138" r="5" fill="#c29bf5"/>
+  <circle cx="58" cy="126" r="2.2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="84" cy="130" r="2.2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="60" cy="150" r="2.2" fill="#c29bf5" opacity="0.7"/>
+  <text x="70" y="172" text-anchor="middle" fill="#c29bf5" font-family="sans-serif" font-size="8">1 Prospecting</text>
+  <text x="70" y="181" text-anchor="middle" fill="#a100ff" font-family="sans-serif" font-size="5.5" opacity="0.8">leads · RM assign · batch-rate</text>
+
+  <!-- 2 Sales -->
+  <circle cx="150" cy="120" r="19" fill="url(#g)"/>
+  <circle cx="150" cy="120" r="4.5" fill="#c29bf5"/>
+  <circle cx="140" cy="110" r="2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="162" cy="114" r="2" fill="#c29bf5" opacity="0.8"/>
+  <text x="150" y="150" text-anchor="middle" fill="#c29bf5" font-family="sans-serif" font-size="8">2 Sales</text>
+  <text x="150" y="159" text-anchor="middle" fill="#a100ff" font-family="sans-serif" font-size="5.5" opacity="0.8">onboard · pre-score · KYC</text>
+
+  <!-- 3 Credit Analysis -->
+  <circle cx="215" cy="108" r="20" fill="url(#g)"/>
+  <circle cx="215" cy="108" r="4.5" fill="#c29bf5"/>
+  <circle cx="204" cy="99" r="2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="227" cy="102" r="2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="209" cy="120" r="2" fill="#c29bf5" opacity="0.7"/>
+  <text x="215" y="62" text-anchor="middle" fill="#c29bf5" font-family="sans-serif" font-size="8">3 Credit Analysis</text>
+  <text x="215" y="71" text-anchor="middle" fill="#a100ff" font-family="sans-serif" font-size="5.5" opacity="0.8">spreading · collateral · DD</text>
+
+  <!-- 4 Approval -->
+  <circle cx="290" cy="118" r="19" fill="url(#g)"/>
+  <circle cx="290" cy="118" r="4.5" fill="#c29bf5"/>
+  <circle cx="280" cy="109" r="2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="302" cy="113" r="2" fill="#c29bf5" opacity="0.8"/>
+  <text x="290" y="78" text-anchor="middle" fill="#c29bf5" font-family="sans-serif" font-size="8">4 Approval</text>
+  <text x="290" y="87" text-anchor="middle" fill="#a100ff" font-family="sans-serif" font-size="5.5" opacity="0.8">agreement · covenants · sign</text>
+
+  <!-- 5 Offering / Set-up -->
+  <circle cx="350" cy="140" r="19" fill="url(#g)"/>
+  <circle cx="350" cy="140" r="4.5" fill="#c29bf5"/>
+  <circle cx="340" cy="131" r="2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="362" cy="135" r="2" fill="#c29bf5" opacity="0.8"/>
+  <text x="350" y="172" text-anchor="middle" fill="#c29bf5" font-family="sans-serif" font-size="8">5 Set-up</text>
+  <text x="350" y="181" text-anchor="middle" fill="#a100ff" font-family="sans-serif" font-size="5.5" opacity="0.8">drawdown · limits · docs</text>
+
+  <!-- 6 Servicing & Monitoring -->
+  <circle cx="388" cy="168" r="23" fill="url(#g)"/>
+  <circle cx="388" cy="168" r="5" fill="#c29bf5"/>
+  <circle cx="376" cy="157" r="2.2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="400" cy="160" r="2.2" fill="#c29bf5" opacity="0.8"/>
+  <circle cx="378" cy="180" r="2.2" fill="#c29bf5" opacity="0.7"/>
+  <text x="388" y="202" text-anchor="middle" fill="#c29bf5" font-family="sans-serif" font-size="8">6 Servicing</text>
+  <text x="388" y="211" text-anchor="middle" fill="#a100ff" font-family="sans-serif" font-size="5.5" opacity="0.8">EWS · covenant mon · collections</text>
+
+  <!-- vertical bus into 4 arch rows = 5 methodology layers -->
+  <g font-family="sans-serif" font-size="6.5">
+    <line x1="60" y1="232" x2="410" y2="232" stroke="#a100ff" stroke-opacity="0.25"/>
+    <line x1="60" y1="256" x2="410" y2="256" stroke="#a100ff" stroke-opacity="0.25"/>
+    <line x1="60" y1="280" x2="410" y2="280" stroke="#a100ff" stroke-opacity="0.25"/>
+    <line x1="60" y1="304" x2="410" y2="304" stroke="#a100ff" stroke-opacity="0.25"/>
+    <!-- drop lines from clusters to the stack -->
+    <g stroke="url(#bus)" stroke-width="1.4">
+      <line x1="215" y1="128" x2="215" y2="304"/>
+      <line x1="290" y1="137" x2="290" y2="304"/>
+      <line x1="388" y1="191" x2="388" y2="304"/>
+    </g>
+    <text x="64" y="229" fill="#c29bf5">Engagement: self-serve · RM · Virtual RM · chatbot   ← 01 Orchestration</text>
+    <text x="64" y="253" fill="#c29bf5">Insight & Analytics: SCV · NBA · MI   ← 02 Model · 04 Data</text>
+    <text x="64" y="277" fill="#c29bf5">Platforms: CRM · Onboarding · LOS/Credit Risk · Core   ← 03 Tools/MCP</text>
+    <text x="64" y="301" fill="#c29bf5">Client & Partner Ecosystems   ← 05 Systems of Record</text>
+  </g>
+
+  <text x="220" y="20" text-anchor="middle" fill="#c29bf5" font-family="sans-serif" font-size="11" letter-spacing="1">THE CREDIT JOURNEY CONSTELLATION</text>
+</svg></div>
+      <p class="why">A rotating node-graph reads as the customer's lending lifecycle the way a constellation reads as a story: six glowing clusters (the real stages) wired by dependency edges, so the eye follows spreading to rating to approval to drawdown as a single arc of motion. It sits in the same violet-hologram family as the helix and plate stack but is unmistakably its own object — depth comes from node parallax and a traced pulse rather than stacked surfaces, which is exactly the functional, lived-journey register this side of the case study needs.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole graph yaws slowly on a vertical axis (~40s/turn), nodes nearer the viewer brightening and scaling on parallax while far nodes dim — a true 3D turntable. A single violet pulse traces the critical path Prospecting→Servicing edge-by-edge, and scroll progress both advances the pulse and lights each stage cluster in sequence so the reader scrubs the lifecycle as they descend.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>Each of the six clusters is wired downward into the four blueprint architecture rows, and that vertical bus is color-keyed to the Connectry 5 layers: the pulse fires from 01 Brain/Orchestration (the conductor), pulls 02 Model Substrate for scoring/spreading nodes, calls 03 Tools/MCP for KYC/VIES/collateral lookups, reads 04 Data Foundation at the Single-Customer-View node, and commits to 05 Systems of Record at drawdown/account set-up — so every node's depth axis is literally a stack-layer it touches.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">09</span><div><h2>Risk Cockpit Horizon</h2><div class="tag">The lifecycle becomes a live instrument cluster</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c29bf5" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#a100ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a100ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#c29bf5" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <text x="220" y="16" fill="#c29bf5" font-size="11" text-anchor="middle" letter-spacing="2">RISK COCKPIT  —  always-on monitoring</text>
+
+  <!-- compact upstream journey inflow rail (stages 1-5) -->
+  <g stroke="#c29bf5" stroke-width="1" fill="none" opacity="0.85">
+    <path d="M22 70 L150 96" stroke="url(#rail)" stroke-width="2"/>
+    <path d="M22 86 L150 104" stroke="url(#rail)" stroke-width="2"/>
+  </g>
+  <g fill="#a100ff" opacity="0.9">
+    <circle cx="26" cy="62" r="3"/><circle cx="26" cy="78" r="3"/>
+    <circle cx="26" cy="94" r="3"/><circle cx="26" cy="110" r="3"/><circle cx="26" cy="126" r="3"/>
+  </g>
+  <g fill="#c29bf5" font-size="6.5">
+    <text x="34" y="64">1 Prospecting · leads, RM assign, batch-rating</text>
+    <text x="34" y="80">2 Sales · onboarding, pre-score, KYC, mandates</text>
+    <text x="34" y="96">3 Credit Analysis · spreading, collateral, DD</text>
+    <text x="34" y="112">4 Approval · agreement, covenants, signatures</text>
+    <text x="34" y="128">5 Set-up · drawdown, limits, final pricing</text>
+  </g>
+  <text x="22" y="142" fill="#a100ff" font-size="6" opacity="0.8">streamlined / automated inflow</text>
+
+  <!-- inflow particles into cluster -->
+  <g fill="#c29bf5" opacity="0.7">
+    <circle cx="170" cy="118" r="1.6"/><circle cx="186" cy="126" r="1.6"/><circle cx="158" cy="110" r="1.4"/>
+  </g>
+
+  <!-- central cockpit brain / orchestration core -->
+  <circle cx="250" cy="150" r="60" fill="url(#core)"/>
+  <circle cx="250" cy="150" r="22" fill="none" stroke="#c29bf5" stroke-width="1.2" opacity="0.9"/>
+  <circle cx="250" cy="150" r="13" fill="none" stroke="#a100ff" stroke-width="1"/>
+  <text x="250" y="148" fill="#c29bf5" font-size="6.5" text-anchor="middle">01 BRAIN</text>
+  <text x="250" y="156" fill="#c29bf5" font-size="5.5" text-anchor="middle">orchestration</text>
+
+  <!-- gauge-computation ring (02 model substrate) -->
+  <circle cx="250" cy="150" r="34" fill="none" stroke="#a100ff" stroke-width="0.8" stroke-dasharray="3 4" opacity="0.7"/>
+  <text x="250" y="118" fill="#a100ff" font-size="5" text-anchor="middle" opacity="0.85">02 model substrate · scoring ring</text>
+
+  <!-- curved instrument deck: 4 gauges on an arc -->
+  <!-- EWS gauge -->
+  <g stroke="#c29bf5" fill="none" stroke-width="1.3">
+    <path d="M300 96 A30 30 0 0 1 348 116"/>
+  </g>
+  <line x1="324" y1="106" x2="338" y2="100" stroke="#a100ff" stroke-width="1.4"/>
+  <circle cx="324" cy="106" r="2" fill="#c29bf5"/>
+  <text x="356" y="100" fill="#c29bf5" font-size="6">EWS · early-warning alerts</text>
+
+  <!-- covenant dial -->
+  <g stroke="#c29bf5" fill="none" stroke-width="1.3">
+    <path d="M312 134 A26 26 0 0 1 356 144"/>
+  </g>
+  <line x1="334" y1="142" x2="350" y2="138" stroke="#a100ff" stroke-width="1.4"/>
+  <circle cx="334" cy="142" r="2" fill="#c29bf5"/>
+  <text x="362" y="142" fill="#c29bf5" font-size="6">Covenant dial · breach watch</text>
+
+  <!-- exposure meter (linear) -->
+  <rect x="310" y="166" width="60" height="7" rx="3" fill="none" stroke="#c29bf5" stroke-width="1"/>
+  <rect x="310" y="166" width="40" height="7" rx="3" fill="#a100ff" opacity="0.45"/>
+  <text x="375" y="172" fill="#c29bf5" font-size="6">Limit & exposure mgmt</text>
+
+  <!-- portfolio heat grid -->
+  <g opacity="0.85">
+    <rect x="312" y="186" width="9" height="9" fill="#a100ff" opacity="0.6"/>
+    <rect x="323" y="186" width="9" height="9" fill="#c29bf5" opacity="0.35"/>
+    <rect x="334" y="186" width="9" height="9" fill="#a100ff" opacity="0.8"/>
+    <rect x="345" y="186" width="9" height="9" fill="#c29bf5" opacity="0.25"/>
+    <rect x="312" y="197" width="9" height="9" fill="#c29bf5" opacity="0.3"/>
+    <rect x="323" y="197" width="9" height="9" fill="#a100ff" opacity="0.7"/>
+    <rect x="334" y="197" width="9" height="9" fill="#c29bf5" opacity="0.4"/>
+    <rect x="345" y="197" width="9" height="9" fill="#a100ff" opacity="0.55"/>
+  </g>
+  <text x="360" y="200" fill="#c29bf5" font-size="6">Portfolio heat · monitoring</text>
+
+  <!-- left-side servicing readouts -->
+  <g fill="#c29bf5" font-size="5.5" opacity="0.9">
+    <text x="150" y="170">payments · collections</text>
+    <text x="150" y="180">renewals · modifications</text>
+    <text x="150" y="190">capital & regulatory reporting</text>
+    <text x="150" y="200">lien perfecting · servicing</text>
+  </g>
+  <text x="150" y="160" fill="#a100ff" font-size="6.5">6 SERVICING & MONITORING</text>
+
+  <!-- architecture layers as cockpit base (bottom-up methodology spine) -->
+  <g font-size="6">
+    <rect x="40" y="226" width="360" height="14" rx="3" fill="none" stroke="#c29bf5" stroke-width="0.8" opacity="0.8"/>
+    <text x="46" y="236" fill="#c29bf5">03 Tools/MCP · Systems of Insight (SCV · NBA · MI)</text>
+    <rect x="40" y="244" width="360" height="14" rx="3" fill="none" stroke="#c29bf5" stroke-width="0.8" opacity="0.7"/>
+    <text x="46" y="254" fill="#c29bf5">04 Data Foundation · Platforms (CRM · Onboarding · LOS/Credit Risk · Core Banking)</text>
+    <rect x="40" y="262" width="360" height="14" rx="3" fill="none" stroke="#c29bf5" stroke-width="0.8" opacity="0.6"/>
+    <text x="46" y="272" fill="#c29bf5">05 Systems of Record · Client & Partner Ecosystems + Engagement (RMs · Virtual RMs · chatbots)</text>
+  </g>
+
+  <!-- rotation indicator -->
+  <g stroke="#a100ff" fill="none" stroke-width="0.8" opacity="0.65">
+    <path d="M250 296 a70 16 0 1 0 0.1 0"/>
+    <path d="M316 292 l6 4 -6 4" stroke="#c29bf5"/>
+  </g>
+  <text x="250" y="312" fill="#a100ff" font-size="6" text-anchor="middle" opacity="0.85">scroll → deck rotates face-on · needles fill · EWS ticks to alert</text>
+</svg></div>
+      <p class="why">It reframes the whole commercial-credit lifecycle around its always-on half: stages 1 to 5 compress into a thin inflow rail that pours fuel into a curved cockpit of live instruments, making "streamline and automate the journey so you can monitor and innovate" the literal composition. The radial gauge cluster reads instantly as a risk dashboard while staying in the same translucent violet additive family as the helix and plate stack, so it is unmistakably its own panel yet clearly a sibling artifact.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole cockpit horizon rotates slowly on a shallow Y-axis tilt as you scroll, so the curved instrument deck pivots from edge-on to face-on; scroll progress fills each gauge needle in sequence (EWS, covenant, exposure, heat) and pulses the inflow particles from the journey rail into the cluster. At the end the early-warning gauge ticks into its amber alert arc and the portfolio heat grid shimmers.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>Mapped bottom-up: the four blueprint architecture rows become the methodology spine. Client &amp; Partner Ecosystems + Systems of Engagement frame 05 Systems of Record (the journey rail feeding/recording state); Platforms (CRM, Onboarding, LOS/Credit Risk, Core Banking) = 04 Data Foundation; Systems of Insight &amp; Analytics (Single Customer View, NBA, MI) = 03 Tools &amp; MCP Servers exposing scored signals; the gauge-computation ring that converts signals to needle positions = 02 Model Substrate; and the central cockpit brain that orchestrates EWS, covenants and exposure into decisions = 01 Brain &amp; Agent Orchestration.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">10</span><div><h2>The Credit Arbor</h2><div class="tag">A loan that branches as it decides</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rotating holographic decision tree of the commercial credit lifecycle">
+  <title>The Credit Arbor — credit lifecycle as a branching tree</title>
+  <desc>Roots = Systems of Record, trunk = core credit activity, branches fork at decision points, canopy = customer engagement.</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="55%" r="60%">
+      <stop offset="0%" stop-color="#a100ff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#06050a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="440" height="320" fill="#06050a"/>
+  <ellipse cx="220" cy="180" rx="210" ry="150" fill="url(#glow)"/>
+
+  <!-- rotation hint: orbit ellipse + arrows -->
+  <ellipse cx="220" cy="292" rx="150" ry="20" fill="none" stroke="#a100ff" stroke-opacity="0.35" stroke-dasharray="4 5"/>
+  <path d="M78 290 q6 -9 16 -10" fill="none" stroke="#c29bf5" stroke-opacity="0.7" stroke-width="1.2"/>
+  <path d="M362 294 q-6 9 -16 10" fill="none" stroke="#c29bf5" stroke-opacity="0.7" stroke-width="1.2"/>
+  <text x="220" y="312" fill="#c29bf5" font-family="sans-serif" font-size="8" text-anchor="middle" opacity="0.75">slow Y-axis rotation · grows on scroll ↑</text>
+
+  <!-- ROOTS = Systems of Record -->
+  <g stroke="#7d4dd6" stroke-width="1.3" fill="none" opacity="0.9">
+    <path d="M220 286 C200 296 176 296 150 300"/>
+    <path d="M220 286 C238 297 266 297 292 301"/>
+    <path d="M220 286 C212 300 206 304 200 308"/>
+    <path d="M220 286 C228 300 234 304 240 308"/>
+  </g>
+  <text x="220" y="300" fill="#c29bf5" font-family="sans-serif" font-size="7.5" text-anchor="middle" opacity="0.85">ROOTS · 05 Systems of Record (Core Banking)</text>
+
+  <!-- TRUNK -->
+  <path d="M214 286 C216 250 218 238 218 214 C218 200 220 196 222 188" fill="none" stroke="#a100ff" stroke-width="3.4" opacity="0.95"/>
+  <path d="M226 286 C224 250 222 238 222 214 C222 200 220 196 218 188" fill="none" stroke="#8a39e0" stroke-width="2" opacity="0.6"/>
+  <text x="300" y="262" fill="#c29bf5" font-family="sans-serif" font-size="7.5" text-anchor="start" opacity="0.85">TRUNK · 04 Data Foundation</text>
+  <text x="300" y="272" fill="#9d7bd1" font-family="sans-serif" font-size="6.5" text-anchor="start" opacity="0.7">Single Customer View · spreading</text>
+
+  <!-- sap pulses -->
+  <circle cx="219" cy="262" r="1.7" fill="#e9d9ff"/>
+  <circle cx="220" cy="232" r="1.5" fill="#e9d9ff" opacity="0.8"/>
+  <circle cx="220" cy="206" r="1.4" fill="#e9d9ff" opacity="0.65"/>
+
+  <!-- STAGE NODES on trunk with branch forks (bottom->top = stage 1->6) -->
+  <!-- 1 Prospecting -->
+  <circle cx="216" cy="256" r="3" fill="none" stroke="#c29bf5" stroke-width="1.2"/>
+  <path d="M216 256 C150 252 120 244 96 236" fill="none" stroke="#9a63e8" stroke-width="1.4" opacity="0.85"/>
+  <text x="92" y="234" fill="#c29bf5" font-family="sans-serif" font-size="7" text-anchor="end">1 Prospecting</text>
+  <text x="92" y="243" fill="#8f6fc4" font-family="sans-serif" font-size="6" text-anchor="end" opacity="0.7">leads · RM assign · batch-rate</text>
+
+  <!-- 2 Sales -->
+  <circle cx="219" cy="234" r="3" fill="none" stroke="#c29bf5" stroke-width="1.2"/>
+  <path d="M219 234 C286 228 318 222 344 214" fill="none" stroke="#9a63e8" stroke-width="1.4" opacity="0.85"/>
+  <text x="348" y="212" fill="#c29bf5" font-family="sans-serif" font-size="7" text-anchor="start">2 Sales</text>
+  <text x="348" y="221" fill="#8f6fc4" font-family="sans-serif" font-size="6" text-anchor="start" opacity="0.7">onboard · pre-score · KYC</text>
+
+  <!-- 3 Credit Analysis -->
+  <circle cx="220" cy="212" r="3" fill="none" stroke="#c29bf5" stroke-width="1.2"/>
+  <path d="M220 212 C160 206 132 198 108 190" fill="none" stroke="#9a63e8" stroke-width="1.4" opacity="0.85"/>
+  <text x="104" y="188" fill="#c29bf5" font-family="sans-serif" font-size="7" text-anchor="end">3 Credit Analysis</text>
+  <text x="104" y="197" fill="#8f6fc4" font-family="sans-serif" font-size="6" text-anchor="end" opacity="0.7">spreading · collateral · CA prep</text>
+
+  <!-- 4 Approval = the big decision fork -->
+  <circle cx="220" cy="190" r="3.6" fill="none" stroke="#e9d9ff" stroke-width="1.4"/>
+  <path d="M220 190 C236 176 250 168 268 160" fill="none" stroke="#c29bf5" stroke-width="1.7"/>
+  <path d="M220 190 C206 178 198 176 184 178" fill="none" stroke="#5b3a8c" stroke-width="1.1" stroke-dasharray="3 3"/>
+  <text x="272" y="158" fill="#c29bf5" font-family="sans-serif" font-size="6.5" text-anchor="start">approve ✓</text>
+  <text x="180" y="180" fill="#7a5ca8" font-family="sans-serif" font-size="6.5" text-anchor="end" opacity="0.75">decline ✕</text>
+  <text x="244" y="146" fill="#c29bf5" font-family="sans-serif" font-size="7" text-anchor="middle">4 Approval · DECISION</text>
+
+  <!-- 5 Offering / Set-up -->
+  <circle cx="232" cy="162" r="2.6" fill="none" stroke="#c29bf5" stroke-width="1.1"/>
+  <path d="M232 162 C300 150 326 142 348 134" fill="none" stroke="#9a63e8" stroke-width="1.3" opacity="0.85"/>
+  <text x="352" y="132" fill="#c29bf5" font-family="sans-serif" font-size="7" text-anchor="start">5 Offering / Set-up</text>
+  <text x="352" y="141" fill="#8f6fc4" font-family="sans-serif" font-size="6" text-anchor="start" opacity="0.7">drawdown · limits · docs</text>
+
+  <!-- 6 Servicing fork: renew vs recover -->
+  <circle cx="248" cy="150" r="2.6" fill="none" stroke="#e9d9ff" stroke-width="1.2"/>
+  <path d="M248 150 C246 124 256 108 268 96" fill="none" stroke="#c29bf5" stroke-width="1.4"/>
+  <path d="M248 150 C234 130 220 118 206 110" fill="none" stroke="#9a63e8" stroke-width="1.2"/>
+  <path d="M248 150 C238 134 226 128 214 132" fill="none" stroke="#5b3a8c" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="206" y="100" fill="#c29bf5" font-family="sans-serif" font-size="7" text-anchor="middle">6 Servicing & Monitoring</text>
+  <text x="272" y="92" fill="#c29bf5" font-family="sans-serif" font-size="6" text-anchor="start" opacity="0.85">renew / EWS ✓</text>
+  <text x="200" y="108" fill="#7a5ca8" font-family="sans-serif" font-size="6" text-anchor="end" opacity="0.75">breach → recover</text>
+
+  <!-- CANOPY = engagement -->
+  <g fill="#c29bf5">
+    <circle cx="200" cy="92" r="2.1" opacity="0.85"/>
+    <circle cx="232" cy="80" r="2.4" opacity="0.95"/>
+    <circle cx="262" cy="86" r="2.1" opacity="0.85"/>
+    <circle cx="284" cy="100" r="1.9" opacity="0.8"/>
+    <circle cx="176" cy="104" r="1.8" opacity="0.7"/>
+    <circle cx="216" cy="66" r="2" opacity="0.8"/>
+    <circle cx="248" cy="66" r="1.8" opacity="0.75"/>
+  </g>
+  <ellipse cx="232" cy="86" rx="78" ry="40" fill="none" stroke="#a100ff" stroke-opacity="0.28" stroke-dasharray="2 4"/>
+  <text x="232" y="48" fill="#c29bf5" font-family="sans-serif" font-size="7.5" text-anchor="middle" opacity="0.9">CANOPY · 01 Brain & Orchestration</text>
+  <text x="232" y="58" fill="#9d7bd1" font-family="sans-serif" font-size="6.5" text-anchor="middle" opacity="0.7">Virtual RMs · chatbots · self-service leaves</text>
+
+  <!-- upper boughs label = model substrate -->
+  <text x="118" y="120" fill="#9d7bd1" font-family="sans-serif" font-size="6.5" text-anchor="middle" opacity="0.7">boughs · 02 Model Substrate</text>
+  <text x="118" y="129" fill="#8f6fc4" font-family="sans-serif" font-size="6" text-anchor="middle" opacity="0.6">scoring · pricing · EWS decide forks</text>
+</svg></div>
+      <p class="why">A rotating tree literally embodies a credit lifecycle that forks at every gate (approve/decline, covenant pass/breach, renew/recover), so the six stages read as growth from one rooted core rather than a flat funnel. It stays in the case study's violet-hologram DNA family but is its own organism: where the helix coils and the plate stack layers flatly, the Arbor grows upward and outward, giving the functional customer journey a living, dimensional silhouette that photographs beautifully on near-black.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole tree slowly Y-axis rotates as a translucent additive-glow hologram while scroll drives vertical growth: roots glow first, then the trunk extrudes and each of the six stages sprouts its branch tier in order (Prospecting at the base to Servicing in the canopy), with decision forks splitting and animated sap-pulses climbing the limbs. Pass-branches brighten to #c29bf5 and breach/decline-branches dim to a faint stub, so the canopy's final shape encodes the journey's outcomes.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>Bottom-up the tree maps one-to-one to the methodology: roots = 05 Systems of Record (Core Banking, the blueprint's data bedrock), lower trunk = 04 Data Foundation (Single Customer View / spreading data feeding the sap), mid trunk = 03 Tools &amp; MCP Servers (the Loan Origination / Credit Risk / Onboarding platforms that do the work at each node), upper boughs = 02 Model Substrate (the scoring, pricing and EWS intelligence deciding each fork), and canopy = 01 Brain &amp; Agent Orchestration (Systems of Engagement: Virtual RMs, chatbots, self-service leaves the customer actually touches).</span></div>
+    </article></div>
+<footer>Connectry · 10 concepts for the commercial-credit brain case study · choose one to build in the rotating hologram style</footer>
+</body></html>

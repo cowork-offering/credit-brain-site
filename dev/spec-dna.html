@@ -1,0 +1,233 @@
+<!doctype html><html lang="en" data-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Credit DNA · scroll-driven</title>
+<style>
+  :root{ --core:#a100ff; --light:#c29bf5; --bg:#06050a; --bg2:#0b0816; --panel:rgba(18,13,32,.6); --ink:#ece6f6; --muted:#a89cc0; --text2:#cfc8dd; --hair:rgba(200,170,255,.16); --vacc:var(--light); --ease:cubic-bezier(.22,1,.36,1); }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:radial-gradient(120% 90% at 60% 30%,#0c0817,#06050a 72%);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .head{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 20px;max-width:900px;margin:0 auto}
+  .head .ic{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;color:var(--vacc);background:color-mix(in srgb,var(--core) 8%,transparent);border:1px solid color-mix(in srgb,var(--core) 22%,var(--hair));margin-bottom:22px}
+  .head .ic svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.6}
+  .head .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--vacc);font-weight:700;margin-bottom:14px}
+  .head h1{font-size:clamp(28px,4vw,50px);letter-spacing:-.025em;line-height:1.04;margin:0 0 16px}
+  .head p{color:var(--muted);font-size:clamp(15px,1.3vw,18px);line-height:1.6;max-width:62ch;margin:0}
+  .track{position:relative;height:620vh}
+  .pin{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .grid{width:min(1240px,92vw);display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(20px,3vw,56px);align-items:center}
+
+  /* ----- left: the DNA helix that collapses into the 3D plate stack ----- */
+  .scene{position:relative;height:min(74vh,600px);perspective:1600px;perspective-origin:50% 40%}
+  #cv{position:absolute;inset:0;width:100%;height:100%;display:block;transition:opacity .25s linear;z-index:1}
+  #labels{position:absolute;inset:0;pointer-events:none;z-index:1}
+  .glabel{position:absolute;left:0;top:0;white-space:nowrap;font-size:11px;font-weight:700;color:var(--ink);padding:2.5px 8px;border:1px solid color-mix(in srgb,var(--core) 38%,var(--hair));border-radius:999px;background:rgba(12,9,22,.62);backdrop-filter:blur(4px);opacity:0}
+  .tilt{position:absolute;left:50%;top:50%;width:380px;height:248px;transform-style:preserve-3d;transform:translate(-50%,-42%) rotateX(56deg);opacity:0;transition:opacity .5s ease}
+  .tilt.on{opacity:1}
+  .spin{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateZ(-40deg);animation:sway 16s ease-in-out infinite alternate}
+  @keyframes sway{from{transform:rotateZ(-47deg)}to{transform:rotateZ(-33deg)}}
+  .deck{position:absolute;inset:0;transform-style:preserve-3d}
+  .plate{position:absolute;inset:0;border-radius:20px;transform:translateZ(calc(var(--z) + 150px));opacity:0;
+    transition:transform .8s var(--ease),opacity .7s ease,box-shadow .5s ease,border-color .5s ease,background .5s ease;
+    background:linear-gradient(135deg,color-mix(in srgb,var(--core) 19%,transparent),color-mix(in srgb,var(--core) 7%,transparent));
+    border:1.5px solid color-mix(in srgb,var(--core) 52%,transparent);
+    box-shadow:0 0 0 1px color-mix(in srgb,var(--core) 22%,transparent) inset,0 30px 60px -22px color-mix(in srgb,var(--core) 45%,transparent)}
+  .plate::before{content:"";position:absolute;inset:0;border-radius:20px;background:repeating-linear-gradient(0deg,transparent 0 6px,color-mix(in srgb,var(--light) 8%,transparent) 6px 7px);opacity:.5;pointer-events:none}
+  .plate.show{opacity:1;transform:translateZ(var(--z))}
+  .plate.lit{border-color:color-mix(in srgb,var(--light) 72%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--light) 26%,transparent) inset,0 0 26px color-mix(in srgb,var(--core) 40%,transparent),0 30px 60px -22px color-mix(in srgb,var(--core) 48%,transparent)}
+  .plate.active{border-color:color-mix(in srgb,var(--light) 85%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--light) 38%,transparent) inset,0 0 42px color-mix(in srgb,var(--core) 54%,transparent),0 34px 70px -18px color-mix(in srgb,var(--core) 58%,transparent);background:linear-gradient(135deg,color-mix(in srgb,var(--core) 26%,transparent),color-mix(in srgb,var(--core) 10%,transparent))}
+  .pid{position:absolute;left:22px;top:15px;display:flex;align-items:baseline;gap:12px}
+  .pnum{font-size:52px;font-weight:800;line-height:1;letter-spacing:-.04em;color:color-mix(in srgb,var(--light) 32%,transparent);font-variant-numeric:tabular-nums}
+  .plate.active .pnum{color:color-mix(in srgb,var(--light) 54%,transparent)}
+  .ptag{font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,var(--light) 84%,white)}
+  .plate.active .ptag{color:#fff}
+  .pico{position:absolute;right:22px;top:50%;width:84px;height:84px;transform:translateY(-50%);opacity:.16;color:var(--light)}
+  .plate.active .pico{opacity:.34}
+  .pico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+  .across{position:absolute;inset:-54px;border-radius:30px;border:1.5px dashed color-mix(in srgb,var(--light) 50%,transparent);transform:translateZ(-26px);opacity:0;transition:opacity .6s ease;pointer-events:none}
+  .across.on{opacity:1;animation:apulse 2.6s ease-in-out infinite}
+  @keyframes apulse{0%,100%{box-shadow:0 0 40px color-mix(in srgb,var(--core) 26%,transparent)}50%{box-shadow:0 0 78px color-mix(in srgb,var(--core) 52%,transparent)}}
+  .across-lbl{position:absolute;top:-13px;left:50%;transform:translate(-50%,-50%) rotateX(-56deg);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--light);background:var(--bg);padding:2px 11px;border-radius:999px;white-space:nowrap}
+  .token{position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#fff;box-shadow:0 0 18px 6px color-mix(in srgb,var(--light) 80%,transparent);opacity:.9}
+
+  /* ----- right: per-layer detail rail (same idea as the methodology rail) ----- */
+  .rail{position:relative;z-index:4}
+  .steps{display:flex;align-items:center;gap:7px;margin-bottom:20px;opacity:0;transition:opacity .5s ease}
+  .steps.on{opacity:1}
+  .steps i{width:24px;height:4px;border-radius:2px;background:var(--hair);transition:background .35s ease,box-shadow .35s ease}
+  .steps i.done{background:color-mix(in srgb,var(--core) 52%,var(--hair))}
+  .steps i.cur{background:var(--core);box-shadow:0 0 10px color-mix(in srgb,var(--core) 60%,transparent)}
+  .stage{position:relative;min-height:330px}
+  .beat,.card{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s var(--ease);pointer-events:none}
+  .beat.on,.card.on{opacity:1;transform:none}
+  .bk,.cl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--vacc);font-weight:700}
+  .beat h3,.card h3{font-size:clamp(20px,2.2vw,29px);font-weight:800;letter-spacing:-.02em;margin:7px 0 10px;line-height:1.12}
+  .beat p,.cdef{color:var(--muted);font-size:14.5px;line-height:1.58;margin:0 0 14px}
+  .cchips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;color:var(--text2);border:1px solid color-mix(in srgb,var(--core) 26%,var(--hair));border-radius:999px;padding:3.5px 11px;background:rgba(12,9,22,.34)}
+  .cnote{margin-top:15px;font-size:11px;color:var(--muted);line-height:1.5;opacity:.85;max-width:42ch}
+
+  .prog{position:fixed;left:0;top:0;height:2px;background:linear-gradient(90deg,var(--core),var(--light));width:0;z-index:9}
+  .foot{position:fixed;left:0;right:0;bottom:16px;text-align:center;font-size:11px;color:var(--muted);letter-spacing:.04em;z-index:5;pointer-events:none}
+</style></head>
+<body>
+<div class="prog" id="prog"></div>
+<section class="head">
+  <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 3c3 4 7 5 10 9M17 3C14 7 10 8 7 12M7 21c3-4 7-5 10-9M17 21c-3-4-7-5-10-9M8.5 6h7M8 9.5h8M8 14.5h8M8.5 18h7"/></svg></div>
+  <div class="k">The specialization</div>
+  <h1>What makes an enterprise brain a commercial credit brain.</h1>
+  <p>It isn't a different brain. It's the same foundation, given a different DNA, then placed onto the same five-layer stack and invoked on demand. Scroll to encode it.</p>
+</section>
+
+<div class="track" id="track">
+  <div class="pin">
+    <canvas id="cv"></canvas>
+    <div id="labels"></div>
+    <div class="grid">
+      <div class="scene">
+        <div class="tilt" id="tilt"><div class="spin"><div class="deck" id="deck">
+          <div class="across" id="across"><div class="across-lbl">governed on every layer</div></div>
+        </div></div></div>
+      </div>
+      <div class="rail">
+        <div class="steps" id="steps"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="stage" id="stage"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="foot">Scroll to progress · encode the DNA → it builds the same stack → one request lights every layer</div>
+
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+<script type="module">
+import * as THREE from 'three';
+const cv=document.getElementById('cv'), labelBox=document.getElementById('labels'), track=document.getElementById('track'),
+      prog=document.getElementById('prog'), deck=document.getElementById('deck'),
+      across=document.getElementById('across'), tilt=document.getElementById('tilt'), stepsEl=document.getElementById('steps'), stage=document.getElementById('stage');
+
+// ----- the five layers (same as the methodology stack) + the real data that lives on each -----
+const ICON={brain:'<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8.2"/>',
+  model:'<rect x="6.5" y="6.5" width="11" height="11" rx="2"/><path d="M9 3.5v3M15 3.5v3M9 17.5v3M15 17.5v3M3.5 9h3M3.5 15h3M17.5 9h3M17.5 15h3"/>',
+  tools:'<rect x="2.5" y="9" width="10" height="6" rx="3"/><rect x="11.5" y="9" width="10" height="6" rx="3"/>',
+  data:'<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>',
+  records:'<path d="M3 21h18M5 21V9l7-4.5L19 9v12M9.5 21v-5h5v5"/>'};
+const LAYERS=[
+  {n:'01', tag:'Brain', z:248, ic:'brain', cl:'Layer 01 · the brain', name:'Brain & Agent Orchestration',
+    def:'The reasoning core you own. Where the bank’s judgement lives: its policy, its risk appetite, the practices it follows, and everything it learns.',
+    pts:['Bank-wide policies','Risk appetite','Industry best practices','Accenture best practices','Commercial lending blueprint','Lessons learned','Credit Memo agent','Early-Warning agent']},
+  {n:'02', tag:'Model', z:186, ic:'model', cl:'Layer 02 · rented intelligence', name:'Model Substrate',
+    def:'The reasoning, on tap and swappable. The credit-tuned scoring that makes it think like an officer, never trained on the bank’s data.',
+    pts:['Claude Opus / Sonnet','Risk-rating model','PD / LGD','Early-warning signals','Adaptive learning']},
+  {n:'03', tag:'Tools', z:124, ic:'tools', cl:'Layer 03 · the hands', name:'Tools & MCP Servers',
+    def:'How the brain reaches the estate. One MCP connector per system, read and acted on in place, the data never moves.',
+    pts:['Salesforce','nCino','Boom · spread','AFS · servicing','Snowflake · zero-copy','Fannie Mae','GLEIF']},
+  {n:'04', tag:'Data', z:62, ic:'data', cl:'Layer 04 · the meaning', name:'Data Foundation',
+    def:'Where knowledge is made findable. The credit ontology and knowledge graph: entities, relationships and a unified view of exposure.',
+    pts:['Borrower & guarantor','Spread financials','Covenants','Risk 360 exposure','Industry / NAICS','Knowledge graph','Domain ontology']},
+  {n:'05', tag:'Records', z:0, ic:'records', cl:'Layer 05 · the base layer', name:'Systems of Record',
+    def:'The lending estate the whole stack rests on. The source of truth, read where it lives.',
+    pts:['Loans','Collateral','Limits & facilities','Credit files','Obligor records']}
+];
+// build the 3D plates (top crown 01 → base layer 05), and the per-layer rail cards
+const plateEls=LAYERS.map(L=>{ const d=document.createElement('div'); d.className='plate'; d.dataset.l=L.n; d.style.setProperty('--z',L.z+'px');
+  d.innerHTML='<div class="pid"><span class="pnum">'+L.n+'</span><span class="ptag">'+L.tag+'</span></div><span class="pico"><svg viewBox="0 0 24 24">'+ICON[L.ic]+'</svg></span>';
+  deck.appendChild(d); return d; });
+const token=document.createElement('div'); token.className='token'; token.style.opacity='0';
+// rail: 2 story beats (encode) + 5 layer cards + 1 across card
+const BEATS=[
+  {k:'01 · the foundation', t:'A universal brain knows nothing about lending.', h:'The framework gives it reasoning, memory, tools and governance. All of it powerful, all of it generic. Pointed at a loan book it is still a stranger: capable, but with no idea how this bank lends or where deals go wrong. What it lacks is not horsepower. It is knowledge.'},
+  {k:'02 · the DNA', t:'The DNA is where it stands or falls.', h:'Industry knowledge and proven lending patterns, the bank’s policy and risk appetite, the benchmarks and the lessons of every decision. Encoded gene by gene from real deals and the Accenture Commercial Credit Blueprint, never guessed. This is the most crucial layer of the build and the one a competitor cannot copy: remove it and the brain is generic again; encode it, and the same architecture reasons like a credit officer.'}
+];
+const beatEls=BEATS.map(b=>{ const a=document.createElement('article'); a.className='beat'; a.innerHTML='<div class="bk">'+b.k+'</div><h3>'+b.t+'</h3><p>'+b.h+'</p>'; stage.appendChild(a); return a; });
+const cardEls=LAYERS.map(L=>{ const a=document.createElement('article'); a.className='card';
+  a.innerHTML='<div class="cl">'+L.cl+'</div><h3>'+L.name+'</h3><p class="cdef">'+L.def+'</p><div class="cchips">'+L.pts.map(p=>'<span class="chip">'+p+'</span>').join('')+'</div>'; stage.appendChild(a); return a; });
+const acrossCard=document.createElement('article'); acrossCard.className='card';
+acrossCard.innerHTML='<div class="cl">Across every layer</div><h3>One request, governed end to end.</h3><p class="cdef">A banker asks. The request lights every layer: down the stack to fetch, back up to answer, governed on each. The decision writes a new lesson back into the brain.</p><div class="cnote">Illustrative, not exhaustive. An example of where information travels. Any lending estate plugs into the same five layers.</div>';
+stage.appendChild(acrossCard);
+const allCards=[...cardEls,acrossCard], stepEls=[...stepsEl.children];
+
+// ----- the DNA helix (encode, then collapses into the stack) -----
+const renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}); renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene(); scene.fog=new THREE.FogExp2(0x06050a,0.05);
+const camera=new THREE.PerspectiveCamera(46,1,0.1,100); camera.position.set(0.1,0,9.3);
+const group=new THREE.Group(); group.rotation.z=0.34; group.position.x=-2.5; scene.add(group);
+function resize(){ const w=cv.clientWidth,h=cv.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+new ResizeObserver(resize).observe(cv); resize();
+const ADD=THREE.AdditiveBlending, coreMats=[], twinkle=[];
+const GENES=['Bankwide Policies','Risk Appetite','Industry Insights','Benchmarks','Commercial Blueprint','Best Practices','Lessons Learned','Borrower','Guarantor','Financials','Covenant','Rating','PD / LGD','Credit Memo'];
+const N=GENES.length, TURNS=3.0, HH=5.9, R=0.92;
+function helix(t,side){ const y=(t-0.5)*HH, a=t*TURNS*Math.PI*2+(side?Math.PI:0); return new THREE.Vector3(Math.cos(a)*R,y,Math.sin(a)*R); }
+const strandGeos=[], strandMats=[];
+function tube(curve,rad,color,op){ const g=new THREE.TubeGeometry(curve,260,rad,12,false); strandGeos.push(g);
+  const m=new THREE.MeshBasicMaterial({color,transparent:true,opacity:op,blending:ADD,depthWrite:false}); strandMats.push({m,base:op}); return new THREE.Mesh(g,m); }
+function backbone(side){ const pts=[]; for(let s=0;s<=260;s++)pts.push(helix(s/260,side)); const c=new THREE.CatmullRomCurve3(pts), grp=new THREE.Group();
+  const core=tube(c,0.04,0xe6ccff,0.6); coreMats.push(core.material); grp.add(tube(c,0.13,0x8a3fd6,0.08),core); return grp; }
+group.add(backbone(0),backbone(1));
+const UP=new THREE.Vector3(0,1,0), rungMats=[];
+const rungs=GENES.map((g,i)=>{ const t=(i+0.5)/N, a=helix(t,0), b=helix(t,1), dir=new THREE.Vector3().subVectors(b,a), len=dir.length();
+  const m=new THREE.MeshBasicMaterial({color:0xc9a3f7,transparent:true,opacity:.42,blending:ADD,depthWrite:false}); rungMats.push(m);
+  const mesh=new THREE.Mesh(new THREE.CylinderGeometry(0.022,0.022,len,8),m);
+  mesh.position.copy(a).add(b).multiplyScalar(0.5); mesh.quaternion.setFromUnitVectors(UP,dir.clone().normalize()); mesh.visible=false; group.add(mesh); return {mesh}; });
+const nodeGeo=new THREE.SphereGeometry(0.072,16,16), haloGeo=new THREE.SphereGeometry(0.15,16,16);
+const genes=GENES.map((name,i)=>{ const t=(i+0.5)/N, hp=helix(t,i%2);
+  const o=new THREE.Group();
+  const halo=new THREE.MeshBasicMaterial({color:0x9a4fe0,transparent:true,opacity:.16,blending:ADD,depthWrite:false}); o.add(new THREE.Mesh(haloGeo,halo));
+  const cm=new THREE.MeshBasicMaterial({color:0xf2e6ff,transparent:true,opacity:.95,blending:ADD,depthWrite:false}); twinkle.push({m:cm,ph:hp.x*4+hp.y*2});
+  o.add(new THREE.Mesh(nodeGeo,cm)); o.position.copy(hp); o.visible=false; group.add(o);
+  const lab=document.createElement('div'); lab.className='glabel'; lab.textContent=name; labelBox.appendChild(lab);
+  return {o,cm,halo,hp,lab}; });
+
+// ----- scroll → progress -----
+let P=0;
+function onScroll(){ const r=track.getBoundingClientRect(), total=track.offsetHeight-window.innerHeight;
+  P=Math.min(1,Math.max(0,(-r.top)/total)); prog.style.width=(P*100).toFixed(1)+'%'; }
+addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); onScroll();
+function smooth(x){ x=Math.min(1,Math.max(0,x)); return x*x*(3-2*x); }
+const C=new THREE.Vector3(0,0,0);
+
+// ----- the stack driver (mirrors the methodology: build 1->5, then across + sweep) -----
+let cur=-2, acr=null, sweepT=null, sweepI=0, sweepD=1;
+function sweepStep(){ plateEls.forEach((p,i)=>p.classList.toggle('lit', i===sweepI)); const lit=plateEls[sweepI];
+  if(lit){ lit.appendChild(token); token.style.opacity='0.9'; }
+  if(sweepI>=plateEls.length-1) sweepD=-1; else if(sweepI<=0) sweepD=1; sweepI+=sweepD; }
+function startSweep(){ if(sweepT) return; sweepI=0; sweepD=1; sweepStep(); sweepT=setInterval(sweepStep,640); }
+function stopSweep(){ if(sweepT){ clearInterval(sweepT); sweepT=null; } plateEls.forEach(p=>p.classList.remove('lit')); token.style.opacity='0'; }
+function renderStack(active, acrossOn){
+  if(active===cur && acrossOn===acr) return; cur=active; acr=acrossOn;
+  plateEls.forEach((p,i)=>{ p.classList.toggle('show', i<active); p.classList.toggle('active', !acrossOn && i===active-1); });
+  across.classList.toggle('on', acrossOn);
+  if(acrossOn) startSweep(); else stopSweep();
+  const ci=acrossOn?5:(active-1);
+  allCards.forEach((c,i)=>c.classList.toggle('on', i===ci));
+  stepEls.forEach((s,i)=>{ s.classList.toggle('done', i<active); s.classList.toggle('cur', acrossOn?i===5:i===active-1); });
+}
+
+const wp=new THREE.Vector3(), idxTotal=strandGeos[0].index.count; let rot=0, lastT=null;
+function frame(ts){ requestAnimationFrame(frame);
+  if(lastT==null)lastT=ts; const dt=Math.min(60,ts-lastT); lastT=ts;
+  const encode=smooth(P/0.20), collapse=smooth((P-0.22)/0.10);
+  // helix fades out as it collapses into the stack
+  cv.style.opacity=(1-smooth((P-0.24)/0.09)).toFixed(2);
+  rot += dt*0.0003*(1+1.5*collapse); group.rotation.y=rot; group.scale.setScalar(1-0.6*collapse);
+  const fade=1-collapse, sh=Math.sin(ts*0.0026);
+  coreMats.forEach(m=>m.opacity=(0.58+0.07*sh)*fade); strandMats.forEach(s=>s.m.opacity=s.base*fade); strandGeos.forEach(g=>g.setDrawRange(0,idxTotal));
+  const revF=encode*N, cw=cv.clientWidth, ch=cv.clientHeight;
+  genes.forEach((g,i)=>{ const enc=Math.max(0,Math.min(1,(revF-(i+0.5))*1.6+1)); const vis=enc>0.02 && collapse<1; g.o.visible=vis;
+    g.o.position.lerpVectors(g.hp,C,collapse); g.o.scale.setScalar(Math.max(0.02,enc)*(1-0.7*collapse));
+    twinkle[i].m.opacity=(0.7+0.3*Math.sin(ts*0.0046+twinkle[i].ph))*fade; g.halo.opacity=0.16*fade;
+    rungs[i].mesh.visible=(enc>0.04 && collapse<1); rungMats[i].opacity=.42*fade;
+    const lab=g.lab; wp.copy(g.o.position).applyMatrix4(group.matrixWorld); const z=wp.z, sp=wp.clone().project(camera);
+    const sx=(sp.x*0.5+0.5)*cw, sy=(-sp.y*0.5+0.5)*ch, off=(i%2)?12:-12;
+    lab.style.transform='translate('+((i%2)?'0':'-100%')+',-50%) translate('+(sx+off).toFixed(0)+'px,'+sy.toFixed(0)+'px)';
+    lab.style.opacity=(vis && sp.z<1 ? Math.max(0,Math.min(1,(z+1.0)/1.5))*fade : 0).toFixed(2);
+  });
+  renderer.render(scene,camera);
+  // the stack appears as the helix collapses, then builds 1->5 and goes across (6 steps over P .34-.86)
+  tilt.classList.toggle('on', P>0.26);
+  const showStack = P>=0.34;
+  stepsEl.classList.toggle('on', showStack);
+  beatEls.forEach((e,i)=>e.classList.toggle('on', !showStack && (P<0.16?i===0:i===1)));
+  if(showStack){ const seg=Math.min(Math.floor((P-0.34)/0.60*6),5); renderStack(Math.min(seg+1,5), seg>=5); }
+  else if(cur!==-2){ renderStack(0,false); allCards.forEach(c=>c.classList.remove('on')); }
+}
+requestAnimationFrame(frame);
+</script>
+</body></html>

@@ -1,0 +1,100 @@
+<!doctype html><html lang="en" data-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero particle test · vertical DNA helix</title>
+<style>
+  html,body{margin:0;height:100%;background:radial-gradient(130% 100% at 50% 38%,#0c0817,#06050a 72%);overflow:hidden}
+  #scene{position:fixed;inset:0;width:100vw;height:100vh;display:block}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;
+    background:radial-gradient(125% 105% at 50% 44%,transparent 52%,rgba(4,2,10,.42) 84%,rgba(2,1,6,.66) 100%)}   /* cinematic vignette */
+  .cap{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);font:12px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:#a89cc0;letter-spacing:.06em;text-align:center;pointer-events:none}
+  .cap b{color:#c29bf5;font-weight:700}
+</style></head>
+<body>
+<canvas id="scene"></canvas>
+<div class="cap"><b>Hero particle test</b> · vertical DNA double helix · same material &amp; density, only the form changed · move the mouse</div>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+<script type="module">
+import * as THREE from 'three';
+const canvas=document.getElementById('scene');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(innerWidth,innerHeight);
+const scene=new THREE.Scene(); scene.fog=new THREE.FogExp2(0x06050a,0.052);   // depth haze → the far end of the helix recedes into the dark (cinematic)
+const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,0.1,1000); camera.position.z=7.0;   // a touch back to fit the wider helix
+
+// ---- same particle budget & buffers as the hero ----
+const COUNT=76000;
+const positions=new Float32Array(COUNT*3), original=new Float32Array(COUNT*3), velocities=new Float32Array(COUNT*3), colors=new Float32Array(COUNT*3);
+
+// ---- THE ONLY CHANGE: sample a vertical DNA double helix instead of a torus knot ----
+// B-DNA: right-handed double helix · two thick backbones nearly opposite (two clear rails) · magenta base-pair ladder across the middle
+const kind=new Uint8Array(COUNT);          // 0 = backbone A · 1 = backbone B · 2 = base-pair rung
+const HH=11.6, RH=1.28, TURNS=3.0, PHI=3.1, RUNGS=46, RT=0.305, W=TURNS*Math.PI*2;   // wider strand separation + fewer turns → fuller, more open DNA ladder (pitch:radius kept ~3)
+function jit(a){ return (Math.random()-0.5)*a; }
+for(let i=0;i<COUNT;i++){
+  const r=Math.random(); let x,y,z;
+  if(r<0.78){                              // the two sugar-phosphate backbones — chunky, dense crisp ropes
+    const s = r<0.39 ? 0 : 1;             // strand A / strand B
+    kind[i]=s;
+    const t = Math.random();
+    const a = t*W + s*PHI, ca=Math.cos(a), sa=Math.sin(a);
+    const Px=RH*ca, Py=(t-0.5)*HH, Pz=RH*sa;
+    let Tx=-RH*sa*W, Ty=HH, Tz=RH*ca*W; const tl=Math.hypot(Tx,Ty,Tz)||1; Tx/=tl; Ty/=tl; Tz/=tl;   // tangent
+    let Bx=Ty*sa, By=Tz*ca-Tx*sa, Bz=-Ty*ca; const bl=Math.hypot(Bx,By,Bz)||1; Bx/=bl; By/=bl; Bz/=bl; // binormal = T × radial
+    const Nx=By*Tz-Bz*Ty, Ny=Bz*Tx-Bx*Tz, Nz=Bx*Ty-By*Tx;                                            // normal = B × T
+    const ph=Math.random()*Math.PI*2, cp=Math.cos(ph), sp=Math.sin(ph);
+    x=Px+RT*(cp*Nx+sp*Bx)+jit(0.04); y=Py+RT*(cp*Ny+sp*By)+jit(0.04); z=Pz+RT*(cp*Nz+sp*Bz)+jit(0.04);
+  } else {                                 // base-pair rungs — a little thicker, spanning both strands
+    kind[i]=2;
+    const ri = (Math.random()*RUNGS)|0;
+    const t = (ri+0.5)/RUNGS, u = Math.random();
+    const angA = t*W, angB = angA + PHI;
+    const ax=Math.cos(angA)*RH, az=Math.sin(angA)*RH;
+    x = ax+(Math.cos(angB)*RH-ax)*u + jit(0.10); y = (t-0.5)*HH + jit(0.10); z = az+(Math.sin(angB)*RH-az)*u + jit(0.10);
+  }
+  positions[i*3]=original[i*3]=x; positions[i*3+1]=original[i*3+1]=y; positions[i*3+2]=original[i*3+2]=-z;   // negate z → right-handed (B-DNA)
+}
+
+const geometry=new THREE.BufferGeometry();
+geometry.setAttribute('position',new THREE.BufferAttribute(positions,3));
+geometry.setAttribute('color',new THREE.BufferAttribute(colors,3));
+const material=new THREE.PointsMaterial({size:0.023,vertexColors:true,transparent:true,depthWrite:false});
+const points=new THREE.Points(geometry,material);
+const pivot=new THREE.Group(); pivot.add(points); pivot.rotation.z=-1.08; pivot.rotation.x=0.16; scene.add(pivot);   // long diagonal axis, edge-on but reclined a touch into depth (the reference angle, cinematic)
+
+// ---- same colour material as the hero ----
+const C_CORE=new THREE.Color(0xa100ff), C_LIGHT=new THREE.Color(0xcaa8ff), C_MAG=new THREE.Color(0xff3d8b),
+      C_B=new THREE.Color(0xa100ff).lerp(new THREE.Color(0x4f73ff),0.36), tmp=new THREE.Color();   // strand B: cooler violet (a touch more distinct)
+for(let i=0;i<COUNT;i++){
+  if(kind[i]===2){ tmp.copy(C_MAG).lerp(C_LIGHT, Math.random()*0.45); }                               // base pairs → magenta (the middle)
+  else if(kind[i]===1){ tmp.copy(C_B).lerp(C_LIGHT, Math.random()); }                                 // strand B → barely-cooler tone
+  else { if(Math.random()<0.02) tmp.copy(C_MAG); else tmp.copy(C_CORE).lerp(C_LIGHT,Math.random()); }  // strand A → violet
+  colors[i*3]=tmp.r; colors[i*3+1]=tmp.g; colors[i*3+2]=tmp.b; }
+geometry.attributes.color.needsUpdate=true; material.blending=THREE.AdditiveBlending; material.opacity=0.80;
+
+// ---- same animation as the hero (mouse repel · breathing home · slow spin) ----
+let mx=0,my=0,hasMouse=false;
+addEventListener('mousemove',e=>{ mx=(e.clientX/innerWidth)*2-1; my=-(e.clientY/innerHeight)*2+1; hasMouse=true; });
+addEventListener('resize',()=>{ camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); });
+const R=1.6,R2=R*R, clock=new THREE.Clock(), _v=new THREE.Vector3(), _w=new THREE.Vector3();
+function animate(){ requestAnimationFrame(animate); const t=clock.getElapsedTime();
+  points.rotation.y=t*0.10; points.rotation.x=0;   // spin first so the cursor maps into the current frame (barber-pole flow, stays edge-on)
+  // project the cursor into the helix's OWN local space → it reaches every part, ends included, through the tilt & spin
+  let mlx=1e9,mly=1e9,mlz=1e9;
+  if(hasMouse){ _v.set(mx,my,0.5).unproject(camera).sub(camera.position).normalize();
+    const tt=-camera.position.z/_v.z; _w.copy(camera.position).addScaledVector(_v,tt);
+    points.updateWorldMatrix(true,false); points.worldToLocal(_w); mlx=_w.x; mly=_w.y; mlz=_w.z; }
+  for(let i=0;i<COUNT;i++){ const ix=i*3,iy=ix+1,iz=ix+2;
+    let px=positions[ix],py=positions[iy],pz=positions[iz], vx=velocities[ix],vy=velocities[iy],vz=velocities[iz];
+    const dx=px-mlx,dy=py-mly,dz=pz-mlz, d2=dx*dx+dy*dy+dz*dz;
+    if(hasMouse && d2<R2){ const d=Math.sqrt(d2)||1e-4, f=(R-d)*0.0058/d; vx+=dx*f; vy+=dy*f; vz+=dz*f; }   // whole helix reacts to the cursor, gently (end to end, not heavy)
+    const ox=original[ix],oy=original[iy],oz=original[iz];
+    const swayX=Math.sin(t*0.32+oy*1.05)*0.17, swayZ=Math.cos(t*0.27+oy*0.85)*0.13;   // slow wave travelling up the strand → elegant flowing curve
+    const hx=ox+swayX+Math.sin(t*0.45+ox*2+oy)*0.03, hy=oy+Math.cos(t*0.40+oy*2+oz)*0.03, hz=oz+swayZ+Math.sin(t*0.50+oz*2+ox)*0.03;
+    vx+=(hx-px)*0.0019; vy+=(hy-py)*0.0019; vz+=(hz-pz)*0.0019; vx*=0.95; vy*=0.95; vz*=0.95;
+    positions[ix]=px+vx; positions[iy]=py+vy; positions[iz]=pz+vz; velocities[ix]=vx; velocities[iy]=vy; velocities[iz]=vz; }
+  geometry.attributes.position.needsUpdate=true;
+  renderer.render(scene,camera); }
+animate();
+</script>
+</body></html>

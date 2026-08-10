@@ -1,0 +1,934 @@
+<!doctype html><html lang="en" data-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Commercial Blueprint · 10 conservative concepts</title>
+<style>
+  :root{--v-core:#a100ff;--v-light:#c29bf5;--bg:#06050a;--ink:#ece6f6;--muted:#a89cc0;--text2:#cfc8dd;--hair:rgba(200,170,255,.16)}
+  *{box-sizing:border-box}html,body{margin:0}
+  body{background:radial-gradient(120% 80% at 50% 0%,#0c0817,#06050a 70%);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:0 0 80px}
+  header{max-width:1180px;margin:0 auto;padding:64px 28px 26px;text-align:center}
+  header .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--v-light);font-weight:700}
+  header h1{font-size:clamp(26px,3.4vw,40px);letter-spacing:-.025em;margin:12px 0 10px;line-height:1.06}
+  header p{color:var(--muted);max-width:72ch;margin:0 auto;font-size:15px;line-height:1.6}
+  header .note{margin-top:14px;font-size:12px;color:var(--v-light);opacity:.85}
+  .grid{max-width:1180px;margin:30px auto 0;padding:0 28px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:880px){.grid{grid-template-columns:1fr}}
+  .card{border:1px solid var(--hair);border-radius:18px;background:color-mix(in srgb,var(--v-core) 4%,transparent);padding:18px;display:flex;flex-direction:column;gap:12px}
+  .cardhead{display:flex;align-items:flex-start;gap:14px}
+  .num{font-size:30px;font-weight:800;letter-spacing:-.04em;color:color-mix(in srgb,var(--v-light) 40%,transparent);font-variant-numeric:tabular-nums;line-height:1}
+  .card h2{font-size:19px;font-weight:800;letter-spacing:-.02em;margin:0}
+  .tag{font-size:12.5px;color:var(--v-light);font-weight:600;margin-top:2px}
+  .viz{border:1px solid var(--hair);border-radius:13px;background:radial-gradient(120% 100% at 50% 30%,#0d0a18,#070610 75%);overflow:hidden;aspect-ratio:440/320}
+  .viz svg{width:100%;height:100%;display:block}
+  .why{color:var(--text2);font-size:13.5px;line-height:1.55;margin:0}
+  .meta{display:grid;grid-template-columns:84px 1fr;gap:10px;font-size:12.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--hair);padding-top:10px}
+  .meta .ml{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:10px;color:var(--text2);padding-top:2px}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:40px;padding:0 28px}
+</style></head>
+<body>
+<header>
+  <div class="k">The Commercial Blueprint · functional side · conservative set</div>
+  <h1>10 restrained ways to visualize the Customers' Credit Journey</h1>
+  <p>The calm, boardroom-grade set: clean geometry, measured motion, all siblings of the methodology plate stack. Each maps the six-stage lending lifecycle (Prospecting → Sales → Credit Analysis → Approval → Offering/Setup → Servicing &amp; Monitoring) onto the five methodology layers, as a slowly rotating violet hologram. Pick one and I'll build the animated 3D version.</p>
+  <div class="note">Conservative concepts · 2D sketches · not yet animated or inserted</div>
+</header>
+<div class="grid">
+    <article class="card">
+      <div class="cardhead"><span class="num">01</span><div><h2>Stage Staircase</h2><div class="tag">Six stages rising, one calm step</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c29bf5" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#a100ff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- title -->
+  <text x="20" y="22" fill="#c29bf5" font-family="sans-serif" font-size="11" letter-spacing="2">THE CUSTOMERS' CREDIT JOURNEY</text>
+  <text x="20" y="35" fill="#a100ff" font-family="sans-serif" font-size="8" opacity="0.7">stage staircase · slow-rotating hologram</text>
+
+  <!-- four architecture floor-bands (back substrate), aligned to methodology layers -->
+  <g stroke="#a100ff" stroke-width="0.7" opacity="0.5" font-family="sans-serif" font-size="6" fill="#c29bf5">
+    <polygon points="70,250 410,250 420,262 60,262" fill="url(#plate)"/>
+    <polygon points="70,250 410,250 420,262 60,262" fill="none"/>
+    <text x="66" y="259">05 · Systems of Record  ·  Ecosystems</text>
+    <polygon points="68,266 412,266 422,278 58,278" fill="url(#plate)"/>
+    <text x="64" y="275">04 · Data Foundation  ·  Platforms (CRM / LOS / Core)</text>
+    <polygon points="66,282 414,282 424,294 56,294" fill="url(#plate)"/>
+    <text x="62" y="291">03 · Tools & MCP  ·  Insight & Analytics (SCV / NBA / MI)</text>
+    <polygon points="64,298 416,298 426,310 54,310" fill="url(#plate)"/>
+    <text x="60" y="307">02 · Model Substrate  ·  Engagement (Web / RM / vRM / chat)</text>
+  </g>
+
+  <!-- ascending staircase: one flat translucent plate per stage -->
+  <g font-family="sans-serif">
+    <!-- helper geometry: each plate is a thin slab top + front face, rising left->right -->
+    <!-- Stage 1 Prospecting -->
+    <g stroke="#c29bf5" stroke-width="1">
+      <polygon points="40,228 110,228 122,238 52,238" fill="url(#plate)"/>
+      <polygon points="40,228 52,238 52,250 40,240" fill="#a100ff" fill-opacity="0.06"/>
+      <text x="46" y="224" fill="#c29bf5" font-size="7">1 · Prospecting</text>
+      <text x="46" y="246" fill="#a100ff" font-size="5" opacity="0.75">leads · clustering · RM assign · batch-rate</text>
+    </g>
+    <!-- Stage 2 Sales -->
+    <g stroke="#c29bf5" stroke-width="1">
+      <polygon points="110,206 180,206 192,216 122,216" fill="url(#plate)"/>
+      <polygon points="110,206 122,216 122,238 110,228" fill="#a100ff" fill-opacity="0.06"/>
+      <text x="116" y="202" fill="#c29bf5" font-size="7">2 · Sales</text>
+      <text x="116" y="224" fill="#a100ff" font-size="5" opacity="0.75">onboarding · pre-score · KYC · mandates</text>
+    </g>
+    <!-- Stage 3 Credit Analysis -->
+    <g stroke="#c29bf5" stroke-width="1">
+      <polygon points="180,184 250,184 262,194 192,194" fill="url(#plate)"/>
+      <polygon points="180,184 192,194 192,216 180,206" fill="#a100ff" fill-opacity="0.06"/>
+      <text x="186" y="180" fill="#c29bf5" font-size="7">3 · Credit Analysis</text>
+      <text x="186" y="202" fill="#a100ff" font-size="5" opacity="0.75">spreading · collateral · due diligence · CA prep</text>
+    </g>
+    <!-- Stage 4 Approval -->
+    <g stroke="#c29bf5" stroke-width="1">
+      <polygon points="250,162 320,162 332,172 262,172" fill="url(#plate)"/>
+      <polygon points="250,162 262,172 262,194 250,184" fill="#a100ff" fill-opacity="0.06"/>
+      <text x="256" y="158" fill="#c29bf5" font-size="7">4 · Approval</text>
+      <text x="256" y="180" fill="#a100ff" font-size="5" opacity="0.75">terms · covenants · decision · signatures</text>
+    </g>
+    <!-- Stage 5 Offering / Set-up -->
+    <g stroke="#c29bf5" stroke-width="1">
+      <polygon points="320,140 390,140 402,150 332,150" fill="url(#plate)"/>
+      <polygon points="320,140 332,150 332,172 320,162" fill="#a100ff" fill-opacity="0.06"/>
+      <text x="318" y="136" fill="#c29bf5" font-size="7">5 · Offering / Set-up</text>
+      <text x="320" y="158" fill="#a100ff" font-size="5" opacity="0.75">drawdown · limits · covenant track · docs</text>
+    </g>
+    <!-- Stage 6 Servicing & Monitoring -->
+    <g stroke="#c29bf5" stroke-width="1">
+      <polygon points="385,118 432,118 432,128 397,128" fill="url(#plate)"/>
+      <polygon points="385,118 397,128 397,150 385,140" fill="#a100ff" fill-opacity="0.06"/>
+      <text x="350" y="114" fill="#c29bf5" font-size="7">6 · Servicing & Monitoring</text>
+      <text x="350" y="132" fill="#a100ff" font-size="5" opacity="0.75">portfolio · EWS · exposure · recoveries · reg-report</text>
+    </g>
+  </g>
+
+  <!-- calm climbing marker = 01 Brain & Agent Orchestration, currently on plate 3 -->
+  <g>
+    <circle cx="216" cy="178" r="5" fill="#a100ff" fill-opacity="0.25" stroke="#c29bf5" stroke-width="1.2"/>
+    <circle cx="216" cy="178" r="1.6" fill="#c29bf5"/>
+    <line x1="216" y1="178" x2="216" y2="194" stroke="#c29bf5" stroke-width="0.6" stroke-dasharray="2 2" opacity="0.6"/>
+    <text x="224" y="170" fill="#c29bf5" font-family="sans-serif" font-size="6">01 · Brain & Agent Orchestration</text>
+    <text x="224" y="178" fill="#a100ff" font-family="sans-serif" font-size="5" opacity="0.7">steps up one stage per scroll</text>
+  </g>
+
+  <!-- faint scroll-step ticks up the staircase -->
+  <g stroke="#a100ff" stroke-width="0.5" opacity="0.35">
+    <line x1="75" y1="233" x2="75" y2="226"/>
+    <line x1="145" y1="211" x2="145" y2="204"/>
+    <line x1="215" y1="189" x2="215" y2="182"/>
+    <line x1="285" y1="167" x2="285" y2="160"/>
+    <line x1="355" y1="145" x2="355" y2="138"/>
+    <line x1="408" y1="123" x2="408" y2="116"/>
+  </g>
+</svg></div>
+      <p class="why">It reuses the case study's own methodology-plate language (flat translucent slabs) so it reads as a native sibling, not a new metaphor. A staircase is the most boardroom-legible way to show six sequential lifecycle stages: clean geometry only, no orbits or playful imagery, and the ascent itself carries the "journey" narrative without any decoration.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole staircase rotates very slowly (a gentle, fixed-speed yaw, a few degrees) so it reads as a hologram, not a flat chart. Scroll advances a single calm marker up exactly one plate at a time, each step easing in and settling; nothing else moves.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The four architecture layers (Ecosystems, Platforms, Insight &amp; Analytics, Engagement) run as fixed translucent floor-bands beneath the staircase and align one-to-one with methodology layers 05 Systems of Record / 04 Data Foundation / 03 Tools &amp; MCP and 02 Model Substrate, while the single marker climbing the six stages is 01 Brain &amp; Agent Orchestration moving across the lifecycle on top of that substrate.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">02</span><div><h2>The Ledger</h2><div class="tag">Six stages cross five quiet layers</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>The Ledger swim-lane: six lending stages across five methodology layers</title>
+  <desc>Five horizontal lanes crossed by six stage columns, one highlighted deal path tracing across.</desc>
+  <g fill="none" stroke="#c29bf5" stroke-width="1" font-family="sans-serif">
+
+    <!-- tilted plate frame -->
+    <g transform="translate(0,6) skewX(-6)" opacity="0.9">
+      <rect x="96" y="40" width="312" height="210" rx="3" stroke="#a100ff" opacity="0.55"/>
+
+      <!-- five lanes (methodology layers) -->
+      <line x1="96" y1="82"  x2="408" y2="82"  opacity="0.35"/>
+      <line x1="96" y1="124" x2="408" y2="124" opacity="0.35"/>
+      <line x1="96" y1="166" x2="408" y2="166" opacity="0.35"/>
+      <line x1="96" y1="208" x2="408" y2="208" opacity="0.35"/>
+
+      <!-- six stage columns -->
+      <line x1="148" y1="40" x2="148" y2="250" opacity="0.22"/>
+      <line x1="200" y1="40" x2="200" y2="250" opacity="0.22"/>
+      <line x1="252" y1="40" x2="252" y2="250" opacity="0.22"/>
+      <line x1="304" y1="40" x2="304" y2="250" opacity="0.22"/>
+      <line x1="356" y1="40" x2="356" y2="250" opacity="0.22"/>
+
+      <!-- the quiet deal thread, dipping per stage -->
+      <polyline points="100,61 122,61 148,103 174,103 200,187 226,187 252,229 278,229 304,145 330,145 356,61 404,61"
+        stroke="#a100ff" stroke-width="2"/>
+      <circle cx="122" cy="61"  r="3" fill="#06050a" stroke="#a100ff"/>
+      <circle cx="174" cy="103" r="3" fill="#06050a" stroke="#a100ff"/>
+      <circle cx="226" cy="187" r="3" fill="#06050a" stroke="#a100ff"/>
+      <circle cx="278" cy="229" r="3" fill="#06050a" stroke="#a100ff"/>
+      <circle cx="330" cy="145" r="3" fill="#06050a" stroke="#a100ff"/>
+      <circle cx="382" cy="61"  r="3" fill="#a100ff"/>
+    </g>
+
+    <!-- lane labels (methodology layers) -->
+    <g font-size="7" fill="#c29bf5" stroke="none" opacity="0.95">
+      <text x="6" y="64">01 Brain & Orchestration</text>
+      <text x="6" y="106">02 Model Substrate</text>
+      <text x="6" y="148">03 Tools & MCP</text>
+      <text x="6" y="190">04 Data Foundation</text>
+      <text x="6" y="232">05 Systems of Record</text>
+    </g>
+    <line x1="92" y1="46" x2="92" y2="248" stroke="#a100ff" opacity="0.4"/>
+
+    <!-- stage headers (six lifecycle stages) -->
+    <g font-size="6.5" fill="#c29bf5" stroke="none" letter-spacing="0.3">
+      <text x="100" y="32">PROSPECT</text>
+      <text x="152" y="32">SALES</text>
+      <text x="204" y="32">CREDIT</text>
+      <text x="256" y="32">APPROVAL</text>
+      <text x="308" y="32">SET-UP</text>
+      <text x="356" y="32">SERVICING</text>
+    </g>
+    <line x1="96" y1="36" x2="408" y2="36" stroke="#a100ff" opacity="0.4"/>
+
+    <!-- footnote -->
+    <text x="96" y="268" font-size="6" fill="#c29bf5" stroke="none" opacity="0.7">one deal traced across the layers it touches, stage by stage</text>
+  </g>
+</svg></div>
+      <p class="why">It reads as a boardroom ledger: five flat horizontal lanes (the methodology layers) ruled by six stage columns, with one thin highlighted thread tracing the deal left to right and dipping into the layers each stage actually touches. It feels premium because it is almost entirely straight lines, even gutters, and a single accent path on near-black violet, the direct architectural sibling of the existing 5-plate methodology stack.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole plate holds at a fixed gentle tilt and rotates a few degrees over many seconds, like a slowly settling hologram. Scroll advances one node of the deal thread at a time, each new segment fading in over ~600ms; nothing races, nothing orbits.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The five lanes ARE the five methodology layers top to bottom (01 Brain &amp; Agent Orchestration, 02 Model Substrate, 03 Tools &amp; MCP Servers, 04 Data Foundation, 05 Systems of Record), and the deal thread's dips show which layer each lifecycle stage leans on (Prospecting/Servicing ride the Brain &amp; Data lanes; Credit Analysis and Approval drop into Tools and Systems of Record).</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">03</span><div><h2>Lifecycle Equaliser</h2><div class="tag">Five layers, one calm advancing light</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+  <!-- frame -->
+  <rect x="8" y="8" width="424" height="304" rx="6" fill="none" stroke="#a100ff" stroke-opacity="0.18"/>
+  <text x="20" y="26" fill="#c29bf5" font-size="9" letter-spacing="1.5">LIFECYCLE EQUALISER · functional credit journey</text>
+
+  <!-- five layer bands, shallow-3D skew via slight vertical offset per column handled by lanes -->
+  <g stroke="#a100ff" stroke-opacity="0.5" fill="#a100ff" fill-opacity="0.05">
+    <rect x="108" y="56"  width="296" height="30" rx="3"/>
+    <rect x="108" y="92"  width="296" height="30" rx="3"/>
+    <rect x="108" y="128" width="296" height="30" rx="3"/>
+    <rect x="108" y="164" width="296" height="30" rx="3"/>
+    <rect x="108" y="200" width="296" height="30" rx="3"/>
+  </g>
+
+  <!-- band labels: layer + methodology tie -->
+  <g fill="#c29bf5" font-size="7.5">
+    <text x="14" y="68">Engagement</text><text x="14" y="78" fill="#a100ff" fill-opacity="0.7">01 Orchestration</text>
+    <text x="14" y="104">Insight/Analytics</text><text x="14" y="114" fill="#a100ff" fill-opacity="0.7">02 Model Substrate</text>
+    <text x="14" y="140">Platforms</text><text x="14" y="150" fill="#a100ff" fill-opacity="0.7">03 Tools / MCP</text>
+    <text x="14" y="176">Data spine</text><text x="14" y="186" fill="#a100ff" fill-opacity="0.7">04 Data Foundation</text>
+    <text x="14" y="212">Core Banking</text><text x="14" y="222" fill="#a100ff" fill-opacity="0.7">05 Sys of Record</text>
+  </g>
+
+  <!-- six stage column guides -->
+  <g stroke="#a100ff" stroke-opacity="0.12" stroke-dasharray="2 3">
+    <line x1="157" y1="52" x2="157" y2="234"/>
+    <line x1="206" y1="52" x2="206" y2="234"/>
+    <line x1="255" y1="52" x2="255" y2="234"/>
+    <line x1="304" y1="52" x2="304" y2="234"/>
+    <line x1="353" y1="52" x2="353" y2="234"/>
+  </g>
+
+  <!-- stage headers -->
+  <g fill="#c29bf5" font-size="6.5" text-anchor="middle">
+    <text x="132" y="48">Prospecting</text>
+    <text x="181" y="48">Sales</text>
+    <text x="230" y="48">Credit Anlys</text>
+    <text x="279" y="48">Approval</text>
+    <text x="328" y="48">Offer/Set-up</text>
+    <text x="380" y="48">Servicing</text>
+  </g>
+
+  <!-- equaliser fills: which bands each stage lights (brighter = touched) -->
+  <!-- Prospecting: engagement+insight (lead clustering, batch-rating) -->
+  <g fill="#c29bf5" fill-opacity="0.30">
+    <rect x="110" y="58" width="44" height="26" rx="2"/>
+    <rect x="110" y="94" width="44" height="26" rx="2"/>
+  </g>
+  <!-- Sales: engagement+platforms (onboarding, KYC, mandates) -->
+  <g fill="#c29bf5" fill-opacity="0.30">
+    <rect x="159" y="58" width="44" height="26" rx="2"/>
+    <rect x="159" y="130" width="44" height="26" rx="2"/>
+  </g>
+  <!-- Credit Analysis: insight+platforms+data (spreading, collateral, DD) -->
+  <g fill="#c29bf5" fill-opacity="0.34">
+    <rect x="208" y="94" width="44" height="26" rx="2"/>
+    <rect x="208" y="130" width="44" height="26" rx="2"/>
+    <rect x="208" y="166" width="44" height="26" rx="2"/>
+  </g>
+  <!-- Approval: platforms+data (pricing, covenants, decision, signatures) -->
+  <g fill="#c29bf5" fill-opacity="0.34">
+    <rect x="257" y="130" width="44" height="26" rx="2"/>
+    <rect x="257" y="166" width="44" height="26" rx="2"/>
+  </g>
+  <!-- Offering/Set-up: platforms+data+core (drawdown, limit set-up, docs) -->
+  <g fill="#c29bf5" fill-opacity="0.38">
+    <rect x="306" y="130" width="44" height="26" rx="2"/>
+    <rect x="306" y="166" width="44" height="26" rx="2"/>
+    <rect x="306" y="202" width="44" height="26" rx="2"/>
+  </g>
+  <!-- Servicing: full stack (EWS, exposure, collections, reg reporting) -->
+  <g fill="#c29bf5" fill-opacity="0.40">
+    <rect x="355" y="58" width="44" height="26" rx="2"/>
+    <rect x="355" y="94" width="44" height="26" rx="2"/>
+    <rect x="355" y="130" width="44" height="26" rx="2"/>
+    <rect x="355" y="166" width="44" height="26" rx="2"/>
+    <rect x="355" y="202" width="44" height="26" rx="2"/>
+  </g>
+
+  <!-- the single calm advancing light-line (scroll-driven), shown mid-sweep at Offering -->
+  <line x1="328" y1="52" x2="328" y2="234" stroke="#c29bf5" stroke-width="1.6"/>
+  <line x1="328" y1="52" x2="328" y2="234" stroke="#a100ff" stroke-width="4" stroke-opacity="0.25"/>
+  <circle cx="328" cy="52" r="2.4" fill="#c29bf5"/>
+  <text x="334" y="246" fill="#c29bf5" font-size="6.5" fill-opacity="0.8">advancing light · scroll-scrubbed →</text>
+
+  <!-- base lifecycle axis -->
+  <line x1="108" y1="234" x2="404" y2="234" stroke="#a100ff" stroke-opacity="0.4"/>
+  <text x="108" y="246" fill="#c29bf5" font-size="6.5">Client & Partner ecosystems (foundation)</text>
+
+  <!-- caption -->
+  <text x="20" y="294" fill="#a100ff" fill-opacity="0.6" font-size="7">Each stage brightens the layers it activates. Slow shallow-3D rotation. No orbits.</text>
+</svg></div>
+      <p class="why">It reuses the case study's own five-plate vocabulary as five flat horizontal bands, so it reads as a quiet sibling of the methodology and spec stacks rather than a new metaphor. The only motion is a single light-line sweeping the six stages and gently brightening the bands each one touches, which keeps it boardroom-restrained and premium: architecture you can watch breathe, not a dashboard that performs.</p>
+      <div class="meta"><span class="ml">Animates</span><span>A single vertical light-line advances slowly left-to-right across the six stage columns, scrubbed by scroll; as it crosses each stage, the bands that stage touches brighten and hold, then settle. The whole plate rotates a few degrees in shallow 3D, very slowly, no orbiting elements.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The five bands map one-to-one to the methodology: Systems of Engagement = 01 Brain &amp; Agent Orchestration, Insight &amp; Analytics = 02 Model Substrate, Platforms = 03 Tools &amp; MCP Servers, the integration/data spine = 04 Data Foundation, and Core Banking / Client &amp; Partner ecosystems = 05 Systems of Record, with the advancing light showing which layers each lifecycle stage activates.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">04</span><div><h2>Credit Continuum</h2><div class="tag">Six stages, one quiet ledger line</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a100ff" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#a100ff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <!-- title -->
+  <text x="20" y="26" fill="#c29bf5" font-family="sans-serif" font-size="11" letter-spacing="1.5">CREDIT CONTINUUM — COMMERCIAL LOAN ORIGINATION</text>
+  <line x1="20" y1="34" x2="420" y2="34" stroke="#a100ff" stroke-opacity="0.25" stroke-width="0.5"/>
+
+  <!-- the segmented phase bar (slightly skewed = hologram plate) -->
+  <g stroke="#c29bf5" stroke-width="1" fill="none">
+    <!-- six segments, x from 20, width ~66 each -->
+    <rect x="20"  y="70" width="66" height="34" fill="url(#fill)"/>
+    <rect x="86"  y="70" width="66" height="34" fill="url(#fill)"/>
+    <rect x="152" y="70" width="66" height="34" fill="url(#fill)"/>
+    <!-- active segment 4: quietly expanded -->
+    <rect x="218" y="62" width="66" height="50" fill="#a100ff" fill-opacity="0.18" stroke="#a100ff" stroke-width="1.4"/>
+    <rect x="284" y="70" width="66" height="34" stroke-opacity="0.5"/>
+    <rect x="350" y="70" width="66" height="34" stroke-opacity="0.35"/>
+  </g>
+
+  <!-- fill front marker -->
+  <line x1="251" y1="58" x2="251" y2="116" stroke="#a100ff" stroke-width="1.2" stroke-dasharray="2 2"/>
+  <text x="251" y="54" fill="#a100ff" font-family="sans-serif" font-size="6.5" text-anchor="middle">fill front</text>
+
+  <!-- stage numbers + names -->
+  <g fill="#c29bf5" font-family="sans-serif" font-size="7.5" text-anchor="middle">
+    <text x="53"  y="90">1 · Prospecting</text>
+    <text x="119" y="90">2 · Sales</text>
+    <text x="185" y="90">3 · Credit Analysis</text>
+    <text x="251" y="84" fill="#e9d6ff" font-weight="bold">4 · Approval</text>
+    <text x="317" y="90" fill-opacity="0.7">5 · Offering / Set-up</text>
+    <text x="383" y="90" fill-opacity="0.55">6 · Servicing & Monitoring</text>
+  </g>
+
+  <!-- active segment expanded activities -->
+  <g fill="#c29bf5" font-family="sans-serif" font-size="6" text-anchor="middle" fill-opacity="0.85">
+    <text x="251" y="98">agreement drafting</text>
+    <text x="251" y="105">pricing & terms · covenants</text>
+    <text x="251" y="111">CA review · decision · signatures</text>
+  </g>
+
+  <!-- faint activity ghosts under neighbours -->
+  <g fill="#c29bf5" font-family="sans-serif" font-size="5.5" text-anchor="middle" fill-opacity="0.4">
+    <text x="53"  y="100">clustering · batch-rating · RM</text>
+    <text x="185" y="100">spreading · collateral · KYC</text>
+    <text x="317" y="100">drawdown · limit set-up</text>
+  </g>
+
+  <!-- four architecture lanes beneath, mapped to 5-layer methodology -->
+  <g font-family="sans-serif" font-size="6.5">
+    <line x1="20" y1="140" x2="420" y2="140" stroke="#a100ff" stroke-opacity="0.2"/>
+    <g stroke="#c29bf5" stroke-opacity="0.45" stroke-width="0.7">
+      <rect x="20" y="150" width="400" height="22" fill="none"/>
+      <rect x="20" y="176" width="400" height="22" fill="none"/>
+      <rect x="20" y="202" width="400" height="22" fill="none"/>
+      <rect x="20" y="228" width="400" height="22" fill="none"/>
+    </g>
+    <g fill="#c29bf5" fill-opacity="0.8">
+      <text x="26" y="164">Systems of Engagement — Web/App · telephony · RMs · chatbots · Data & AI</text>
+      <text x="26" y="190">Systems of Insight — Single Customer View · Insights · Next Best Actions · MI</text>
+      <text x="26" y="216">Platforms — CRM · Onboarding · Loan Origination & Credit Risk · Core Banking</text>
+      <text x="26" y="242">Client & Partner Ecosystems</text>
+    </g>
+    <!-- 5-layer methodology tags on the right rail -->
+    <g fill="#a100ff" fill-opacity="0.85" text-anchor="end" font-size="6">
+      <text x="414" y="59">01 Brain & Orchestration → stage logic</text>
+      <text x="414" y="164">02 Model Substrate · 05 SoR</text>
+      <text x="414" y="190">04 Data Foundation</text>
+      <text x="414" y="216">03 Tools & MCP Servers</text>
+      <text x="414" y="242">05 Systems of Record</text>
+    </g>
+  </g>
+
+  <!-- slow-yaw hologram hint -->
+  <g stroke="#a100ff" stroke-opacity="0.3" stroke-width="0.6" fill="none">
+    <path d="M20 260 q200 14 400 0"/>
+  </g>
+  <text x="220" y="276" fill="#a100ff" fill-opacity="0.6" font-family="sans-serif" font-size="6" text-anchor="middle">slow ~30s yaw · fill advances on scroll · active segment eases open</text>
+</svg></div>
+      <p class="why">It takes the most familiar executive object — a single segmented progress bar — and renders it as a thin translucent hologram plate, so it reads as the direct functional sibling of the methodology's 5-plate stack rather than a new metaphor. Restraint comes from doing exactly one thing: six clean segments that fill in sequence, with only the active segment quietly expanding to reveal its real activities, no orbits, comets, or decoration.</p>
+      <div class="meta"><span class="ml">Animates</span><span>As you scroll, a fill front advances left-to-right segment by segment; the just-reached segment eases open a few px taller to surface its activity list, the previous one settles back. The whole plate holds a slow ~30s yaw of a few degrees and a faint emissive pulse on the active divider — measured, never busy.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The bar sits on four faint architecture lanes (Engagement, Insight, Platforms, Ecosystems) that map upward to the methodology: stage logic = 01 Brain &amp; Agent Orchestration, the rating/scoring/NBA intelligence threaded through stages = 02 Model Substrate, the platform connectors (CRM, Onboarding, LOS, Core Banking via APIs) = 03 Tools &amp; MCP Servers, Single Customer View / MI = 04 Data Foundation, and Core Banking + systems of record beneath = 05 Systems of Record.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">05</span><div><h2>Sweeping Plate Stack</h2><div class="tag">Five methodology plates, one slow sweep</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five tilted methodology plates with a sweeping highlight mapped to six lending stages">
+  <title>Sweeping Plate Stack</title>
+  <desc>Tilted five-plate methodology stack as a calm backdrop, one soft highlight sweeping through a single layer while six lifecycle stages advance.</desc>
+  <defs>
+    <style>
+      .pl{fill:#a100ff;fill-opacity:.05;stroke:#c29bf5;stroke-width:1;stroke-opacity:.55}
+      .plOn{fill:#a100ff;fill-opacity:.16;stroke:#c29bf5;stroke-width:1.4;stroke-opacity:.95}
+      .lab{fill:#c29bf5;font-family:sans-serif;font-size:7.5px}
+      .num{fill:#c29bf5;font-family:sans-serif;font-size:7px;fill-opacity:.7}
+      .stg{fill:#c29bf5;font-family:sans-serif;font-size:7px}
+      .stgOn{fill:#e7d4ff;font-family:sans-serif;font-size:7.5px;font-weight:700}
+      .act{fill:#c29bf5;font-family:sans-serif;font-size:5.6px;fill-opacity:.65}
+      .ax{stroke:#c29bf5;stroke-opacity:.4;stroke-width:.8}
+      .sw{stroke:#c29bf5;stroke-width:.5;stroke-opacity:.25}
+      .tit{fill:#c29bf5;font-family:sans-serif;font-size:8px;fill-opacity:.8;letter-spacing:1px}
+    </style>
+    <!-- one plate face, tilted in depth: skew via parallelogram -->
+  </defs>
+
+  <text x="22" y="20" class="tit">SWEEPING PLATE STACK</text>
+  <text x="22" y="30" class="num">functional lending lifecycle over the methodology spine</text>
+
+  <!-- top rail: six lifecycle stages advancing left to right -->
+  <line x1="28" y1="48" x2="412" y2="48" class="ax"/>
+  <g>
+    <circle cx="40"  cy="48" r="2.4" fill="#c29bf5" fill-opacity=".5"/>
+    <circle cx="108" cy="48" r="2.4" fill="#c29bf5" fill-opacity=".5"/>
+    <circle cx="176" cy="48" r="2.4" fill="#c29bf5" fill-opacity=".5"/>
+    <circle cx="244" cy="48" r="3.2" fill="#e7d4ff"/>
+    <circle cx="312" cy="48" r="2.4" fill="#c29bf5" fill-opacity=".5"/>
+    <circle cx="384" cy="48" r="2.4" fill="#c29bf5" fill-opacity=".5"/>
+  </g>
+  <text x="40"  y="42" text-anchor="middle" class="stg">1 Prospect</text>
+  <text x="108" y="42" text-anchor="middle" class="stg">2 Sales</text>
+  <text x="176" y="42" text-anchor="middle" class="stg">3 Credit</text>
+  <text x="244" y="38" text-anchor="middle" class="stgOn">4 Approval</text>
+  <text x="312" y="42" text-anchor="middle" class="stg">5 Set-up</text>
+  <text x="384" y="42" text-anchor="middle" class="stg">6 Servicing</text>
+
+  <!-- active stage activity caption (the one the sweep is on) -->
+  <text x="244" y="60" text-anchor="middle" class="act">pricing | covenants | CA review | approval decision</text>
+  <!-- drop line from active stage into the lit plate -->
+  <line x1="244" y1="62" x2="244" y2="96" class="ax" stroke-dasharray="2 2"/>
+
+  <!-- ===== the tilted 5-plate methodology stack (front-low to back-high) ===== -->
+  <!-- each plate is a parallelogram: front-left low, receding up-right -->
+  <!-- PLATE 01 (top) — LIT by stage 4 Approval -->
+  <g>
+    <polygon class="plOn" points="86,108 330,108 374,86 130,86"/>
+    <text x="120" y="101" class="lab">01 Brain & Agent Orchestration</text>
+    <text x="93" y="101" class="num">01</text>
+  </g>
+  <!-- PLATE 02 -->
+  <g>
+    <polygon class="pl" points="86,138 330,138 374,116 130,116"/>
+    <text x="120" y="131" class="lab">02 Model Substrate</text>
+    <text x="93" y="131" class="num">02</text>
+  </g>
+  <!-- PLATE 03 -->
+  <g>
+    <polygon class="pl" points="86,168 330,168 374,146 130,146"/>
+    <text x="120" y="161" class="lab">03 Tools & MCP Servers</text>
+    <text x="93" y="161" class="num">03</text>
+  </g>
+  <!-- PLATE 04 -->
+  <g>
+    <polygon class="pl" points="86,198 330,198 374,176 130,176"/>
+    <text x="120" y="191" class="lab">04 Data Foundation</text>
+    <text x="93" y="191" class="num">04</text>
+  </g>
+  <!-- PLATE 05 (bottom) -->
+  <g>
+    <polygon class="pl" points="86,228 330,228 374,206 130,206"/>
+    <text x="120" y="221" class="lab">05 Systems of Record</text>
+    <text x="93" y="221" class="num">05</text>
+  </g>
+
+  <!-- soft horizontal highlight band sweeping through the lit plate (01) -->
+  <g>
+    <line x1="86" y1="97" x2="352" y2="97" class="sw"/>
+    <line x1="86" y1="100" x2="352" y2="100" class="sw"/>
+    <line x1="86" y1="103" x2="352" y2="103" class="sw"/>
+    <polygon points="86,108 330,108 374,86 130,86" fill="#c29bf5" fill-opacity=".07"/>
+    <text x="338" y="92" class="act" transform="rotate(-9 338 92)">sweep</text>
+  </g>
+
+  <!-- architecture-layer note: the four blueprint layers fold into the plates -->
+  <text x="22" y="258" class="num">blueprint layers fold in: Engagement | Insight & Analytics | Platforms | Client & Partner</text>
+  <line x1="22" y1="264" x2="418" y2="264" class="ax" stroke-opacity=".25"/>
+
+  <!-- slow-rotation indicator: a faint arc, no orbit -->
+  <path d="M 360 290 A 40 14 0 0 1 410 290" fill="none" stroke="#c29bf5" stroke-width=".8" stroke-opacity=".4"/>
+  <polygon points="410,290 405,287 405,293" fill="#c29bf5" fill-opacity=".4"/>
+  <text x="385" y="304" text-anchor="middle" class="act">slow yaw</text>
+
+  <!-- scroll-advance indicator -->
+  <text x="28" y="296" class="act">scroll advances stage 1 to 6 along the rail</text>
+</svg></div>
+      <p class="why">It is the literal 5-plate methodology stack the case study already uses, reused verbatim as a calm tilted backdrop, so the functional lending lifecycle reads as a true sibling of the spec stack rather than a new metaphor. Restraint comes from doing nothing but moving a single soft highlight through one plate at a time, which feels like a boardroom slide quietly turning, not a visualization performing.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole stack rotates almost imperceptibly (a few degrees of slow yaw) while scroll advances the six lifecycle stages along the top rail; as each stage lands, one soft horizontal highlight band cross-fades to the methodology plate that stage leans on, illuminating that single layer and dimming the rest. No orbiting, no comets, only the measured sweep and a faint settle.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The five tilted plates are exactly the five methodology layers top-to-bottom: 01 Brain and Agent Orchestration, 02 Model Substrate, 03 Tools and MCP Servers, 04 Data Foundation, 05 Systems of Record, and the sweeping highlight maps each lifecycle stage to the layer it most exercises (Prospecting to 04 Data, Credit Analysis to 02/03, Approval to 01, Servicing to 05).</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">06</span><div><h2>Concentric Credit Dial</h2><div class="tag">Five rings, one stage hand sweeping slowly</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="hub" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c29bf5" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#a100ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- title -->
+  <text x="20" y="24" fill="#c29bf5" font-family="sans-serif" font-size="11" letter-spacing="2">CONCENTRIC CREDIT DIAL — near top-down, slow rotate</text>
+
+  <!-- dial center -->
+  <g transform="translate(200,170)">
+    <!-- five concentric layer rings (outer 05 -> inner 01) -->
+    <ellipse cx="0" cy="0" rx="138" ry="86" fill="none" stroke="#a100ff" stroke-opacity="0.55" stroke-width="1.2"/>
+    <ellipse cx="0" cy="0" rx="110" ry="68" fill="none" stroke="#c29bf5" stroke-opacity="0.45" stroke-width="1"/>
+    <ellipse cx="0" cy="0" rx="82"  ry="51" fill="none" stroke="#c29bf5" stroke-opacity="0.45" stroke-width="1"/>
+    <ellipse cx="0" cy="0" rx="54"  ry="33" fill="none" stroke="#c29bf5" stroke-opacity="0.45" stroke-width="1"/>
+    <ellipse cx="0" cy="0" rx="26"  ry="16" fill="none" stroke="#a100ff" stroke-opacity="0.7"  stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="34" fill="url(#hub)"/>
+    <circle cx="0" cy="0" r="3" fill="#c29bf5"/>
+
+    <!-- six radial sector spokes (faint grid, every 60deg) -->
+    <line x1="0" y1="0" x2="138" y2="0"    stroke="#c29bf5" stroke-opacity="0.18"/>
+    <line x1="0" y1="0" x2="69"  y2="-74"  stroke="#c29bf5" stroke-opacity="0.18"/>
+    <line x1="0" y1="0" x2="-69" y2="-74"  stroke="#c29bf5" stroke-opacity="0.18"/>
+    <line x1="0" y1="0" x2="-138" y2="0"   stroke="#c29bf5" stroke-opacity="0.18"/>
+    <line x1="0" y1="0" x2="-69" y2="74"   stroke="#c29bf5" stroke-opacity="0.18"/>
+    <line x1="0" y1="0" x2="69"  y2="74"   stroke="#c29bf5" stroke-opacity="0.18"/>
+
+    <!-- the single restrained stage-arc (currently on stage 3) -->
+    <path d="M -69 -74 A 138 86 0 0 1 4 -86" fill="none" stroke="#a100ff" stroke-width="3" stroke-opacity="0.95" stroke-linecap="round"/>
+    <circle cx="4" cy="-86" r="3.4" fill="#c29bf5"/>
+    <text x="14" y="-90" fill="#c29bf5" font-family="sans-serif" font-size="8">sweep ▸</text>
+  </g>
+
+  <!-- six stage labels around the dial, in order -->
+  <text x="338" y="172" fill="#c29bf5" font-family="sans-serif" font-size="8.5">1 Prospecting</text>
+  <text x="338" y="183" fill="#a100ff" font-family="sans-serif" font-size="6.5" opacity="0.8">lead / cluster / batch-rate</text>
+
+  <text x="262" y="74" fill="#c29bf5" font-family="sans-serif" font-size="8.5">2 Sales</text>
+  <text x="244" y="85" fill="#a100ff" font-family="sans-serif" font-size="6.5" opacity="0.8">onboard / pre-score / KYC</text>
+
+  <text x="96" y="74" fill="#c29bf5" font-family="sans-serif" font-size="8.5" text-anchor="end">3 Credit Analysis</text>
+  <text x="116" y="85" fill="#a100ff" font-family="sans-serif" font-size="6.5" text-anchor="end" opacity="0.8">spreading / collateral / DD</text>
+
+  <text x="18" y="172" fill="#c29bf5" font-family="sans-serif" font-size="8.5">4 Approval</text>
+  <text x="18" y="183" fill="#a100ff" font-family="sans-serif" font-size="6.5" opacity="0.8">pricing / covenants / sign</text>
+
+  <text x="96" y="270" fill="#c29bf5" font-family="sans-serif" font-size="8.5" text-anchor="end">5 Offering / Set-up</text>
+  <text x="116" y="281" fill="#a100ff" font-family="sans-serif" font-size="6.5" text-anchor="end" opacity="0.8">drawdown / limits / docs</text>
+
+  <text x="262" y="270" fill="#c29bf5" font-family="sans-serif" font-size="8.5">6 Servicing</text>
+  <text x="262" y="281" fill="#a100ff" font-family="sans-serif" font-size="6.5" opacity="0.8">EWS / exposure / reporting</text>
+
+  <!-- ring legend: 5 layers, center outward -->
+  <g font-family="sans-serif" font-size="7.5" fill="#c29bf5">
+    <text x="200" y="172" text-anchor="middle" fill="#06050a" font-weight="bold">01</text>
+    <text x="20" y="300">rings, center → rim:</text>
+    <text x="20" y="311" fill="#a100ff" opacity="0.85">01 Brain/Orchestration · 02 Model · 03 Tools/MCP · 04 Data · 05 Systems of Record</text>
+  </g>
+</svg></div>
+      <p class="why">It reduces the entire commercial-credit lifecycle to one calm radial instrument: five flat concentric rings (the architecture, read as the methodology's five layers) with a single understated arc marking the six stages in order, so there is exactly one moving part and no orrery clutter. It reads premium because it borrows the same flat-plate, straight-edge vocabulary as the methodology stack and the spec stack, just folded into a top-down dial, so an executive sees governance, not a gadget.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole dial sits near top-down and rotates a few degrees per scroll-screen, slow and continuous; the single stage-arc advances one notch at a time across the six labelled sectors as the reader scrolls, each ring brightening only when its sector is active. No comets, no multi-speed orbits. One arc, one gentle turn.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The five rings map one-to-one, center outward, to the methodology: the bullseye core is 01 Brain and Agent Orchestration (the dial's hub that drives the sweep), ring 2 is 02 Model Substrate, ring 3 is 03 Tools and MCP Servers, ring 4 is 04 Data Foundation (Systems of Insight and Analytics), and the outer ring is 05 Systems of Record (Core Banking and Systems of Engagement at the rim where customers touch it).</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">07</span><div><h2>Pipeline Spine</h2><div class="tag">Six stages, one spine, five layers</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Pipeline Spine: six lending stages over five methodology layers</title>
+<desc>Six evenly spaced stage nodes on one horizontal spine, with thin vertical ticks dropping to five horizontal layer bands.</desc>
+<style>
+  .ln{stroke:#c29bf5;fill:none;}
+  .lnf{stroke:#a100ff;fill:none;}
+  .fp{fill:#a100ff;fill-opacity:0.06;stroke:#c29bf5;stroke-opacity:0.5;}
+  .nd{fill:#06050a;stroke:#c29bf5;}
+  .ndlit{fill:#a100ff;fill-opacity:0.18;stroke:#a100ff;}
+  .tick{stroke:#c29bf5;stroke-opacity:0.35;}
+  .ticklit{stroke:#a100ff;stroke-opacity:0.9;}
+  text{fill:#c29bf5;font-family:sans-serif;}
+  .stg{font-size:7px;}
+  .num{font-size:6px;fill:#a100ff;}
+  .lyr{font-size:6.5px;}
+  .lid{font-size:6px;fill:#a100ff;}
+  .cap{font-size:6px;fill:#c29bf5;fill-opacity:0.6;}
+</style>
+
+<!-- caption -->
+<text x="20" y="22" class="cap">FUNCTIONAL VIEW · Commercial Credit Lifecycle</text>
+
+<!-- THE SPINE -->
+<line x1="36" y1="56" x2="404" y2="56" class="lnf" stroke-width="1.2"/>
+
+<!-- six evenly spaced stage nodes (active pulse on node 3) -->
+<!-- x positions: 56,124,192,260,328,396 -->
+<g>
+  <circle cx="56"  cy="56" r="6" class="nd"/>
+  <circle cx="124" cy="56" r="6" class="nd"/>
+  <circle cx="192" cy="56" r="7" class="ndlit"/>
+  <circle cx="192" cy="56" r="3" class="lnf" fill="#a100ff"/>
+  <circle cx="260" cy="56" r="6" class="nd"/>
+  <circle cx="328" cy="56" r="6" class="nd"/>
+  <circle cx="396" cy="56" r="6" class="nd"/>
+</g>
+
+<!-- stage numbers + labels -->
+<text x="56"  y="40" text-anchor="middle" class="num">01</text>
+<text x="124" y="40" text-anchor="middle" class="num">02</text>
+<text x="192" y="40" text-anchor="middle" class="num">03</text>
+<text x="260" y="40" text-anchor="middle" class="num">04</text>
+<text x="328" y="40" text-anchor="middle" class="num">05</text>
+<text x="396" y="40" text-anchor="middle" class="num">06</text>
+
+<text x="56"  y="76" text-anchor="middle" class="stg">Prospecting</text>
+<text x="124" y="76" text-anchor="middle" class="stg">Sales</text>
+<text x="192" y="76" text-anchor="middle" class="stg">Credit Analysis</text>
+<text x="260" y="76" text-anchor="middle" class="stg">Approval</text>
+<text x="328" y="76" text-anchor="middle" class="stg">Offering / Set-up</text>
+<text x="396" y="76" text-anchor="middle" class="stg">Servicing</text>
+
+<!-- vertical ticks from each node to the band field (band field y: 96..300) -->
+<!-- non-lit stage ticks (faint) -->
+<line x1="56"  y1="62" x2="56"  y2="300" class="tick"/>
+<line x1="124" y1="62" x2="124" y2="300" class="tick"/>
+<line x1="260" y1="62" x2="260" y2="300" class="tick"/>
+<line x1="328" y1="62" x2="328" y2="300" class="tick"/>
+<line x1="396" y1="62" x2="396" y2="300" class="tick"/>
+<!-- active stage 03 tick (lit) — Credit Analysis touches L01,L02,L03,L04 -->
+<line x1="192" y1="63" x2="192" y2="252" class="ticklit"/>
+
+<!-- five layer bands (flat translucent plates) -->
+<!-- band rows centered at y: 108,144,180,216,252 ; height 28 -->
+<g>
+  <rect x="36" y="96"  width="368" height="26" rx="2" class="fp"/>
+  <rect x="36" y="132" width="368" height="26" rx="2" class="fp"/>
+  <rect x="36" y="168" width="368" height="26" rx="2" class="fp"/>
+  <rect x="36" y="204" width="368" height="26" rx="2" class="fp"/>
+  <rect x="36" y="240" width="368" height="26" rx="2" class="fp"/>
+</g>
+
+<!-- layer ids + names (methodology mapping) -->
+<text x="44" y="106" class="lid">01</text>
+<text x="44" y="113" class="lyr">Brain & Agent Orchestration</text>
+<text x="240" y="113" class="cap">RM assignment · batch-rating</text>
+
+<text x="44" y="142" class="lid">02</text>
+<text x="44" y="149" class="lyr">Model Substrate</text>
+<text x="240" y="149" class="cap">scoring · NBA · insights</text>
+
+<text x="44" y="178" class="lid">03</text>
+<text x="44" y="185" class="lyr">Tools & MCP — Platforms</text>
+<text x="240" y="185" class="cap">CRM · Onboarding · LOS · Core</text>
+
+<text x="44" y="214" class="lid">04</text>
+<text x="44" y="221" class="lyr">Data Foundation</text>
+<text x="240" y="221" class="cap">Single Customer View · MI</text>
+
+<text x="44" y="250" class="lid">05</text>
+<text x="44" y="257" class="lyr">Systems of Record</text>
+<text x="240" y="257" class="cap">Core Banking ledger</text>
+
+<!-- tick contact dots where active stage meets each touched band -->
+<circle cx="192" cy="108" r="2.2" class="lnf" fill="#a100ff"/>
+<circle cx="192" cy="144" r="2.2" class="lnf" fill="#a100ff"/>
+<circle cx="192" cy="180" r="2.2" class="lnf" fill="#a100ff"/>
+<circle cx="192" cy="216" r="2.2" class="lnf" fill="#a100ff"/>
+
+<!-- engagement footer line (Systems of Engagement, quiet) -->
+<line x1="36" y1="288" x2="404" y2="288" class="ln" stroke-opacity="0.4"/>
+<text x="44" y="300" class="cap">Systems of Engagement · Web/App · RMs · 3rd-party · chatbots</text>
+</svg></div>
+      <p class="why">It reuses the case study's own visual grammar (a flat plate stack plus a clean horizontal axis), so it reads as a quiet sibling of the methodology stack rather than a new metaphor. Restraint comes from a single straight spine, evenly-spaced nodes, and orthogonal ticks: nothing curves, orbits, or competes for attention, which is exactly the executive register the set needs.</p>
+      <div class="meta"><span class="ml">Animates</span><span>A faint pulse travels the spine left to right, lighting one stage node at a time in scroll order; as each lights, only the thin vertical ticks for the layers it touches brighten, then settle. The whole hologram rotates about 8 degrees per full scroll, slow and continuous, with no other motion.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The five layer bands beneath the spine ARE the methodology stack, top to bottom: Brain and Agent Orchestration (the spine itself and stage logic) over Model Substrate, Tools and MCP Servers (the platform connectors), Data Foundation (Single Customer View and analytics), and Systems of Record (Core Banking) at the base, so every stage tick visibly resolves into the same 01 to 05 layers used across the study.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">08</span><div><h2>The Operating Matrix</h2><div class="tag">Five layers, six stages, one quiet grid</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .ax{fill:none;stroke:#c29bf5;stroke-width:1}
+      .grid{fill:none;stroke:#a100ff;stroke-width:.6;opacity:.45}
+      .cellon{fill:#a100ff;opacity:.30;stroke:#c29bf5;stroke-width:.6}
+      .cellhi{fill:#c29bf5;opacity:.42;stroke:#c29bf5;stroke-width:.7}
+      .lbl{fill:#c29bf5;font-family:sans-serif;font-size:7px}
+      .row{fill:#c29bf5;font-family:sans-serif;font-size:6.5px}
+      .num{fill:#a100ff;font-family:sans-serif;font-size:7px;font-weight:bold}
+      .ttl{fill:#c29bf5;font-family:sans-serif;font-size:8px;letter-spacing:1px}
+      .dim{fill:#c29bf5;font-family:sans-serif;font-size:6px;opacity:.7}
+    </style>
+  </defs>
+
+  <text x="20" y="22" class="ttl">LAYER  x  STAGE  —  OPERATING MATRIX</text>
+  <text x="20" y="33" class="dim">commercial credit lifecycle · slow 3D tilt · scroll-lit diagonal</text>
+
+  <!-- Tilted grid plane: a parallelogram skew gives the gentle 3D plate feel.
+       Rows = 5 methodology layers (top->bottom). Cols = 6 lifecycle stages (left->right). -->
+  <!-- transform applies a small shear + vertical scale to read as a receding plane -->
+  <g transform="translate(118,60) matrix(1,0,-0.42,0.86,0,0)">
+
+    <!-- 5 row bands x 6 col bands, cell 34w x 30h -->
+    <!-- outer frame -->
+    <rect x="0" y="0" width="204" height="150" class="grid"/>
+
+    <!-- vertical column rules (6 stages -> 5 inner lines) -->
+    <line x1="34"  y1="0" x2="34"  y2="150" class="grid"/>
+    <line x1="68"  y1="0" x2="68"  y2="150" class="grid"/>
+    <line x1="102" y1="0" x2="102" y2="150" class="grid"/>
+    <line x1="136" y1="0" x2="136" y2="150" class="grid"/>
+    <line x1="170" y1="0" x2="170" y2="150" class="grid"/>
+
+    <!-- horizontal row rules (5 layers -> 4 inner lines) -->
+    <line x1="0" y1="30"  x2="204" y2="30"  class="grid"/>
+    <line x1="0" y1="60"  x2="204" y2="60"  class="grid"/>
+    <line x1="0" y1="90"  x2="204" y2="90"  class="grid"/>
+    <line x1="0" y1="120" x2="204" y2="120" class="grid"/>
+
+    <!-- LIT CELLS: measured diagonal of activity.
+         Row0 top = 01 Orchestration ... Row4 bottom = 05 Records.
+         Early stages (left) light lower rows; late stages (right) light upper rows. -->
+
+    <!-- col0 Prospecting: records + data -->
+    <rect x="1"   y="121" width="32" height="28" class="cellon"/>
+    <rect x="1"   y="91"  width="32" height="28" class="cellhi"/>
+    <!-- col1 Sales: data + platforms -->
+    <rect x="35"  y="91"  width="32" height="28" class="cellon"/>
+    <rect x="35"  y="61"  width="32" height="28" class="cellhi"/>
+    <!-- col2 Credit Analysis: platforms + data -->
+    <rect x="69"  y="61"  width="32" height="28" class="cellhi"/>
+    <rect x="69"  y="91"  width="32" height="28" class="cellon"/>
+    <!-- col3 Approval: platforms + insight -->
+    <rect x="103" y="61"  width="32" height="28" class="cellon"/>
+    <rect x="103" y="31"  width="32" height="28" class="cellhi"/>
+    <!-- col4 Offering/Set-up: insight + platforms -->
+    <rect x="137" y="31"  width="32" height="28" class="cellhi"/>
+    <rect x="137" y="61"  width="32" height="28" class="cellon"/>
+    <!-- col5 Servicing: orchestration + insight (top, AI/EWS) -->
+    <rect x="171" y="1"   width="32" height="28" class="cellhi"/>
+    <rect x="171" y="31"  width="32" height="28" class="cellon"/>
+
+  </g>
+
+  <!-- ROW LABELS (left, methodology layers, top->bottom) -->
+  <text x="6" y="74"  class="num">01</text><text x="20" y="74"  class="row">Brain / Agent Orchestration</text>
+  <text x="6" y="100" class="num">02</text><text x="20" y="100" class="row">Model Substrate · Insight</text>
+  <text x="6" y="126" class="num">03</text><text x="20" y="126" class="row">Tools / MCP · Platforms</text>
+  <text x="6" y="152" class="num">04</text><text x="20" y="152" class="row">Data Foundation</text>
+  <text x="6" y="178" class="num">05</text><text x="20" y="178" class="row">Systems of Record</text>
+
+  <!-- subtle leader ticks from labels to plane -->
+  <line x1="112" y1="71"  x2="120" y2="71"  class="grid"/>
+  <line x1="112" y1="123" x2="120" y2="129" class="grid"/>
+  <line x1="112" y1="175" x2="120" y2="188" class="grid"/>
+
+  <!-- COLUMN LABELS (bottom, six lifecycle stages, left->right) -->
+  <text x="120" y="232" class="lbl" transform="rotate(-20 120 232)">1 Prospecting</text>
+  <text x="148" y="246" class="lbl" transform="rotate(-20 148 246)">2 Sales</text>
+  <text x="180" y="260" class="lbl" transform="rotate(-20 180 260)">3 Credit Analysis</text>
+  <text x="216" y="274" class="lbl" transform="rotate(-20 216 274)">4 Approval</text>
+  <text x="252" y="288" class="lbl" transform="rotate(-20 252 288)">5 Offering / Set-up</text>
+  <text x="288" y="302" class="lbl" transform="rotate(-20 288 302)">6 Servicing & Monitoring</text>
+
+  <!-- activity caption: the diagonal -->
+  <text x="300" y="120" class="dim">lit cells =</text>
+  <text x="300" y="130" class="dim">where a layer</text>
+  <text x="300" y="140" class="dim">serves a stage</text>
+  <line x1="296" y1="146" x2="338" y2="190" class="ax" opacity=".5" stroke-dasharray="2 3"/>
+  <text x="300" y="204" class="dim">scroll fills the</text>
+  <text x="300" y="214" class="dim">diagonal L→R</text>
+</svg></div>
+      <p class="why">A 5x6 data grid is the most boardroom-literate form there is: an executive reads a matrix without instruction, and the tilt-in-3D plane lets it sit as a calm sibling to the methodology plate stack rather than a separate metaphor. Restraint comes from doing nothing decorative. Just lit and unlit cells on a ruled plane, so the only "graphic" is the truth of where each lifecycle stage actually touches the stack.</p>
+      <div class="meta"><span class="ml">Animates</span><span>As you scroll, the whole plane rotates a few slow degrees and the active cells fill left-to-right one stage column at a time, tracing a measured diagonal of activity (early stages light the lower record/data rows, later stages light the upper orchestration rows). Cells fade in by a soft opacity lift only. No travel, no orbit, no pulse.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>The five rows ARE the methodology, top-to-bottom: 01 Brain &amp; Agent Orchestration (= Systems of Engagement: virtual RMs, chatbots, NBA), 02 Model Substrate (= Insight &amp; Analytics: Single Customer View, Customer Insights, MI), 03 Tools &amp; MCP Servers (= Platforms: CRM, Onboarding, LOS &amp; Credit Risk, Core Banking), 04 Data Foundation (= collateral/financial-spreading/KYC data plane), 05 Systems of Record (= Client &amp; Partner Ecosystems, Core Banking ledger). Each of the six columns is a lifecycle stage, so every lit cell reads as "this layer serves this stage."</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">09</span><div><h2>The Ledger Rail</h2><div class="tag">Six stages, one quiet vertical rail</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <!-- title -->
+  <text x="24" y="22" fill="#c29bf5" font-size="12" letter-spacing="1.5">THE CUSTOMERS' CREDIT JOURNEY</text>
+  <text x="24" y="35" fill="#8a6fb0" font-size="8" letter-spacing="0.5">commercial loan origination · vertical lifecycle rail</text>
+
+  <!-- the thin spine -->
+  <line x1="44" y1="48" x2="44" y2="300" stroke="#5a3f7a" stroke-width="1.2"/>
+  <!-- scroll "reached" marker -->
+  <circle cx="44" cy="160" r="4" fill="#a100ff"/>
+  <path d="M44 160 l8 -4 0 8 z" fill="#c29bf5" opacity="0.7"/>
+  <text x="58" y="155" fill="#a100ff" font-size="6" opacity="0.8">scroll ▸ reached</text>
+
+  <!-- layer-tag legend -->
+  <text x="330" y="22" fill="#8a6fb0" font-size="6">METHODOLOGY LAYERS</text>
+  <g font-size="6" fill="#8a6fb0">
+    <rect x="330" y="28" width="6" height="6" fill="#a100ff"/><text x="340" y="33">01 Brain/Orch</text>
+    <rect x="330" y="37" width="6" height="6" fill="#a100ff"/><text x="340" y="42">02 Model</text>
+    <rect x="330" y="46" width="6" height="6" fill="none" stroke="#5a3f7a"/><text x="340" y="51">03 Tools/MCP</text>
+    <rect x="330" y="55" width="6" height="6" fill="none" stroke="#5a3f7a"/><text x="340" y="60">04 Data</text>
+    <rect x="330" y="64" width="6" height="6" fill="none" stroke="#5a3f7a"/><text x="340" y="69">05 Record</text>
+  </g>
+
+  <!-- node dots on spine -->
+  <circle cx="44" cy="62" r="2.5" fill="#a100ff"/>
+  <circle cx="44" cy="103" r="2.5" fill="#a100ff"/>
+  <circle cx="44" cy="144" r="2.5" fill="#a100ff"/>
+  <circle cx="44" cy="185" r="2.5" fill="#5a3f7a"/>
+  <circle cx="44" cy="226" r="2.5" fill="#5a3f7a"/>
+  <circle cx="44" cy="267" r="2.5" fill="#5a3f7a"/>
+
+  <!-- helper: cards. lit ones (reached) get brighter stroke -->
+  <!-- 1 Prospecting -->
+  <g>
+    <rect x="62" y="50" width="240" height="32" rx="3" fill="#a100ff" fill-opacity="0.07" stroke="#c29bf5" stroke-width="1"/>
+    <text x="70" y="63" fill="#c29bf5" font-size="9">1 · Prospecting</text>
+    <text x="70" y="76" fill="#8a6fb0" font-size="6">lead ID · clustering · RM assignment · pipeline · batch-rating</text>
+    <g><rect x="262" y="55" width="5" height="5" fill="#a100ff"/><rect x="269" y="55" width="5" height="5" fill="#a100ff"/><rect x="276" y="55" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="283" y="55" width="5" height="5" fill="#a100ff"/><rect x="290" y="55" width="5" height="5" fill="none" stroke="#5a3f7a"/></g>
+  </g>
+  <!-- 2 Sales -->
+  <g>
+    <rect x="62" y="91" width="240" height="32" rx="3" fill="#a100ff" fill-opacity="0.07" stroke="#c29bf5" stroke-width="1"/>
+    <text x="70" y="104" fill="#c29bf5" font-size="9">2 · Sales</text>
+    <text x="70" y="117" fill="#8a6fb0" font-size="6">onboarding · application prep · pre-scoring & KYC · mandates</text>
+    <g><rect x="262" y="96" width="5" height="5" fill="#a100ff"/><rect x="269" y="96" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="276" y="96" width="5" height="5" fill="#a100ff"/><rect x="283" y="96" width="5" height="5" fill="#a100ff"/><rect x="290" y="96" width="5" height="5" fill="#a100ff"/></g>
+  </g>
+  <!-- 3 Credit Analysis -->
+  <g>
+    <rect x="62" y="132" width="240" height="32" rx="3" fill="#a100ff" fill-opacity="0.07" stroke="#c29bf5" stroke-width="1"/>
+    <text x="70" y="145" fill="#c29bf5" font-size="9">3 · Credit Analysis</text>
+    <text x="70" y="158" fill="#8a6fb0" font-size="6">financial spreading · collateral · KYC/DD · CA preparation</text>
+    <g><rect x="262" y="137" width="5" height="5" fill="#a100ff"/><rect x="269" y="137" width="5" height="5" fill="#a100ff"/><rect x="276" y="137" width="5" height="5" fill="#a100ff"/><rect x="283" y="137" width="5" height="5" fill="#a100ff"/><rect x="290" y="137" width="5" height="5" fill="#a100ff"/></g>
+  </g>
+  <!-- 4 Approval (not yet reached) -->
+  <g opacity="0.55">
+    <rect x="62" y="173" width="240" height="32" rx="3" fill="none" stroke="#5a3f7a" stroke-width="1"/>
+    <text x="70" y="186" fill="#8a6fb0" font-size="9">4 · Approval</text>
+    <text x="70" y="199" fill="#6b5388" font-size="6">drafting · pricing & terms · covenants · decision · signatures</text>
+    <g><rect x="262" y="178" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="269" y="178" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="276" y="178" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="283" y="178" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="290" y="178" width="5" height="5" fill="none" stroke="#5a3f7a"/></g>
+  </g>
+  <!-- 5 Offering / Set-up -->
+  <g opacity="0.55">
+    <rect x="62" y="214" width="240" height="32" rx="3" fill="none" stroke="#5a3f7a" stroke-width="1"/>
+    <text x="70" y="227" fill="#8a6fb0" font-size="9">5 · Offering / Set-up</text>
+    <text x="70" y="240" fill="#6b5388" font-size="6">drawdown · account/limit set-up · covenant track · docs</text>
+    <g><rect x="262" y="219" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="269" y="219" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="276" y="219" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="283" y="219" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="290" y="219" width="5" height="5" fill="none" stroke="#5a3f7a"/></g>
+  </g>
+  <!-- 6 Servicing & Monitoring -->
+  <g opacity="0.55">
+    <rect x="62" y="255" width="240" height="32" rx="3" fill="none" stroke="#5a3f7a" stroke-width="1"/>
+    <text x="70" y="268" fill="#8a6fb0" font-size="9">6 · Servicing & Monitoring</text>
+    <text x="70" y="281" fill="#6b5388" font-size="6">portfolio · EWS · covenant · exposure · collections · reg-report</text>
+    <g><rect x="262" y="260" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="269" y="260" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="276" y="260" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="283" y="260" width="5" height="5" fill="none" stroke="#5a3f7a"/><rect x="290" y="260" width="5" height="5" fill="none" stroke="#5a3f7a"/></g>
+  </g>
+
+  <!-- architecture-layer footer band -->
+  <line x1="24" y1="300" x2="416" y2="300" stroke="#5a3f7a" stroke-width="0.6" stroke-dasharray="2 2"/>
+  <text x="24" y="312" fill="#6b5388" font-size="6">architecture beneath: Ecosystems ▸ Platforms (CRM·LOS·Core) ▸ Insight & Analytics (SCV·NBA·MI) ▸ Engagement (Web·RM·Data&AI)</text>
+</svg></div>
+      <p class="why">It reads as a premium document: six slim stacked cards on a single thin spine, the same restrained grammar as the methodology 5-plate stack, so it sits as a natural sibling rather than a flashy cousin. The restraint comes from flat plates, one straight rail, and tiny layer-tags instead of any orbiting or racing motion, which is exactly the boardroom register a banking case study demands.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The hologram rotates very slowly (one full turn over ~60s) so cards stay legible at all times; scroll position drives a single "reached" marker down the spine, lighting each card in sequence with a gentle 0.4s fade. Nothing else moves.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>Each card carries a small fixed-order tag strip 01-05 (Brain/Orchestration, Model Substrate, Tools &amp; MCP, Data Foundation, Systems of Record), and the tags it actively uses are filled violet while the rest stay outline, so the column doubles as a legend showing how every lifecycle stage draws on the five methodology layers.</span></div>
+    </article>
+    <article class="card">
+      <div class="cardhead"><span class="num">10</span><div><h2>Isometric Slab Path</h2><div class="tag">Five slabs. One quiet path.</div></div></div>
+      <div class="viz"><svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Isometric Slab Path — commercial credit lifecycle over the five-layer brain stack</title>
+  <desc>Five stacked isometric slabs with one straight path tracing six lending stages.</desc>
+  <defs>
+    <g id="slab">
+      <path d="M0,0 L150,-46 L300,0 L150,46 Z" fill="#a100ff" fill-opacity="0.06" stroke="#c29bf5" stroke-width="1"/>
+    </g>
+  </defs>
+
+  <!-- stack: five slabs bottom-to-top -->
+  <g transform="translate(70,250)">
+    <use href="#slab" transform="translate(0,0)"/>
+    <use href="#slab" transform="translate(0,-44)"/>
+    <use href="#slab" transform="translate(0,-88)"/>
+    <use href="#slab" transform="translate(0,-132)"/>
+    <use href="#slab" transform="translate(0,-176)"/>
+
+    <!-- slab edges (vertical risers, faint) -->
+    <g stroke="#a100ff" stroke-opacity="0.4" stroke-width="1">
+      <line x1="0" y1="0" x2="0" y2="-176"/>
+      <line x1="150" y1="46" x2="150" y2="-130"/>
+      <line x1="300" y1="0" x2="300" y2="-176"/>
+    </g>
+  </g>
+
+  <!-- layer labels (right side) -->
+  <g font-family="sans-serif" font-size="8" fill="#c29bf5" text-anchor="start">
+    <text x="378" y="256">05 Systems of Record</text>
+    <text x="378" y="212">04 Data Foundation</text>
+    <text x="378" y="168">03 Tools & MCP</text>
+    <text x="378" y="124">02 Model Substrate</text>
+    <text x="378" y="80">01 Brain / Orchestration</text>
+  </g>
+  <g stroke="#c29bf5" stroke-opacity="0.35" stroke-width="0.75" stroke-dasharray="2 2">
+    <line x1="300" y1="252" x2="376" y2="252"/>
+    <line x1="300" y1="208" x2="376" y2="208"/>
+    <line x1="300" y1="164" x2="376" y2="164"/>
+    <line x1="300" y1="120" x2="376" y2="120"/>
+    <line x1="300" y1="76" x2="376" y2="76"/>
+  </g>
+
+  <!-- the one calm path: straight isometric line climbing across the slabs -->
+  <g>
+    <path d="M84,236 L148,202 L196,178 L244,154 L292,130 L344,104"
+          fill="none" stroke="#a100ff" stroke-width="2" stroke-opacity="0.9"/>
+    <!-- stage nodes -->
+    <g fill="#06050a" stroke="#c29bf5" stroke-width="1.25">
+      <circle cx="84"  cy="236" r="4"/>
+      <circle cx="148" cy="202" r="4"/>
+      <circle cx="196" cy="178" r="4"/>
+      <circle cx="244" cy="154" r="4"/>
+      <circle cx="292" cy="130" r="4"/>
+      <circle cx="344" cy="104" r="4"/>
+    </g>
+    <!-- advancing light-node (scroll position) -->
+    <circle cx="244" cy="154" r="6" fill="#a100ff" fill-opacity="0.25" stroke="#c29bf5" stroke-width="1"/>
+  </g>
+
+  <!-- stage labels along the path -->
+  <g font-family="sans-serif" font-size="7.5" fill="#c29bf5" text-anchor="middle">
+    <text x="76"  y="252">1 Prospecting</text>
+    <text x="140" y="218">2 Sales</text>
+    <text x="186" y="194">3 Credit Analysis</text>
+    <text x="244" y="170">4 Approval</text>
+    <text x="292" y="118">5 Set-up</text>
+    <text x="348" y="92">6 Servicing</text>
+  </g>
+
+  <!-- sub-activity ticks (rough, restrained) -->
+  <g font-family="sans-serif" font-size="6" fill="#c29bf5" fill-opacity="0.7" text-anchor="middle">
+    <text x="76"  y="278">leads · RM assign · rating</text>
+    <text x="196" y="300">spreading · collateral · KYC</text>
+    <text x="316" y="296">drawdown · covenants · EWS</text>
+  </g>
+
+  <!-- title -->
+  <g font-family="sans-serif" fill="#c29bf5">
+    <text x="20" y="26" font-size="11" font-weight="700">The Customers' Credit Journey</text>
+    <text x="20" y="40" font-size="7.5" fill-opacity="0.7">commercial loan origination over the five-layer brain</text>
+  </g>
+</svg></div>
+      <p class="why">A tidy isometric stack of five architectural slabs reads as the calm, boardroom-grade sibling of the methodology's five-plate stack: same vocabulary, applied to the functional lifecycle. Restraint comes from flat plates, a single straight path, and one violet accent doing all the wayfinding, so nothing competes and the structure stays legible at a glance.</p>
+      <div class="meta"><span class="ml">Animates</span><span>The whole slab stack rotates a few degrees, very slowly and continuously, like a held architectural model. Scroll advances one calm light-node along the straight path, stepping through the six stages and rising slab to slab as it goes.</span></div>
+      <div class="meta"><span class="ml">5-layer tie</span><span>Bottom to top the five slabs ARE the methodology: 05 Systems of Record (Core Banking / Client &amp; Partner Ecosystems), 04 Data Foundation (Single Customer View / MI), 03 Tools &amp; MCP Servers (CRM, Onboarding, Loan Origination &amp; Credit Risk platforms), 02 Model Substrate (Customer Insights / Next Best Actions), 01 Brain &amp; Agent Orchestration (Systems of Engagement: RMs, virtual RMs, chatbots, Data and AI).</span></div>
+    </article></div>
+<footer>Connectry · 10 conservative concepts for the commercial-credit brain case study</footer>
+</body></html>

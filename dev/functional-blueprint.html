@@ -1,0 +1,206 @@
+<!doctype html><html lang="en" data-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Customers' Credit Journey · Lending Atrium</title>
+<style>
+  :root{ --core:#a100ff; --light:#c29bf5; --bg:#06050a; --ink:#ece6f6; --muted:#a89cc0; --text2:#cfc8dd; --hair:rgba(200,170,255,.16); --vacc:var(--light); --ease:cubic-bezier(.22,1,.36,1); }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:radial-gradient(120% 90% at 55% 25%,#0c0817,#06050a 72%);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .head{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 20px;max-width:920px;margin:0 auto}
+  .head .ic{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;color:var(--vacc);background:color-mix(in srgb,var(--core) 8%,transparent);border:1px solid color-mix(in srgb,var(--core) 22%,var(--hair));margin-bottom:22px}
+  .head .ic svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.6}
+  .head .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--vacc);font-weight:700;margin-bottom:14px}
+  .head h1{font-size:clamp(28px,4vw,50px);letter-spacing:-.025em;line-height:1.04;margin:0 0 16px}
+  .head p{color:var(--muted);font-size:clamp(15px,1.3vw,18px);line-height:1.6;max-width:64ch;margin:0}
+  .track{position:relative;height:640vh}
+  .pin{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .grid{width:min(1240px,92vw);display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(20px,3vw,56px);align-items:center}
+  .scene{position:relative;height:min(80vh,640px)}
+  #cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+  #labels{position:absolute;inset:0;pointer-events:none}
+  .glabel{position:absolute;left:0;top:0;white-space:nowrap;font-size:10.5px;font-weight:700;color:var(--ink);padding:2px 8px;border:1px solid color-mix(in srgb,var(--core) 36%,var(--hair));border-radius:999px;background:rgba(12,9,22,.6);backdrop-filter:blur(4px);opacity:0;transition:opacity .25s ease}
+  .plabel{position:absolute;left:0;top:0;white-space:nowrap;font-size:10px;font-weight:700;letter-spacing:.04em;color:var(--muted);opacity:0}
+  .plabel b{color:var(--vacc);margin-right:6px}
+  .rail{position:relative;z-index:2}
+  .steps{display:flex;align-items:center;gap:6px;margin-bottom:20px;opacity:0;transition:opacity .5s ease}
+  .steps.on{opacity:1}
+  .steps i{width:20px;height:4px;border-radius:2px;background:var(--hair);transition:background .35s ease,box-shadow .35s ease}
+  .steps i.done{background:color-mix(in srgb,var(--core) 52%,var(--hair))}
+  .steps i.cur{background:var(--core);box-shadow:0 0 10px color-mix(in srgb,var(--core) 60%,transparent)}
+  .cards{position:relative;min-height:clamp(420px,58vh,500px)}
+  .card{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s var(--ease);pointer-events:none}
+  .card.on{opacity:1;transform:none}
+  .cl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--vacc);font-weight:700}
+  .card h3{font-size:clamp(21px,2.3vw,30px);font-weight:800;letter-spacing:-.02em;margin:7px 0 4px;line-height:1.1}
+  .card .csub{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:13px}
+  .ccap{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);margin:0 0 9px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .chip{font-size:11.5px;font-weight:600;color:var(--text2);border:1px solid color-mix(in srgb,var(--core) 24%,var(--hair));border-radius:999px;padding:3px 10px;background:rgba(12,9,22,.34)}
+  .touch{font-size:13.5px;color:var(--muted);line-height:1.55;border-top:1px solid var(--hair);padding-top:12px}
+  .touch b{color:var(--ink);font-weight:700}
+  .lk{display:inline-flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+  .lk span{font-size:10.5px;font-weight:700;letter-spacing:.04em;color:var(--vacc);border:1px solid color-mix(in srgb,var(--core) 30%,var(--hair));border-radius:6px;padding:2px 7px}
+  .intro{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s var(--ease)}
+  .intro.on{opacity:1;transform:none}
+  .intro h3{font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.02em;margin:0 0 12px;line-height:1.1}
+  .intro p{color:var(--muted);font-size:15px;line-height:1.6;margin:0}
+  .prog{position:fixed;left:0;top:0;height:2px;background:linear-gradient(90deg,var(--core),var(--light));width:0;z-index:9}
+  .foot{position:fixed;left:0;right:0;bottom:16px;text-align:center;font-size:11px;color:var(--muted);letter-spacing:.04em;z-index:5;pointer-events:none}
+</style></head>
+<body>
+<div class="prog" id="prog"></div>
+<section class="head">
+  <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V8l4-3 4 3v12M13 20V11l3-2 3 2v9M8 12h2M8 15.5h2"/></svg></div>
+  <div class="k">The functional journey</div>
+  <h1>The customers' credit journey.</h1>
+  <p>One commercial loan, from first lead to a live, monitored facility. Watch it climb the brain layer by layer, lighting each stage of the lending lifecycle as it goes. Scroll to follow the deal.</p>
+</section>
+
+<div class="track" id="track">
+  <div class="pin">
+    <div class="grid">
+      <div class="scene">
+        <canvas id="cv"></canvas>
+        <div id="labels"></div>
+      </div>
+      <div class="rail">
+        <div class="steps" id="steps"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="cards" id="cards"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="foot">Lending Atrium · concept preview · scroll to send a deal through the lifecycle</div>
+
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+<script type="module">
+import * as THREE from 'three';
+const cv=document.getElementById('cv'), labelBox=document.getElementById('labels'), track=document.getElementById('track'),
+      prog=document.getElementById('prog'), stepsEl=document.getElementById('steps'), cardsEl=document.getElementById('cards');
+
+// the 5 methodology layers, as the atrium floors (top brain → bottom records)
+const PLATES=[
+  {n:'01', tag:'Brain & Orchestration', y:2.3},
+  {n:'02', tag:'Model Substrate', y:1.15},
+  {n:'03', tag:'Tools & MCP', y:0.0},
+  {n:'04', tag:'Data Foundation', y:-1.15},
+  {n:'05', tag:'Systems of Record', y:-2.3}
+];
+// the 6 lifecycle stages (the journey climbs across the floors)
+const STAGES=[
+  {n:'01', name:'Prospecting', sub:'find the deal', acts:['Lead identification','Clustering & scanning','RM assignment','Pipeline & opportunity','Batch-rating'], layers:[2,3], touch:'CRM, the single customer view and an early batch-rating surface the leads worth pursuing.'},
+  {n:'02', name:'Sales', sub:'open the relationship', acts:['Onboarding','Application preparation','Pre-scoring & KYC','Mandates'], layers:[1,2,3], touch:'Onboarding and KYC run through the tools and data; pre-scoring runs on the model.'},
+  {n:'03', name:'Credit Analysis', sub:'understand the risk', acts:['Financial spreading','Collateral estimation','KYC & due diligence','CA preparation'], layers:[0,1,2,3], touch:'Boom spreads the financials, the model rates them, and the brain assembles the analysis.'},
+  {n:'04', name:'Approval', sub:'decide', acts:['Agreement drafting','Pricing & terms','Covenants finalization','CA review','Approval decision','Signatures'], layers:[0,1], touch:'The brain orchestrates pricing and terms; the credit committee decides, governed on every call.'},
+  {n:'05', name:'Offering & Set-up', sub:'book the loan', acts:['Drawdown','Account / product / limit set-up','Covenant tracking','Collateral valuation','Documentation'], layers:[2,3,4], touch:'Core banking and the systems of record stand up the live facility and its limits.'},
+  {n:'06', name:'Servicing & Monitoring', sub:'keep it healthy', acts:['Portfolio monitoring','EWS · early-warning','Covenant monitoring','Limit & exposure','Collections & recoveries','Regulatory reporting'], layers:[0,1,3,4], touch:'The Early-Warning agent watches Risk 360 across the book, and every outcome flows back to the brain as a lesson.'}
+];
+
+// ----- rail: intro + 6 stage cards -----
+const intro=document.createElement('article'); intro.className='intro';
+intro.innerHTML='<h3>The same brain, across the whole lifecycle.</h3><p>The technical view showed where the brain lives. This is what it does: it carries one commercial loan from prospecting to servicing, touching exactly the layers each stage needs. Scroll, and the deal lights its way up.</p>';
+cardsEl.appendChild(intro);
+const cardEls=STAGES.map(s=>{ const a=document.createElement('article'); a.className='card';
+  a.innerHTML='<div class="cl">Stage '+s.n+' · '+s.sub+'</div><h3>'+s.name+'</h3>'+
+    '<div class="ccap">Core activity</div><div class="chips">'+s.acts.map(x=>'<span class="chip">'+x+'</span>').join('')+'</div>'+
+    '<div class="touch">'+s.touch+'<div class="lk">'+s.layers.map(li=>'<span>'+PLATES[li].n+' '+PLATES[li].tag.split(' ')[0]+'</span>').join('')+'</div></div>';
+  cardsEl.appendChild(a); return a; });
+const stepEls=[...stepsEl.children];
+
+// ----- three.js scene -----
+const renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}); renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene(); scene.fog=new THREE.FogExp2(0x06050a,0.036);
+const camera=new THREE.PerspectiveCamera(46,1,0.1,100); camera.position.set(0,0,9.4);
+const group=new THREE.Group(); group.rotation.x=-0.12; scene.add(group);
+function resize(){ const w=cv.clientWidth||1,h=cv.clientHeight||1; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+new ResizeObserver(resize).observe(cv); resize();
+const ADD=THREE.AdditiveBlending;
+
+// floors (the layers) — faint fill + bright edge, brighten when a stage touches them
+const PW=6.6, PD=3.2;
+const plates=PLATES.map(L=>{ const g=new THREE.Group(); g.position.y=L.y;
+  const fillM=new THREE.MeshBasicMaterial({color:0x7a3fd0,transparent:true,opacity:0.05,blending:ADD,depthWrite:false});
+  const fill=new THREE.Mesh(new THREE.PlaneGeometry(PW,PD),fillM); fill.rotation.x=-Math.PI/2; g.add(fill);
+  const edgeM=new THREE.LineBasicMaterial({color:0xc29bf5,transparent:true,opacity:0.3});
+  const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.PlaneGeometry(PW,PD)),edgeM); edge.rotation.x=-Math.PI/2; g.add(edge);
+  group.add(g);
+  const lab=document.createElement('div'); lab.className='plabel'; lab.innerHTML='<b>'+L.n+'</b>'+L.tag; labelBox.appendChild(lab);
+  return {g,fillM,edgeM,L,lab}; });
+
+// stage pylons — the journey climbs from records (front-left) up to brain (back-right)
+function pylonPos(i){ return new THREE.Vector3(-2.7+i*1.08, PLATES[4].y+0.12+i*((PLATES[0].y-PLATES[4].y)/5), 1.35-i*0.5); }
+const nodeGeo=new THREE.SphereGeometry(0.1,16,16), haloGeo=new THREE.SphereGeometry(0.22,16,16);
+const UP=new THREE.Vector3(0,1,0);
+const pylons=STAGES.map((s,i)=>{ const p=pylonPos(i); const o=new THREE.Group();
+  const haloM=new THREE.MeshBasicMaterial({color:0x9a4fe0,transparent:true,opacity:.12,blending:ADD,depthWrite:false}); o.add(new THREE.Mesh(haloGeo,haloM));
+  const coreM=new THREE.MeshBasicMaterial({color:0xf2e6ff,transparent:true,opacity:.5,blending:ADD,depthWrite:false}); o.add(new THREE.Mesh(nodeGeo,coreM));
+  o.position.copy(p); group.add(o);
+  // stem down to the floor beneath
+  const floorY = PLATES.reduce((a,L)=> (L.y<=p.y && L.y>a)?L.y:a, -10); const len=Math.max(0.1,p.y-floorY);
+  const stemM=new THREE.MeshBasicMaterial({color:0x8a3fd6,transparent:true,opacity:.22,blending:ADD,depthWrite:false});
+  const stem=new THREE.Mesh(new THREE.CylinderGeometry(0.012,0.012,len,6),stemM); stem.position.set(p.x,p.y-len/2,p.z); group.add(stem);
+  const lab=document.createElement('div'); lab.className='glabel'; lab.textContent=s.n+'  '+s.name; labelBox.appendChild(lab);
+  return {o,coreM,haloM,stemM,p,lab,s}; });
+
+// the journey path (a tube through the pylons) + a comet that rides it
+const curve=new THREE.CatmullRomCurve3(pylons.map(p=>p.p));
+const pathGeo=new THREE.TubeGeometry(curve,160,0.022,10,false);
+const pathM=new THREE.MeshBasicMaterial({color:0x8a3fd6,transparent:true,opacity:.32,blending:ADD,depthWrite:false});
+const path=new THREE.Mesh(pathGeo,pathM); group.add(path);
+const litGeo=new THREE.TubeGeometry(curve,160,0.03,10,false); const litIdx=litGeo.index.count;
+const litM=new THREE.MeshBasicMaterial({color:0xe6ccff,transparent:true,opacity:.7,blending:ADD,depthWrite:false});
+const lit=new THREE.Mesh(litGeo,litM); group.add(lit);
+const comet=new THREE.Group();
+comet.add(new THREE.Mesh(new THREE.SphereGeometry(0.24,16,16),new THREE.MeshBasicMaterial({color:0xa100ff,transparent:true,opacity:.3,blending:ADD,depthWrite:false})));
+comet.add(new THREE.Mesh(new THREE.SphereGeometry(0.1,16,16),new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.95,blending:ADD,depthWrite:false})));
+group.add(comet);
+
+// ----- scroll → progress -----
+let P=0;
+function onScroll(){ const r=track.getBoundingClientRect(), total=track.offsetHeight-window.innerHeight; P=Math.min(1,Math.max(0,(-r.top)/total)); prog.style.width=(P*100).toFixed(1)+'%'; }
+addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',()=>{resize();onScroll();}); onScroll();
+function smooth(x){ x=Math.min(1,Math.max(0,x)); return x*x*(3-2*x); }
+
+const wp=new THREE.Vector3(); let rot=0, lastT=null;
+function frame(ts){ requestAnimationFrame(frame);
+  if(lastT==null)lastT=ts; const dt=Math.min(60,ts-lastT); lastT=ts;
+  // intro until the journey starts; then journey progress jp over the six stages
+  const start=0.12, jp=smooth((P-start)/(1-start-0.04));
+  const onJourney = P>start;
+  // slow yaw + a gentle lift following the comet up the building
+  rot += dt*0.00018; group.rotation.y=Math.sin(rot)*0.5 + 0.15;
+  const cometPt=curve.getPointAt(Math.min(0.999,Math.max(0.001,jp)));
+  camera.position.y = cometPt.y*0.45; camera.lookAt(0, cometPt.y*0.5, 0);
+  comet.position.copy(cometPt); comet.visible=onJourney;
+  // traveled portion of the path lights up
+  lit.geometry.setDrawRange(0, Math.max(2,Math.floor(jp*litIdx)));
+  // active stage
+  const sf=jp*STAGES.length, ai=Math.min(STAGES.length-1,Math.floor(sf));
+  const cw=cv.clientWidth, ch=cv.clientHeight;
+  // which layers the active stage touches → brighten those floors
+  const touched = onJourney ? STAGES[ai].layers : [];
+  plates.forEach((pl,i)=>{ const hot=touched.includes(i); const tgt=hot?0.16:0.05; pl.fillM.opacity += (tgt-pl.fillM.opacity)*0.12;
+    pl.edgeM.opacity += ((hot?0.85:0.3)-pl.edgeM.opacity)*0.12;
+    wp.set(-PW/2-0.15, pl.L.y, PD/2).applyMatrix4(group.matrixWorld); const sp=wp.clone().project(camera);
+    pl.lab.style.transform='translate(-104%,-50%) translate('+((sp.x*0.5+0.5)*cw).toFixed(0)+'px,'+((-sp.y*0.5+0.5)*ch).toFixed(0)+'px)';
+    pl.lab.style.opacity=(onJourney?(sp.z<1?(hot?1:0.5):0):0).toFixed(2);
+  });
+  // pylons: light those the comet has passed; active one brightest
+  pylons.forEach((py,i)=>{ const passed = sf >= i; const active = i===ai && onJourney;
+    const tc = active?0.98:(passed?0.7:0.32); py.coreM.opacity += (tc-py.coreM.opacity)*0.14;
+    py.haloM.opacity += ((active?0.4:(passed?0.18:0.08))-py.haloM.opacity)*0.14;
+    py.stemM.opacity += ((passed?0.4:0.15)-py.stemM.opacity)*0.14;
+    wp.copy(py.p).applyMatrix4(group.matrixWorld); const sp=wp.clone().project(camera);
+    const sx=(sp.x*0.5+0.5)*cw, sy=(-sp.y*0.5+0.5)*ch;
+    py.lab.style.transform='translate(-50%,-50%) translate('+sx.toFixed(0)+'px,'+(sy-20).toFixed(0)+'px)';
+    py.lab.style.opacity=((onJourney && sp.z<1)?(active?1:(passed?0.75:0.4)):0).toFixed(2);
+  });
+  renderer.render(scene,camera);
+  // rail
+  intro.classList.toggle('on', !onJourney);
+  cardEls.forEach((c,i)=>c.classList.toggle('on', onJourney && i===ai));
+  stepsEl.classList.toggle('on', onJourney);
+  stepEls.forEach((s,i)=>{ s.classList.toggle('done', i<sf); s.classList.toggle('cur', onJourney && i===ai); });
+}
+requestAnimationFrame(frame);
+</script>
+</body></html>
