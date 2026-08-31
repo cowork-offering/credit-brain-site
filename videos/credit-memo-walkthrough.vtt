@@ -1,0 +1,88 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.999
+Here's the reality of a commercial credit memo. It usually takes an analyst the better part of a week, pulling spreads, reconciling covenants, writing the narrative, then formatting every bit of it for committee.
+
+00:00:12.000 --> 00:00:20.999
+So watch what happens when an agent carries that load and the banker stays in control, from the first click to the final sign-off.
+
+00:00:21.000 --> 00:00:29.999
+We start right where the banker already works, nCino. This is the Piedmont Precision relationship, organized as a single product package.
+
+00:00:30.000 --> 00:00:39.999
+Underneath it sit three facilities, a working capital line of credit, an equipment loan, and a requested increase that takes the line to $7.5 million.
+
+00:00:40.000 --> 00:00:52.999
+Right now, the package sits in the credit underwriting stage, which means the deal is ready to be worked. From here, everything runs through one conversation.
+
+00:00:53.000 --> 00:01:07.999
+The first thing we ask the agent to do is move the package into final review. Now, keep your eye on the stage field, because the agent isn't just reading nCino, it's writing back to it. And that round trip, that's the whole point.
+
+00:01:08.000 --> 00:01:17.999
+The system of record stays the single source of truth, and every move is logged. Next, show me the deal summary.
+
+00:01:18.000 --> 00:01:32.999
+In one panel, the agent pulls the entire relationship together, $17.5 million of proposed exposure, $12.5 million of it new money, a Pass/Watch risk grade of five, and all four covenants passing.
+
+00:01:33.000 --> 00:01:42.999
+This isn't a screenshot from one system. It's stitched together live from nCino, the financial spreads, and the risk engine.
+
+00:01:43.000 --> 00:01:47.999
+Now let's go deeper into the financials. These are the spreads straight from Boom.
+
+00:01:48.000 --> 00:01:59.999
+$56 million in revenue, EBITDA of $4.4 million, a 7.9% margin, leverage at 3.16x, with interest coverage of 4.6.
+
+00:02:00.000 --> 00:02:08.999
+But the agent has already spotted the real story. Margins are compressing, free cash flow is thinning, and debt is creeping up.
+
+00:02:09.000 --> 00:02:19.999
+And we can drill into any statement and trace every line back to its source document. Nothing here is invented. Every number has a lineage.
+
+00:02:20.000 --> 00:02:33.999
+Now the main event, draft the credit memo. And here's the first thing worth understanding. The agent isn't filling in a fixed template. It reads this specific deal and resolves exactly which sections apply.
+
+00:02:34.000 --> 00:02:44.999
+For Piedmont, that's 15 sections, and 16 more it suppresses because they don't fit. So what you get is a memo built for this deal, not a generic form.
+
+00:02:45.000 --> 00:02:57.999
+Look at any section. Each one has two halves. The data side is deterministic. Those numbers come straight from the spreads and the risk engine, never from the language model.
+
+00:02:58.000 --> 00:03:10.999
+The narrative side is AI generated. That's the writing an analyst would normally do by hand. And it's fenced. If a number falls outside policy or the data can't be traced, the agent stops and flags it.
+
+00:03:11.000 --> 00:03:23.999
+You can see it flagging a missing guarantor statement for the relationship manager. So you're always reviewing an AI draft. On the left, you talk to the agent. On the right, you approve it section by section.
+
+00:03:24.000 --> 00:03:32.999
+And nothing is locked in. Any section can be explained, corrected, or rewritten just by asking.
+
+00:03:33.000 --> 00:03:46.999
+Now scroll up to the executive summary. This is the agent doing real analysis. Revenue of $64.5 million. Adjusted EBITDA of $5.2 million and 8% margin.
+
+00:03:47.000 --> 00:03:55.999
+Leverage at 3.85x. And debt service coverage tightening year after year, but still inside the covenant.
+
+00:03:56.000 --> 00:04:03.999
+So the story it carries into committee is a borrower with thinning profitability. And it frames the increase against exactly that.
+
+00:04:04.000 --> 00:04:12.999
+That's the judgment a seasoned analyst brings. Drafted, sourced, and ready for a human to challenge.
+
+00:04:13.000 --> 00:04:22.999
+And when the banker is happy, it takes a single instruction. Move it to credit decisioning and submit for approval. The agent does both in one shot.
+
+00:04:23.000 --> 00:04:36.999
+It advances the package and all three loans to credit decisioning. And it submits the deal into the loan committee queue. One sentence and the handoff to committee is done with a full audit trail behind it.
+
+00:04:37.000 --> 00:04:50.999
+And back in nCino, it's all there. The narrative the agent wrote is synced straight into the package fields. And the full memo is published right onto the record as a formatted document.
+
+00:04:51.000 --> 00:05:03.999
+The record is now locked, submitted for credit decision. No edits while committee reviews. Nothing ever left a governed system. And the memo still carries its DRAFT banner, pending credit committee review.
+
+00:05:04.000 --> 00:05:13.999
+Because the agent's job is to do the work, not to make the credit decision. That stays with the people who are accountable for it.
+
+00:05:14.000 --> 00:05:33.030
+A week of work compressed into a single conversation. Every number traceable, every step logged, and a banker in control from start to finish. This is the commercial credit memo, reinvented.
