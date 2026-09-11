@@ -11,6 +11,7 @@ function must(cond, msg){ if(!cond){ console.error('FAIL:', msg); process.exit(1
 
 // ---------------------------------------------------------------- 1. head: drop external service links
 const headKills = [
+  /<!-- invitation-only gate:[^>]*-->\n<script src="gate\.js\?v=\d+"><\/script>\n/,   // the claude.ai artifact is shared deliberately; no gate
   /<!-- warm the voice-agent network path[^>]*-->\n/,
   /<link rel="preconnect" href="https:\/\/api\.elevenlabs\.io" crossorigin \/>\n/,
   /<link rel="preconnect" href="https:\/\/esm\.sh" crossorigin \/>\n/,

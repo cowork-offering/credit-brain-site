@@ -14,6 +14,7 @@ Brain programme's team brain.
 | Path | What |
 |---|---|
 | `index.html` | The live page. Single file, self-contained logic. `?view=functional` switches to the functional-blueprint view. |
+| `gate.js` | Invitation-only gate loaded in every page `<head>`: hides the page until the access phrase is entered (salted SHA-256, phrase not in repo; unlock kept 30d; `?lock` re-locks). Courtesy lock, not a security boundary. |
 | `brain-widget.js` | "Enterprise Brain Advisor" voice + chat widget (v14). Custom-built, talks to ElevenLabs ConvAI directly. |
 | `accenture-logo.png`, `silk.jpg`, `founder-*.jpg` | Page assets. |
 | `docs/HANDOVER.md` | **Read this first.** Everything Archy knew about this project: history, architecture, provenance, operations. |
