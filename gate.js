@@ -16,7 +16,7 @@
 (function () {
   var KEY = 'ccb.gate.v1';
   var SALT = 'credit-brain-2026:';
-  var HASH = 'fec8f8419479cf3ad021d916b29a53c094cc4a51c1b1e8806efff65f4e527693';
+  var HASH = 'bb17e0bae63a4bcde55e0a3c8d1adfbc9d21075b895db4fa610c408831344879';
   var TTL = 30 * 24 * 3600 * 1000;
   var root = document.documentElement;
   var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
